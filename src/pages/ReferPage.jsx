@@ -1,39 +1,92 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Heart, 
   Gift, 
-  Sparkles, 
-  Award, 
-  MessageCircle, 
   Copy, 
   Check, 
-  Share2, 
   AlertCircle,
-  Crown,
-  Calendar
+  ArrowRight,
+  MessageCircle
 } from 'lucide-react';
 
 export default function ReferPage() {
-  const [yourName, setYourName] = useState('');
-  const [friendName, setFriendName] = useState('');
-  const [friendPhone, setFriendPhone] = useState('');
+  const [referrerName, setReferrerName] = useState('');
+  const [hasGenerated, setHasGenerated] = useState(false);
+  const [generatedName, setGeneratedName] = useState('');
   const [copied, setCopied] = useState(false);
+  const [inputError, setInputError] = useState(false);
 
-  const defaultMessage = `Hey ${friendName.trim() || 'babe'}, you have to try Maja Beauty Bar in Dubai! I'm sharing AED 50 OFF your first appointment so we can both treat ourselves. Book here: https://majabeautybar.ae (Mention ${yourName.trim() || 'me'} when booking!) ✨`;
+  const resultRef = useRef(null);
+  const inputRef = useRef(null);
+  const linkInputRef = useRef(null);
 
-  const getWhatsAppShareUrl = () => {
-    const encoded = encodeURIComponent(defaultMessage);
-    if (friendPhone.trim()) {
-      const cleanPhone = friendPhone.replace(/[^0-9]/g, '');
-      return `https://wa.me/${cleanPhone}?text=${encoded}`;
+  // Official Maja Beauty Bar WhatsApp number
+  const WA_NUMBER = '971509964626';
+
+  // Build the booking link that the friend will click (opens Maja WhatsApp with pre-filled referral credit claim)
+  const currentName = generatedName || referrerName.trim() || 'a friend';
+  const bookingMsg = `Hi Maja Beauty Bar, I was referred by ${currentName}. I'd like to book an appointment and claim my AED 50 referral discount on my first visit!`;
+  const bookingLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(bookingMsg)}`;
+
+  // Build the share message that the referrer sends to their friends via WhatsApp
+  const shareMsg = `Hey! I love Maja Beauty Bar in Dubai (Meydan) — my go-to luxury beauty routine. Use my referral link and get AED 50 OFF your first visit!\n\nBook here: ${bookingLink}`;
+  const shareWhatsAppUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
+
+  const handleGenerate = (e) => {
+    if (e) e.preventDefault();
+    const clean = referrerName.trim();
+    if (!clean) {
+      setInputError(true);
+      if (inputRef.current) inputRef.current.focus();
+      setTimeout(() => setInputError(false), 2500);
+      return;
     }
-    return `https://wa.me/?text=${encoded}`;
+
+    setGeneratedName(clean);
+    setHasGenerated(true);
+    setInputError(false);
+
+    // Smooth scroll down to result container (like Blush N Curls)
+    setTimeout(() => {
+      if (resultRef.current) {
+        resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 150);
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(defaultMessage);
+    if (linkInputRef.current) {
+      linkInputRef.current.select();
+      linkInputRef.current.setSelectionRange(0, 99999);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(bookingLink)
+        .then(() => triggerCopied())
+        .catch(() => fallbackCopy());
+    } else {
+      fallbackCopy();
+    }
+  };
+
+  const fallbackCopy = () => {
+    try {
+      document.execCommand('copy');
+    } catch (_) {}
+    triggerCopied();
+  };
+
+  const triggerCopied = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const scrollToGenerate = () => {
+    const el = document.getElementById('generate-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (inputRef.current) inputRef.current.focus();
+    }
   };
 
   return (
@@ -45,219 +98,337 @@ export default function ReferPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        {/* 1. Header (Mirrored from Blush N Curls) */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/30 text-xs font-semibold uppercase tracking-wider text-[#9E7D47] mb-4">
-            <Heart className="w-3.5 h-3.5 text-[#C5A880] fill-[#C5A880]/20" />
-            <span>Maja Girls Club</span>
+            <span>Share the Love</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] leading-tight">
-            Beauty That Gives Back.
+            Refer a Friend
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#5C5048] max-w-2xl mx-auto font-light leading-relaxed">
-            Enjoy more from every visit with birthday privileges, loyalty points, and referral rewards for you and your best friends.
+            Love your experience at Maja Beauty Bar? Share it with a friend and you both get rewarded with AED 50 off your treatments.
           </p>
         </div>
 
-        {/* 4 Pillars of Maja Girls Club (From menu & deck page 29-30 & 5) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* 2. 3-Step "How It Works" (Mirrored from Blush N Curls) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-20 max-w-5xl mx-auto">
           
-          {/* 1. Better Together (Referral) */}
-          <div className="bg-luxury-card rounded-3xl p-7 border border-[#C5A880]/35 shadow-lg flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] mb-5">
-                <Gift className="w-6 h-6" />
-              </div>
-              <span className="text-[10px] uppercase tracking-wider text-[#A6865A] font-bold block">
-                Give AED 50 · Get AED 50
-              </span>
-              <h3 className="font-serif text-2xl text-[#1C1816] mt-1 mb-2">
-                BETTER TOGETHER
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                Refer a new friend and, once she completes her first appointment, you’ll both receive <strong className="text-[#1C1816]">AED 50 OFF</strong> your next visit (min spend AED 200).
-              </p>
+          {/* Step 1 */}
+          <div className="bg-luxury-card rounded-3xl p-8 border border-[#C5A880]/30 shadow-lg text-center flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] font-serif text-2xl font-bold mb-5">
+              1
             </div>
-            <div className="mt-6 pt-3 border-t border-[#C5A880]/20 text-[11px] text-[#9E7D47] font-semibold">
-              Instant Referral Benefit
-            </div>
-          </div>
-
-          {/* 2. Birthday Privilege */}
-          <div className="bg-luxury-card rounded-3xl p-7 border border-[#C5A880]/35 shadow-lg flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] mb-5">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <span className="text-[10px] uppercase tracking-wider text-[#A6865A] font-bold block">
-                Birthday Celebration
-              </span>
-              <h3 className="font-serif text-2xl text-[#1C1816] mt-1 mb-2">
-                IT’S YOUR WEEK
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                Enjoy <strong className="text-[#1C1816]">20% OFF</strong> one visit during your birthday week. Valid Emirates ID must be presented upon arrival.
-              </p>
-            </div>
-            <div className="mt-6 pt-3 border-t border-[#C5A880]/20 text-[11px] text-[#9E7D47] font-semibold">
-              Birthday Privilege
-            </div>
-          </div>
-
-          {/* 3. Loyalty Points */}
-          <div className="bg-luxury-card rounded-3xl p-7 border border-[#C5A880]/35 shadow-lg flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] mb-5">
-                <Award className="w-6 h-6" />
-              </div>
-              <span className="text-[10px] uppercase tracking-wider text-[#A6865A] font-bold block">
-                Points on Every Dirham
-              </span>
-              <h3 className="font-serif text-2xl text-[#1C1816] mt-1 mb-2">
-                EVERY VISIT COUNTS
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                Earn 1 pt per AED 1 spent, 10 pts for booking online, 25 pts for reviews. Complete 10 visits for 1,000 bonus pts. Every 100 pts = AED 1 off!
-              </p>
-            </div>
-            <div className="mt-6 pt-3 border-t border-[#C5A880]/20 text-[11px] text-[#9E7D47] font-semibold">
-              Loyalty Rewards Program
-            </div>
-          </div>
-
-          {/* 4. Tier System */}
-          <div className="bg-luxury-card rounded-3xl p-7 border border-[#C5A880]/35 shadow-lg flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] mb-5">
-                <Crown className="w-6 h-6" />
-              </div>
-              <span className="text-[10px] uppercase tracking-wider text-[#A6865A] font-bold block">
-                VIP Tier Status
-              </span>
-              <h3 className="font-serif text-2xl text-[#1C1816] mt-1 mb-2">
-                LOYALTY LOOKS GOOD ON YOU
-              </h3>
-              <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                Start at Silver. Unlock Gold when you spend AED 5,000 for <strong className="text-[#1C1816]">15% OFF</strong>. Reach Platinum at AED 15,000 for <strong className="text-[#1C1816]">20% OFF</strong>.
-              </p>
-            </div>
-            <div className="mt-6 pt-3 border-t border-[#C5A880]/20 text-[11px] text-[#9E7D47] font-semibold">
-              Silver · Gold · Platinum
-            </div>
-          </div>
-
-        </div>
-
-        {/* INTERACTIVE WHATSAPP REFERRAL GENERATOR (Inspired by Blush N Curls) */}
-        <div className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#C5A880]/35 shadow-2xl mb-16">
-          <div className="text-center mb-8">
-            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
-              Instant Referral Tool
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-1">
-              Send Your WhatsApp Invite
-            </h2>
-            <p className="text-xs sm:text-sm text-[#7A6F68] mt-2">
-              Fill in your details to create an automatic WhatsApp invite message with your AED 50 referral discount.
+            <h3 className="font-serif text-2xl text-[#1C1816] mb-3">
+              Generate Your Link
+            </h3>
+            <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+              Enter your name below to create a personalised WhatsApp referral booking link.
             </p>
           </div>
 
-          <div className="space-y-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {/* Step 2 */}
+          <div className="bg-luxury-card rounded-3xl p-8 border border-[#C5A880]/30 shadow-lg text-center flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] font-serif text-2xl font-bold mb-5">
+              2
+            </div>
+            <h3 className="font-serif text-2xl text-[#1C1816] mb-3">
+              Share with Friends
+            </h3>
+            <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+              Send the link to friends via WhatsApp. They book directly through your referral.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-luxury-card rounded-3xl p-8 border border-[#C5A880]/30 shadow-lg text-center flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] font-serif text-2xl font-bold mb-5">
+              3
+            </div>
+            <h3 className="font-serif text-2xl text-[#1C1816] mb-3">
+              Both Get Rewarded
+            </h3>
+            <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+              Your friend gets <strong className="text-[#1C1816]">AED 50 off their first visit</strong> and you earn <strong className="text-[#1C1816]">AED 50 credit</strong>.
+            </p>
+          </div>
+
+        </div>
+
+        {/* 3. Referral Link Generator (Exact Blush N Curls Form & Output) */}
+        <section id="generate-section" className="max-w-xl mx-auto mb-20 scroll-mt-28">
+          <div className="bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#C5A880]/35 shadow-2xl">
+            
+            <div className="text-center mb-8">
+              <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+                Your Referral Link
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-2">
+                Generate &amp; Share
+              </h2>
+              <p className="text-xs sm:text-sm text-[#7A6F68] mt-3 leading-relaxed">
+                Enter your name and we will create a personalised WhatsApp booking link you can share with friends.
+              </p>
+            </div>
+
+            <form onSubmit={handleGenerate} className="space-y-5">
+              {/* Name Input */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                <label 
+                  htmlFor="referrerName"
+                  className="block text-xs font-bold uppercase tracking-wider text-[#1C1816] mb-2"
+                >
                   Your Name *
                 </label>
                 <input
+                  ref={inputRef}
+                  id="referrerName"
                   type="text"
                   placeholder="e.g. Sarah"
-                  value={yourName}
-                  onChange={(e) => setYourName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                  value={referrerName}
+                  onChange={(e) => {
+                    setReferrerName(e.target.value);
+                    if (inputError) setInputError(false);
+                  }}
+                  className={`w-full px-4 py-3.5 rounded-xl bg-white border transition-all text-sm text-[#1C1816] placeholder:text-[#9E948B] focus:outline-none ${
+                    inputError 
+                      ? 'border-red-500 ring-2 ring-red-200' 
+                      : 'border-[#C5A880]/40 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20'
+                  }`}
                 />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
-                  Friend's Name *
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Maya"
-                  value={friendName}
-                  onChange={(e) => setFriendName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
-                Friend's WhatsApp Number (Optional)
-              </label>
-              <input
-                type="tel"
-                placeholder="+971 50 000 0000 (or leave empty to pick contact in WhatsApp)"
-                value={friendPhone}
-                onChange={(e) => setFriendPhone(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
-              />
-            </div>
-
-            {/* Live Message Preview */}
-            <div className="pt-2">
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
-                Auto-Generated WhatsApp Message Preview:
-              </label>
-              <div className="p-4 rounded-2xl bg-white/90 border border-[#C5A880]/30 text-xs sm:text-sm text-[#2D2622] leading-relaxed shadow-inner">
-                {defaultMessage}
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href={getWhatsAppShareUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all"
-              >
-                <MessageCircle className="w-4 h-4 fill-white/20" />
-                <span>Send WhatsApp Invite</span>
-              </a>
-
-              <button
-                onClick={handleCopy}
-                className="py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-wider bg-white hover:bg-[#FAF7F2] border border-[#C5A880]/40 text-[#1C1816] flex items-center justify-center gap-2 shadow-sm transition-all"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-green-600" />
-                    <span className="text-green-700">Message Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 text-[#9E7D47]" />
-                    <span>Copy Message</span>
-                  </>
+                {inputError && (
+                  <p className="text-xs text-red-500 mt-1.5 font-medium">
+                    Please enter your name to generate your link.
+                  </p>
                 )}
+              </div>
+
+              {/* Generate Button */}
+              <button
+                type="submit"
+                className="btn-luminous w-full py-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+              >
+                <span>Generate My Referral Link</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
+            </form>
+
+            {/* Result (Hidden initially, exact structure of Blush N Curls) */}
+            {hasGenerated && (
+              <div 
+                ref={resultRef}
+                className="mt-8 pt-8 border-t border-[#C5A880]/25 space-y-5 transition-all duration-300"
+              >
+                {/* 1. Referral Link Display Box */}
+                <div className="bg-[#FFFDF9] rounded-2xl p-5 border border-[#C5A880]/40 shadow-sm">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1C1816] mb-2">
+                    Booking Link for Your Friend
+                  </label>
+                  <div className="flex gap-2 items-stretch">
+                    <input
+                      ref={linkInputRef}
+                      type="text"
+                      readOnly
+                      value={bookingLink}
+                      onClick={(e) => e.target.select()}
+                      className="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl bg-white border border-[#C5A880]/30 text-xs text-[#5C5048] font-mono select-all focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleCopy}
+                      className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shrink-0 ${
+                        copied 
+                          ? 'bg-[#25D366] text-white shadow-md' 
+                          : 'bg-[#1C1816] hover:bg-[#3E342F] text-white'
+                      }`}
+                    >
+                      {copied ? (
+                        <>
+                          <Check className="w-3.5 h-3.5" />
+                          <span>Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  <p className="mt-2.5 text-[11px] text-[#7A6F68] leading-relaxed">
+                    When your friend clicks this link, WhatsApp opens with a pre-filled message mentioning your name.
+                  </p>
+                </div>
+
+                {/* 2. Direct Share on WhatsApp Button (Blush N Curls style) */}
+                <div>
+                  <a
+                    href={shareWhatsAppUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2.5 shadow-lg hover:shadow-xl transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white/20" />
+                    <span>Share on WhatsApp</span>
+                  </a>
+                  <p className="text-center text-xs text-[#7A6F68] mt-2.5">
+                    This will open WhatsApp with a pre-filled message you can send to your friends.
+                  </p>
+                </div>
+
+              </div>
+            )}
+
+          </div>
+        </section>
+
+        {/* 4. What You Both Get (Rewards section from Blush N Curls) */}
+        <div className="mb-20 max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+              Rewards
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#1C1816] mt-2">
+              What You Both Get
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            
+            {/* Friend Gets */}
+            <div className="bg-luxury-card rounded-3xl p-8 sm:p-10 border-t-4 border-[#C5A880] border border-[#C5A880]/30 shadow-lg text-center flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#8C6D3B] mx-auto mb-4">
+                  <Gift className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl text-[#1C1816] mb-2">
+                  Your Friend Gets
+                </h3>
+                <div className="font-serif text-4xl text-[#8C6D3B] font-bold my-3">
+                  AED 50 OFF
+                </div>
+                <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                  Applied to their very first visit at Maja Beauty Bar on any salon or spa treatment (minimum spend AED 200).
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-semibold text-[#8C6D3B]">
+                First Visit Privilege
+              </div>
             </div>
+
+            {/* Referrer Earns */}
+            <div className="bg-luxury-card rounded-3xl p-8 sm:p-10 border-t-4 border-[#8C6D3B] border border-[#C5A880]/30 shadow-lg text-center flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#C5A880]/15 flex items-center justify-center text-[#8C6D3B] mx-auto mb-4">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h3 className="font-serif text-2xl text-[#1C1816] mb-2">
+                  You Earn
+                </h3>
+                <div className="font-serif text-4xl text-[#8C6D3B] font-bold my-3">
+                  AED 50 Credit
+                </div>
+                <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                  Automatically added to your client account after your friend completes her first appointment.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-semibold text-[#8C6D3B]">
+                Unlimited Referrals
+              </div>
+            </div>
+
           </div>
         </div>
 
-        {/* Terms and Conditions (Exact from deck page 30 & menu page 5) */}
-        <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-white/70 border border-[#C5A880]/30 shadow-sm">
+        {/* 5. Frequently Asked Questions (Blush N Curls FAQ style) */}
+        <div className="max-w-3xl mx-auto mb-20">
+          <div className="text-center mb-10">
+            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+              Good to Know
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-2">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 border border-[#C5A880]/30 shadow-md divide-y divide-[#C5A880]/20">
+            
+            <div className="py-4 first:pt-0">
+              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+                How many friends can I refer?
+              </h4>
+              <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                There is no limit! Refer as many besties as you like and earn AED 50 salon credit for every friend who completes her first visit.
+              </p>
+            </div>
+
+            <div className="py-4">
+              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+                When do I get my AED 50 credit?
+              </h4>
+              <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                Your AED 50 credit is recorded on your Maja client profile immediately once your friend finishes her first appointment with us.
+              </p>
+            </div>
+
+            <div className="py-4">
+              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+                What treatments qualify for the referral offer?
+              </h4>
+              <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                All services across our suites — Nails, Hair, Lashes, Brows, Waxing, and Massages qualify, with a minimum spend of AED 200.
+              </p>
+            </div>
+
+            <div className="py-4 last:pb-0">
+              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+                How does my friend claim the AED 50 discount?
+              </h4>
+              <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
+                They simply click your WhatsApp referral link to start booking, which automatically includes your name in their WhatsApp booking inquiry.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* 6. Terms and Conditions (Deck page 30 & Menu page 5) */}
+        <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-white/60 border border-[#C5A880]/25 shadow-sm mb-16">
           <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold mb-3 flex items-center gap-2">
             <AlertCircle className="w-4 h-4" />
-            <span>Terms & Conditions — Maja Girls Club</span>
+            <span>Terms &amp; Conditions — Maja Girls Club Referral</span>
           </h4>
           <ul className="space-y-2 text-xs text-[#5C5048] leading-relaxed">
-            <li>• Only one loyalty reward or discount may be used per visit. Benefits cannot be combined with other offers, promotions or discount cards.</li>
-            <li>• Loyalty rewards and discounts cannot be redeemed during Eid, UAE public holidays, New Year’s Eve or New Year’s Day.</li>
-            <li>• Referral rewards are issued after the new client completes her first appointment. Both clients receive AED 50 off their next visit, with a minimum spend of AED 200.</li>
-            <li>• The birthday offer provides 20% off one visit during the client’s birthday week. A valid Emirates ID must be presented to redeem the offer.</li>
+            <li>• Only one loyalty reward or discount may be used per visit. Benefits cannot be combined with other offers, seasonal packages, or promotions.</li>
+            <li>• Referral rewards cannot be redeemed during Eid, UAE public holidays, New Year’s Eve, or New Year’s Day.</li>
+            <li>• Referral discounts are valid for new clients only, with a minimum spend of AED 200 on their first appointment.</li>
           </ul>
+        </div>
+
+        {/* 7. Bottom CTA (Blush N Curls style) */}
+        <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-[#2D2622] to-[#1C1816] rounded-3xl p-8 sm:p-12 text-white border border-[#C5A880]/30 shadow-2xl">
+          <h3 className="font-serif text-3xl sm:text-4xl text-[#FFFDF9] mb-3">
+            Start Sharing Today
+          </h3>
+          <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto mb-6 leading-relaxed">
+            The more friends you invite, the more beauty credits you earn. Generate your link in seconds and treat yourself and your friends.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={scrollToGenerate}
+              className="btn-luminous py-3.5 px-8 rounded-xl text-xs font-bold uppercase tracking-wider"
+            >
+              Generate My Link
+            </button>
+            <a
+              href="https://wa.me/971509964626"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3.5 px-8 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/30 transition-colors"
+            >
+              Contact Maja on WhatsApp
+            </a>
+          </div>
         </div>
 
       </div>
