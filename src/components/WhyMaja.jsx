@@ -43,7 +43,7 @@ export default function WhyMaja() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
             Why Maja
           </span>
@@ -51,6 +51,32 @@ export default function WhyMaja() {
             Beauty, Elevated to Its Highest Standard
           </h2>
           <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4" />
+        </div>
+
+        {/* Highlights & Trust Metrics Bar (4.8 ★, 5 Years, 5 Suites, Dubai Meydan) */}
+        <div className="bg-luxury-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C5A880]/30 shadow-lg mb-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-[#C5A880]/20">
+            <div className="flex flex-col items-center pt-2 sm:pt-0">
+              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">4.8 ★</span>
+              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">394+ Verified Clients</span>
+              <span className="text-[11px] text-[#9E7D47] mt-0.5">Top-Rated on Google</span>
+            </div>
+            <div className="flex flex-col items-center pt-4 sm:pt-0">
+              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">5 Years</span>
+              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Beauty Expertise</span>
+              <span className="text-[11px] text-[#9E7D47] mt-0.5">Established in Dubai</span>
+            </div>
+            <div className="flex flex-col items-center pt-4 sm:pt-0">
+              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">5 Suites</span>
+              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Complete Destination</span>
+              <span className="text-[11px] text-[#9E7D47] mt-0.5">Hair · Nails · Brows · Spa</span>
+            </div>
+            <div className="flex flex-col items-center pt-4 sm:pt-0">
+              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">Dubai</span>
+              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Prime Location</span>
+              <span className="text-[11px] text-[#9E7D47] mt-0.5">M1M Meydan, Nad Al Sheba</span>
+            </div>
+          </div>
         </div>
 
         {/* 3 Cards with Photos as Requested */}
