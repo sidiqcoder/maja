@@ -1,10 +1,10 @@
 import React from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function ServicesOverview({ onSelectCategory, onNavigateToServices }) {
   
-  // Large visual cards modeled after thecoloristhairsalon.com
-  // No body text on the cards, just full-bleed editorial imagery, luxury title, and CTA
+  // Large visual cards modeled after thecoloristhairsalon.com (landing page.txt line 69)
+  // Clean full-bleed editorial imagery, luxury title, and glowing CTA
   const serviceCards = [
     {
       id: 'nails',
@@ -43,42 +43,8 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
     },
   ];
 
-  // Specific updated text requested for "needs" section
-  const needsCopy = [
-    {
-      id: 'nails',
-      title: 'Nails',
-      copy: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The GelBottle for a polished, long lasting finish.',
-      brands: 'Luxio · The GelBottle · Essie · Orly',
-    },
-    {
-      id: 'hair',
-      title: 'Hair',
-      copy: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
-      brands: 'Davines · Keune · Schwarzkopf',
-    },
-    {
-      id: 'lashes-brows',
-      title: 'Lashes & Brows',
-      copy: 'Lash extensions, tinting, lamination and threading to define and frame your features, with YUMI used for our lash treatments for a refined, natural looking finish.',
-      brands: 'YUMI Lashes · Professional Tint',
-    },
-    {
-      id: 'waxing',
-      title: 'Waxing',
-      copy: 'Professional waxing treatments focused on smooth results and skin comfort, with careful techniques for a clean finish while keeping your skin feeling comfortable and cared for.',
-      brands: 'Sensitive Strip-less Hot Wax',
-    },
-    {
-      id: 'massages',
-      title: 'Massages',
-      copy: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
-      brands: 'Manual Lymphatic Drainage · Red Light',
-    },
-  ];
-
   return (
-    <section id="services-section" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="services-section" className="py-20 lg:py-24 relative overflow-hidden">
       
       {/* Subtle organic warm background blobs (ensuring non-solid background) */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E8DAC7]/30 rounded-full blur-3xl pointer-events-none" />
@@ -87,7 +53,7 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
             Our Services
           </span>
@@ -97,8 +63,8 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
           <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-5" />
         </div>
 
-        {/* 1. Large Visual Service Cards (Colorist style: Large photos, no text clutter, pure imagery & CTA) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-20">
+        {/* Large Visual Service Cards (Colorist style: Large photos, no text clutter, pure imagery & CTA) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {serviceCards.map((card) => (
             <div
               key={card.id}
@@ -139,77 +105,7 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
           ))}
         </div>
 
-        {/* 2. Needs Detail Grid (Detailed updated copy requested in landing page.txt lines 27-38) */}
-        <div className="bg-warm-canvas rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#C5A880]/25 shadow-xl">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="font-serif text-2xl sm:text-4xl text-[#1C1816]">
-              Carefully Selected Brands & Tailored Techniques
-            </h3>
-            <p className="text-sm text-[#7A6F68] mt-2">
-              Every formula and technique at Maja is hand-picked to deliver lasting, polished results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {needsCopy.map((item) => (
-              <div 
-                key={item.id}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C5A880]/20 hover:border-[#C5A880]/60 transition-all duration-300 hover:shadow-md flex flex-col justify-between"
-              >
-                <div>
-                  <h4 className="font-serif text-2xl text-[#1C1816] font-medium mb-3">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                    {item.copy}
-                  </p>
-                </div>
-
-                <div className="mt-5 pt-4 border-t border-[#C5A880]/15 flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-[#9E7D47]">
-                    {item.brands}
-                  </span>
-                  <button
-                    onClick={() => onSelectCategory(item.id)}
-                    className="text-xs font-semibold text-[#1C1816] hover:text-[#C5A880] inline-flex items-center gap-1"
-                  >
-                    <span>Menu</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-            ))}
-
-            {/* Final Highlight Card */}
-            <div className="bg-gradient-to-br from-[#2D2622] to-[#1C1816] text-white rounded-2xl p-6 flex flex-col justify-between border border-[#C5A880]/30 shadow-lg md:col-span-2 lg:col-span-1">
-              <div>
-                <span className="text-[10px] uppercase tracking-widest text-[#E5D2BA] font-semibold">
-                  Full Experience
-                </span>
-                <h4 className="font-serif text-2xl text-[#FFFDF9] mt-2 mb-3">
-                  Ready to explore all pricing?
-                </h4>
-                <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  Discover our comprehensive price menu including BIAB sets, Davines hair colours, YUMI lamination, and Cecilia’s lymphatic drainage.
-                </p>
-              </div>
-
-              <div className="mt-6">
-                <button
-                  onClick={onNavigateToServices}
-                  className="btn-luminous w-full py-3 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2"
-                >
-                  <span>Explore Complete Menu</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </section>
   );
 }
-

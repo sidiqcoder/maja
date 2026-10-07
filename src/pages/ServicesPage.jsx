@@ -81,7 +81,7 @@ export default function ServicesPage({ initialCategory = 'all' }) {
         </div>
 
         {/* Categories Tab Bar */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
+        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
           {serviceCategories.map((cat) => (
             <button
               key={cat.id}
@@ -96,6 +96,26 @@ export default function ServicesPage({ initialCategory = 'all' }) {
             </button>
           ))}
         </div>
+
+        {/* Active Category Description Banner (From landing page.txt lines 27-38) */}
+        {activeCategory !== 'all' && (
+          <div className="max-w-3xl mx-auto mb-12 p-5 rounded-2xl bg-white/75 border border-[#C5A880]/30 shadow-sm text-center">
+            {serviceCategories
+              .filter((c) => c.id === activeCategory)
+              .map((c) => (
+                <div key={c.id}>
+                  <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
+                    {c.description}
+                  </p>
+                  {c.brands && (
+                    <div className="mt-2 text-[11px] font-semibold text-[#8C6D3B] tracking-wide uppercase">
+                      Premium Brands: {c.brands}
+                    </div>
+                  )}
+                </div>
+              ))}
+          </div>
+        )}
 
         {/* Services Grid with Photos from Drive */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

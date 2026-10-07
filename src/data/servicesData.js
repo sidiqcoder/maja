@@ -2,12 +2,42 @@
 // Derived from MAJA_Beauty_Bar_Website_Deck.pdf and New Maja MENU.pdf
 
 export const serviceCategories = [
-  { id: 'all', name: 'All Services' },
-  { id: 'nails', name: 'Nails' },
-  { id: 'hair', name: 'Hair' },
-  { id: 'lashes-brows', name: 'Lashes & Brows' },
-  { id: 'waxing', name: 'Waxing' },
-  { id: 'massages', name: 'Massages' },
+  { 
+    id: 'all', 
+    name: 'All Services',
+    description: 'Explore our full menu of luxury salon and spa rituals across all suites.',
+    brands: 'Complete Menu'
+  },
+  { 
+    id: 'nails', 
+    name: 'Nails',
+    description: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The GelBottle for a polished, long lasting finish.',
+    brands: 'Luxio · The GelBottle · Essie · Orly'
+  },
+  { 
+    id: 'hair', 
+    name: 'Hair',
+    description: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
+    brands: 'Davines · Keune · Schwarzkopf'
+  },
+  { 
+    id: 'lashes-brows', 
+    name: 'Lashes & Brows',
+    description: 'Lash extensions, tinting, lamination and threading to define and frame your features, with YUMI used for our lash treatments for a refined, natural looking finish.',
+    brands: 'YUMI Lashes · Professional Tint'
+  },
+  { 
+    id: 'waxing', 
+    name: 'Waxing',
+    description: 'Professional waxing treatments focused on smooth results and skin comfort, with careful techniques for a clean finish while keeping your skin feeling comfortable and cared for.',
+    brands: 'Sensitive Strip-less Hot Wax'
+  },
+  { 
+    id: 'massages', 
+    name: 'Massages',
+    description: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
+    brands: 'Manual Lymphatic Drainage · Sculpt'
+  },
 ];
 
 export const servicesData = [
