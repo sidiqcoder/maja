@@ -6,7 +6,6 @@ import {
   Menu as MenuIcon, 
   X, 
   Instagram,
-  Heart,
   Scissors,
   Eye,
   Activity,
@@ -227,13 +226,12 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             {/* Refer a Friend */}
             <button
               onClick={() => handleNavClick('refer')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activePage === 'refer' 
                   ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
                   : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
               }`}
             >
-              <Heart className="w-3.5 h-3.5 text-[#C5A880]" />
               Refer a Friend
             </button>
           </nav>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { serviceCategories, servicesData } from '../data/servicesData';
 import { 
-  Sparkles, 
   MessageCircle, 
   Calendar, 
   Search, 
@@ -195,7 +194,7 @@ export default function ServicesPage({ initialCategory = 'all' }) {
 
         {filteredServices.length === 0 && (
           <div className="text-center py-16 bg-white/60 rounded-3xl border border-[#C5A880]/20 max-w-md mx-auto">
-            <Sparkles className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
+            <Search className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
             <h3 className="font-serif text-2xl text-[#1C1816]">No Treatments Found</h3>
             <p className="text-xs text-[#7A6F68] mt-1 mb-4">
               Try searching with different terms or reset the filters.

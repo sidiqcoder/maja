@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { packagesData } from '../data/packagesData';
 import { 
-  Sparkles, 
   CheckCircle2, 
   Clock, 
   Calendar, 
@@ -60,13 +59,12 @@ export default function PackagesPage() {
 
           <button
             onClick={() => setActiveTab('reset')}
-            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
+            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all whitespace-nowrap ${
               activeTab === 'reset'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
             }`}
           >
-            <Sparkles className="w-4 h-4 text-[#C5A880]" />
             <span>The Beauty Reset (Mon & Tue)</span>
           </button>
 

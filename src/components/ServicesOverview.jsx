@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Scissors, Eye, Feather, Activity, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function ServicesOverview({ onSelectCategory, onNavigateToServices }) {
   
@@ -48,35 +48,30 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
     {
       id: 'nails',
       title: 'Nails',
-      icon: Sparkles,
       copy: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The GelBottle for a polished, long lasting finish.',
       brands: 'Luxio · The GelBottle · Essie · Orly',
     },
     {
       id: 'hair',
       title: 'Hair',
-      icon: Scissors,
       copy: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
       brands: 'Davines · Keune · Schwarzkopf',
     },
     {
       id: 'lashes-brows',
       title: 'Lashes & Brows',
-      icon: Eye,
       copy: 'Lash extensions, tinting, lamination and threading to define and frame your features, with YUMI used for our lash treatments for a refined, natural looking finish.',
       brands: 'YUMI Lashes · Professional Tint',
     },
     {
       id: 'waxing',
       title: 'Waxing',
-      icon: Feather,
       copy: 'Professional waxing treatments focused on smooth results and skin comfort, with careful techniques for a clean finish while keeping your skin feeling comfortable and cared for.',
       brands: 'Sensitive Strip-less Hot Wax',
     },
     {
       id: 'massages',
       title: 'Massages',
-      icon: Activity,
       copy: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
       brands: 'Manual Lymphatic Drainage · Red Light',
     },
@@ -156,42 +151,34 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {needsCopy.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div 
-                  key={item.id}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C5A880]/20 hover:border-[#C5A880]/60 transition-all duration-300 hover:shadow-md flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47]">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <h4 className="font-serif text-xl sm:text-2xl text-[#1C1816] font-medium">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
-                      {item.copy}
-                    </p>
-                  </div>
-
-                  <div className="mt-5 pt-4 border-t border-[#C5A880]/15 flex items-center justify-between">
-                    <span className="text-[11px] font-medium text-[#9E7D47]">
-                      {item.brands}
-                    </span>
-                    <button
-                      onClick={() => onSelectCategory(item.id)}
-                      className="text-xs font-semibold text-[#1C1816] hover:text-[#C5A880] inline-flex items-center gap-1"
-                    >
-                      <span>Menu</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
+            {needsCopy.map((item) => (
+              <div 
+                key={item.id}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#C5A880]/20 hover:border-[#C5A880]/60 transition-all duration-300 hover:shadow-md flex flex-col justify-between"
+              >
+                <div>
+                  <h4 className="font-serif text-2xl text-[#1C1816] font-medium mb-3">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
+                    {item.copy}
+                  </p>
                 </div>
-              );
-            })}
+
+                <div className="mt-5 pt-4 border-t border-[#C5A880]/15 flex items-center justify-between">
+                  <span className="text-[11px] font-medium text-[#9E7D47]">
+                    {item.brands}
+                  </span>
+                  <button
+                    onClick={() => onSelectCategory(item.id)}
+                    className="text-xs font-semibold text-[#1C1816] hover:text-[#C5A880] inline-flex items-center gap-1"
+                  >
+                    <span>Menu</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
 
             {/* Final Highlight Card */}
             <div className="bg-gradient-to-br from-[#2D2622] to-[#1C1816] text-white rounded-2xl p-6 flex flex-col justify-between border border-[#C5A880]/30 shadow-lg md:col-span-2 lg:col-span-1">

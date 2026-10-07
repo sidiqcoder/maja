@@ -3,7 +3,6 @@ import { teamMembers, openPositions } from '../data/teamData';
 import { 
   Users, 
   Briefcase, 
-  Sparkles, 
   CheckCircle2, 
   Send, 
   Mail, 

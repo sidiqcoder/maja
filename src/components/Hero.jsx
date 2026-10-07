@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, MessageCircle, ArrowRight } from 'lucide-react';
 
 export default function Hero({ onExploreServices }) {
   const freshaUrl = "https://www.fresha.com/a/maja-beauty-bar-dubai-m1m-building-al-meydan-d8xwkzcg?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
@@ -32,8 +32,7 @@ export default function Hero({ onExploreServices }) {
       <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto my-auto">
         
         {/* Subtle Luxury Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 sm:mb-5 animate-in fade-in duration-700">
-          <Sparkles className="w-3.5 h-3.5 text-[#E5D2BA]" />
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 sm:mb-5 animate-in fade-in duration-700">
           <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F3E7D7] font-medium">
             Maja Beauty Bar · Meydan, Dubai
           </span>

@@ -20,11 +20,6 @@ export default function CtaSection() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
-        
-        {/* Subtle Icon Accent */}
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-[#E2CEB5]">
-          <Sparkles className="w-5 h-5" />
-        </div>
 
         {/* Headline with Instrument Serif Font */}
         <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#FFFDF9] tracking-tight leading-[1.12]">

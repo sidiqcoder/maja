@@ -1,5 +1,4 @@
 import React from 'react';
-import { Star, Award, Sparkles, Building2 } from 'lucide-react';
 
 export default function WhyMaja() {
   const cards = [
@@ -10,7 +9,6 @@ export default function WhyMaja() {
       title: '4.8 ★ Rated by 394+ Clients & 5 Years Beauty Expertise',
       description: 'Bringing 5 years of dedicated salon expertise in Dubai. Our passionate team of certified beauty artisans ensures every visit is memorable, relaxed, and finished to perfection.',
       footerTag: 'Top Rated in Meydan Dubai',
-      icon: Star,
     },
     {
       id: 'products',
@@ -20,7 +18,6 @@ export default function WhyMaja() {
       description: 'We choose premium products from trusted beauty brands to give every treatment the quality and results it deserves.',
       brandsList: 'Schwarzkopf · Davines · Keune · The GelBottle · Luxio · Essie',
       footerTag: '100% Authentic Formulations',
-      icon: Sparkles,
     },
     {
       id: 'destination',
@@ -29,7 +26,6 @@ export default function WhyMaja() {
       title: 'One Beauty Destination',
       description: 'Nails • Hair • Lashes • Brows • Wellness. Everything your beauty routine needs brought together under one chic, welcoming roof in Dubai.',
       footerTag: 'M1M Building, Al Meydan Road',
-      icon: Building2,
     },
   ];
 
@@ -81,11 +77,9 @@ export default function WhyMaja() {
 
         {/* 3 Cards with Photos as Requested */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card) => {
-            const Icon = card.icon;
-            return (
-              <div
-                key={card.id}
+          {cards.map((card) => (
+            <div
+              key={card.id}
                 className="group bg-luxury-card rounded-3xl overflow-hidden border border-[#C5A880]/30 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col justify-between transform hover:-translate-y-2"
               >
                 {/* Photo Top with Scrim & Badge */}
@@ -102,12 +96,6 @@ export default function WhyMaja() {
                     <span className="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-black/40 backdrop-blur-md text-[#FFFDF9] border border-white/20">
                       {card.badge}
                     </span>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-[#E5D2BA]">
-                      <Icon className="w-5 h-5" />
-                    </div>
                   </div>
                 </div>
 
@@ -136,10 +124,9 @@ export default function WhyMaja() {
                     <span>{card.footerTag}</span>
                     <span className="text-[#C5A880] font-semibold">Maja Standard</span>
                   </div>
-                </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
       </div>
