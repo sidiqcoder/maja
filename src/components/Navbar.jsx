@@ -86,78 +86,81 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                 <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
 
-              {/* Services Dropdown Menu */}
-              <div className="absolute top-full left-0 pt-2 w-64 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
-                <div className="rounded-2xl bg-[#FFFDF9]/98 backdrop-blur-xl border border-[#C5A880]/30 shadow-2xl p-2.5 space-y-1">
+              {/* Services Dropdown Menu (100% Solid Opaque, High Contrast) */}
+              <div className="absolute top-full left-0 pt-2 w-72 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50">
+                <div 
+                  className="rounded-2xl border-2 border-[#C5A880]/50 shadow-[0_20px_50px_rgba(0,0,0,0.35)] p-2.5 space-y-1"
+                  style={{ backgroundColor: '#FFFFFF' }}
+                >
                   <button
                     onClick={() => handleNavClick('services', 'nails')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors group/item"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">NAILS</div>
-                      <div className="text-[11px] text-[#7A6F68]">BIAB, Manicure, Pedicure & Art</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">NAILS</div>
+                      <div className="text-[11px] text-[#5C5048]">BIAB, Manicure, Pedicure & Art</div>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleNavClick('services', 'hair')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors group/item"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
                       <Scissors className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">HAIR</div>
-                      <div className="text-[11px] text-[#7A6F68]">Cut, Blow-dry, Balayage & Care</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">HAIR</div>
+                      <div className="text-[11px] text-[#5C5048]">Cut, Blow-dry, Balayage & Care</div>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleNavClick('services', 'lashes-brows')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors group/item"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
                       <Eye className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">LASHES & BROWS</div>
-                      <div className="text-[11px] text-[#7A6F68]">Extensions, YUMI Lift & Tint</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">LASHES & BROWS</div>
+                      <div className="text-[11px] text-[#5C5048]">Extensions, YUMI Lift & Tint</div>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleNavClick('services', 'waxing')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors group/item"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
                       <Feather className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">WAXING</div>
-                      <div className="text-[11px] text-[#7A6F68]">Gentle Full Body & Brazilian</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">WAXING</div>
+                      <div className="text-[11px] text-[#5C5048]">Gentle Full Body & Brazilian</div>
                     </div>
                   </button>
 
                   <button
                     onClick={() => handleNavClick('services', 'massages')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors group/item"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/15 flex items-center justify-center text-[#9E7D47] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
                       <Activity className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">MASSAGES</div>
-                      <div className="text-[11px] text-[#7A6F68]">Lymphatic Drainage & Sculpt</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">MASSAGES</div>
+                      <div className="text-[11px] text-[#5C5048]">Lymphatic Drainage & Sculpt</div>
                     </div>
                   </button>
 
-                  <div className="pt-2 border-t border-[#C5A880]/20">
+                  <div className="pt-2 border-t border-[#C5A880]/25">
                     <button
                       onClick={() => handleNavClick('services', 'all')}
-                      className="w-full text-center py-2 text-xs font-semibold uppercase tracking-wider text-[#9E7D47] hover:text-[#1C1816]"
+                      className="w-full text-center py-2.5 px-3 rounded-xl bg-[#FAF6F0] hover:bg-[#C5A880] text-xs font-bold uppercase tracking-wider text-[#8C6D3B] hover:text-[#1C1816] transition-colors"
                     >
                       View All Services & Pricing →
                     </button>
@@ -192,16 +195,21 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                 <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
 
-              <div className="absolute top-full left-0 pt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
-                <div className="rounded-2xl bg-[#FFFDF9]/98 backdrop-blur-xl border border-[#C5A880]/30 shadow-2xl p-2.5 space-y-1">
+              <div className="absolute top-full left-0 pt-2 w-64 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50">
+                <div 
+                  className="rounded-2xl border-2 border-[#C5A880]/50 shadow-[0_20px_50px_rgba(0,0,0,0.35)] p-2.5 space-y-1"
+                  style={{ backgroundColor: '#FFFFFF' }}
+                >
                   <button
                     onClick={() => handleNavClick('about')}
-                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <Users className="w-4 h-4 text-[#9E7D47]" />
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
+                      <Users className="w-4 h-4" />
+                    </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">ABOUT & TEAM</div>
-                      <div className="text-[11px] text-[#7A6F68]">Meet Our Beauty Experts</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">ABOUT & TEAM</div>
+                      <div className="text-[11px] text-[#5C5048]">Meet Our Beauty Experts</div>
                     </div>
                   </button>
                   <button
@@ -211,12 +219,14 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                         document.getElementById('career-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 200);
                     }}
-                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-sm text-[#3E342F] hover:bg-[#F6EFE6] hover:text-[#1C1816] transition-colors"
+                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
-                    <Briefcase className="w-4 h-4 text-[#9E7D47]" />
+                    <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
                     <div>
-                      <div className="font-semibold text-xs tracking-wide">CAREERS</div>
-                      <div className="text-[11px] text-[#7A6F68]">Join the Maja Team</div>
+                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">CAREERS</div>
+                      <div className="text-[11px] text-[#5C5048]">Join the Maja Team</div>
                     </div>
                   </button>
                 </div>
