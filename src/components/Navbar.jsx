@@ -399,3 +399,4 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
     </header>
   );
 }
+

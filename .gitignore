@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.production
+.env.development
+
+# Playwright & test artifacts
+.playwright-mcp
+screenshot*.png
+
+# Raw client drive folder & source decks (assets are already compiled into /public)
+/Drive
+/Drive/
+/MAJA_Beauty_Bar_Website_Deck.pdf
+/landing page.txt
+/lovable_index.html
+/deck_extracted.txt
+/menu_design_extracted.txt
+/new_maja_menu_extracted.txt
+/maja-logo-mark.png

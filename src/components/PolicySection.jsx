@@ -125,3 +125,4 @@ export default function PolicySection() {
     </section>
   );
 }
+

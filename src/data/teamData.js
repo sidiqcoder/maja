@@ -89,3 +89,4 @@ export const openPositions = [
     experience: 'Experience with YUMI / Russian Volume',
   },
 ];
+

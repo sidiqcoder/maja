@@ -416,3 +416,4 @@ export const servicesData = [
     image: '/images/services/massage.jpg',
   },
 ];
+

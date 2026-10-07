@@ -225,3 +225,4 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
     </section>
   );
 }
+
