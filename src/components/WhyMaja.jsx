@@ -49,30 +49,48 @@ export default function WhyMaja() {
           <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4" />
         </div>
 
-        {/* Highlights & Trust Metrics Bar (4.8 ★, 5 Years, 5 Suites, Dubai Meydan) */}
-        <div className="bg-luxury-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C5A880]/30 shadow-lg mb-12 max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-y sm:divide-y-0 sm:divide-x divide-[#C5A880]/20">
-            <div className="flex flex-col items-center pt-2 sm:pt-0">
-              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">4.8 ★</span>
-              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">394+ Verified Clients</span>
-              <span className="text-[11px] text-[#9E7D47] mt-0.5">Top-Rated on Google</span>
-            </div>
-            <div className="flex flex-col items-center pt-4 sm:pt-0">
-              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">5 Years</span>
-              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Beauty Expertise</span>
-              <span className="text-[11px] text-[#9E7D47] mt-0.5">Established in Dubai</span>
-            </div>
-            <div className="flex flex-col items-center pt-4 sm:pt-0">
-              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">5 Suites</span>
-              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Complete Destination</span>
-              <span className="text-[11px] text-[#9E7D47] mt-0.5">Hair · Nails · Brows · Spa</span>
-            </div>
-            <div className="flex flex-col items-center pt-4 sm:pt-0">
-              <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium">Dubai</span>
-              <span className="text-xs uppercase tracking-wider text-[#7A6F68] mt-1 font-semibold">Prime Location</span>
-              <span className="text-[11px] text-[#9E7D47] mt-0.5">M1M Meydan, Nad Al Sheba</span>
-            </div>
+        {/* Highlights & Trust Metrics: 3 Separate Cards (Star & Experience Combined) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-14 max-w-6xl mx-auto">
+          
+          {/* Card 1: Star & Experience Combined */}
+          <div className="bg-luxury-card rounded-3xl p-7 sm:p-8 border border-[#C5A880]/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1 flex flex-col justify-center items-center">
+            <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium mb-1">
+              4.8 ★ · 5 Years
+            </span>
+            <span className="text-xs uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+              394+ Verified Clients
+            </span>
+            <span className="text-[12px] text-[#9E7D47] font-medium mt-1">
+              Top-Rated & 5 Years Expertise in Dubai
+            </span>
           </div>
+
+          {/* Card 2: 5 Suites */}
+          <div className="bg-luxury-card rounded-3xl p-7 sm:p-8 border border-[#C5A880]/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1 flex flex-col justify-center items-center">
+            <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium mb-1">
+              5 Suites
+            </span>
+            <span className="text-xs uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+              Complete Destination
+            </span>
+            <span className="text-[12px] text-[#9E7D47] font-medium mt-1">
+              Hair · Nails · Brows · Waxing · Spa
+            </span>
+          </div>
+
+          {/* Card 3: Dubai Location */}
+          <div className="bg-luxury-card rounded-3xl p-7 sm:p-8 border border-[#C5A880]/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1 flex flex-col justify-center items-center">
+            <span className="font-serif text-3xl sm:text-4xl text-[#1C1816] font-medium mb-1">
+              Dubai
+            </span>
+            <span className="text-xs uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+              Prime Location
+            </span>
+            <span className="text-[12px] text-[#9E7D47] font-medium mt-1">
+              M1M Building, Nad Al Sheba 1
+            </span>
+          </div>
+
         </div>
 
         {/* 3 Cards with Photos as Requested */}
