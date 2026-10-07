@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Node modules
+# Node modules & build outputs
 node_modules
 dist
 dist-ssr
@@ -29,13 +29,21 @@ dist-ssr
 .env.production
 .env.development
 
-# Playwright & test artifacts
+# Playwright & test screenshot artifacts
 .playwright-mcp
+.playwright-mcp/
 screenshot*.png
+screenshot*.jpg
+screenshot*.webp
 
-# Raw client drive folder & source decks (assets are already compiled into /public)
+# Raw client Drive dumps & temporary extraction directories
 /Drive
 /Drive/
+/extracted_deck_images
+/extracted_deck_images/
+
+# Raw client briefing documents, decks & scraped html
+/*.pdf
 /MAJA_Beauty_Bar_Website_Deck.pdf
 /landing page.txt
 /lovable_index.html
@@ -43,4 +51,3 @@ screenshot*.png
 /menu_design_extracted.txt
 /new_maja_menu_extracted.txt
 /maja-logo-mark.png
-
