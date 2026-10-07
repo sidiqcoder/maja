@@ -114,15 +114,22 @@ export default function PolicySection() {
                 </div>
               </div>
             </div>
-            <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-xs text-[#7A6F68]">
-              Thank you for your understanding and cooperation in respecting our stylists' time.
+            <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-xs text-[#7A6F68] flex items-center justify-between">
+              <span>All prices are inclusive of 5% UAE VAT</span>
+              <span className="font-semibold text-[#9E7D47]">Maja Policy</span>
             </div>
           </div>
 
+        </div>
+
+        {/* VAT & Assurance banner */}
+        <div className="mt-10 p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-[#C5A880]/20 max-w-2xl mx-auto text-center text-xs text-[#5C5048]">
+          <span className="font-semibold text-[#1C1816]">Transparency Guarantee:</span> All listed prices across our menus are inclusive of 5% VAT. Deposits paid are strictly deducted from your final bill on the day of treatment.
         </div>
 
       </div>
     </section>
   );
 }
+
 

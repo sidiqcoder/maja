@@ -36,7 +36,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const freshaUrl = "https://www.fresha.com/a/maja-beauty-bar-dubai-al-meydan-road-m1m-building-nad-al-sheba-1-nsc10s67";
+  const freshaUrl = "https://www.fresha.com/a/maja-beauty-bar-dubai-m1m-building-al-meydan-d8xwkzcg?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
   const igUrl = "https://www.instagram.com/majabeautybar";
 
   return (

@@ -4,21 +4,20 @@ import ServicesOverview from '../components/ServicesOverview';
 import PolicySection from '../components/PolicySection';
 import WhyMaja from '../components/WhyMaja';
 import VisitUs from '../components/VisitUs';
-import CtaSection from '../components/CtaSection';
 
 export default function HomePage({ onSelectCategory, onNavigateToServices }) {
   return (
     <div className="relative">
-      {/* 1. Hero */}
+      {/* 1. Landing Page Section (Hero) */}
       <Hero onExploreServices={onNavigateToServices} />
 
-      {/* 2. Our Service */}
+      {/* 2. Our Services */}
       <ServicesOverview 
         onSelectCategory={onSelectCategory}
         onNavigateToServices={onNavigateToServices}
       />
 
-      {/* 3. Policy */}
+      {/* 3. Cancellation Policy */}
       <PolicySection />
 
       {/* 4. Why Maja */}
@@ -26,10 +25,8 @@ export default function HomePage({ onSelectCategory, onNavigateToServices }) {
 
       {/* 5. Visit Us */}
       <VisitUs />
-
-      {/* 6. Ready for your Maja moment CTA */}
-      <CtaSection />
     </div>
   );
 }
+
 
