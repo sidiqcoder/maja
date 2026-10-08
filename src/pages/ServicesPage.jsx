@@ -71,22 +71,22 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
   const getCategoryIcon = (catId) => {
     switch (catId) {
       case 'nails':
-        return <Sparkles className="w-4 h-4 text-[#C5A880]" />;
+        return <Sparkles className="w-4 h-4 text-[#B97A86]" />;
       case 'hair':
-        return <Scissors className="w-4 h-4 text-[#C5A880]" />;
+        return <Scissors className="w-4 h-4 text-[#B97A86]" />;
       case 'lashes-brows':
-        return <Eye className="w-4 h-4 text-[#C5A880]" />;
+        return <Eye className="w-4 h-4 text-[#B97A86]" />;
       case 'waxing':
-        return <Feather className="w-4 h-4 text-[#C5A880]" />;
+        return <Feather className="w-4 h-4 text-[#B97A86]" />;
       case 'massages':
-        return <Activity className="w-4 h-4 text-[#C5A880]" />;
+        return <Activity className="w-4 h-4 text-[#B97A86]" />;
       default:
-        return <Sparkles className="w-4 h-4 text-[#C5A880]" />;
+        return <Sparkles className="w-4 h-4 text-[#B97A86]" />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#2D2622]">
+    <div className="min-h-screen bg-[#FAF5F2] text-[#3A1E1E]">
 
       {/* ========================================================================= */}
       {/* 1. VIEW A: ALL SERVICES HUB / OVERVIEW (Route: /services)                */}
@@ -101,17 +101,17 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 alt="Maja Beauty Bar Dubai Salon Ambiance"
                 className="w-full h-full object-cover filter brightness-[0.52] contrast-[1.05] scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816] via-[#1C1816]/75 to-[#1C1816]/65" />
-              <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#1C1816]/40 to-[#1C1816]/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E] via-[#3A1E1E]/80 to-[#3A1E1E]/70" />
+              <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#3A1E1E]/40 to-[#3A1E1E]/90" />
             </div>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30 mb-5">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#D8B1B7]/20 text-[#F7CEC2] border border-[#D8B1B7]/35 mb-5">
                 Our Services · More Than Beauty
               </span>
 
-              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#FFFDF9] tracking-tight leading-[1.12]">
-                Beauty, <span className="italic text-[#E2CEB5]">Your Way</span>
+              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.12]">
+                Beauty, <span className="italic text-[#F7CEC2]">Your Way</span>
               </h1>
 
               <p className="mt-5 text-base sm:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
@@ -130,7 +130,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     onClick={() => handleCategoryChange(cat.id)}
                     className={`px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
                       activeCategory === cat.id
-                        ? 'bg-[#C5A880] text-[#1C1816] shadow-lg font-medium scale-105'
+                        ? 'bg-[#7B2E3A] text-white shadow-lg font-medium scale-105 border border-[#D8B1B7]/40'
                         : 'bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/25'
                     }`}
                   >
@@ -144,8 +144,8 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
           {/* 5 Suite Showcase Sections (Alternating Luxury Layout) */}
           <section className="py-20 lg:py-28 relative">
             {/* Ambient luxury blobs */}
-            <div className="absolute top-10 right-0 w-[600px] h-[600px] bg-[#E8DAC7]/40 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-10 left-0 w-[550px] h-[550px] bg-[#E2CEB5]/30 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-10 right-0 w-[600px] h-[600px] bg-[#F7CEC2]/25 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-10 left-0 w-[550px] h-[550px] bg-[#D8B1B7]/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 lg:space-y-28">
               {showcaseCategories.map((cat, idx) => {
@@ -160,7 +160,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                   >
                     {/* Image Column */}
                     <div className={`lg:col-span-6 ${isEven ? '' : 'lg:col-start-7'}`}>
-                      <div className="relative group overflow-hidden rounded-3xl shadow-2xl border border-[#C5A880]/30 bg-black aspect-[4/3] sm:aspect-[16/11]">
+                      <div className="relative group overflow-hidden rounded-3xl shadow-2xl border border-[#D8B1B7]/40 bg-black aspect-[4/3] sm:aspect-[16/11]">
                         <img
                           src={cat.image}
                           alt={`Maja Beauty Bar ${cat.name}`}
@@ -168,7 +168,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                         <div className="absolute top-4 left-4">
-                          <span className="px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider bg-[#1C1816]/80 text-[#E5D2BA] backdrop-blur-md border border-white/20">
+                          <span className="px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider bg-[#3A1E1E]/85 text-[#F7CEC2] backdrop-blur-md border border-white/20">
                             Category 0{idx + 1}
                           </span>
                         </div>
@@ -180,22 +180,22 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                       <div className="space-y-4">
                         <div className="flex items-center gap-2">
                           {getCategoryIcon(cat.id)}
-                          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6D3B] font-medium">
+                          <span className="text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
                             Suite 0{idx + 1} · {cat.name}
                           </span>
                         </div>
 
-                        <h2 className="font-serif text-3xl sm:text-5xl text-[#1C1816] tracking-tight leading-tight">
+                        <h2 className="font-serif text-3xl sm:text-5xl text-[#3A1E1E] tracking-tight leading-tight">
                           {cat.name}
                         </h2>
 
                         {cat.deckHeadline && (
-                          <p className="font-serif italic text-lg sm:text-xl text-[#8C6D3B] leading-snug">
+                          <p className="font-serif italic text-lg sm:text-xl text-[#7B2E3A] leading-snug">
                             "{cat.deckHeadline}"
                           </p>
                         )}
 
-                        <p className="text-sm sm:text-base text-[#5C5048] leading-relaxed font-normal">
+                        <p className="text-sm sm:text-base text-[#3A1E1E]/80 leading-relaxed font-normal">
                           {cat.description}
                         </p>
 
@@ -205,9 +205,9 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                             {cat.highlights.map((h, i) => (
                               <span
                                 key={i}
-                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#C5A880]/15 text-[#5C4524] border border-[#C5A880]/25 font-normal"
+                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#F3E4DB] text-[#7B2E3A] border border-[#D8B1B7]/40 font-normal"
                               >
-                                <CheckCircle2 className="w-3 h-3 text-[#8C6D3B]" />
+                                <CheckCircle2 className="w-3 h-3 text-[#7B2E3A]" />
                                 <span>{h}</span>
                               </span>
                             ))}
@@ -215,8 +215,8 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                         )}
 
                         {cat.brands && (
-                          <p className="text-xs text-[#8C7D73] font-medium">
-                            <span className="text-[#8C6D3B]">Featured Brands:</span> {cat.brands}
+                          <p className="text-xs text-[#8C7474] font-medium">
+                            <span className="text-[#7B2E3A]">Featured Brands:</span> {cat.brands}
                           </p>
                         )}
 
@@ -224,17 +224,17 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                         <div className="pt-4 flex flex-wrap items-center gap-3.5">
                           <button
                             onClick={() => handleCategoryChange(cat.id)}
-                            className="btn-luminous px-6 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2.5 shadow-md group"
+                            className="btn-luminous px-6 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2.5 shadow-md group text-white"
                           >
                             <span>{cat.ctaLabel || `Explore ${cat.name} Pricing`}</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                           </button>
 
                           <a
                             href={getGeneralWhatsAppLink(cat.name)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-5 py-3.5 rounded-full text-xs font-medium tracking-wide bg-white hover:bg-[#F3ECE1] text-[#2D2622] border border-[#C5A880]/40 inline-flex items-center gap-2 transition-all shadow-sm"
+                            className="px-5 py-3.5 rounded-full text-xs font-medium tracking-wide bg-white hover:bg-[#F3E4DB] text-[#3A1E1E] border border-[#B97A86]/35 inline-flex items-center gap-2 transition-all shadow-sm"
                           >
                             <MessageCircle className="w-4 h-4 text-[#25D366]" />
                             <span>Inquire on WhatsApp</span>
@@ -250,12 +250,12 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
 
           {/* Bottom Banner */}
           <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl bg-gradient-to-br from-[#2D2622] via-[#221D1A] to-[#1C1816] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl border border-[#C5A880]/30">
+            <div className="rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-                <span className="text-xs uppercase tracking-widest text-[#E5D2BA] font-medium">
+                <span className="text-xs uppercase tracking-widest text-[#F7CEC2] font-medium">
                   Appointments & Inquiries
                 </span>
-                <h3 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
+                <h3 className="font-serif italic text-3xl sm:text-5xl text-white font-normal leading-tight">
                   Ready for Your Maja Moment?
                 </h3>
                 <p className="text-xs sm:text-base text-white/80 max-w-lg mx-auto font-light leading-relaxed">
@@ -266,9 +266,9 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     href={freshaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+                    className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg text-white"
                   >
-                    <Calendar className="w-4 h-4 text-[#1A1614]" />
+                    <Calendar className="w-4 h-4 text-white" />
                     <span>Book on Fresha</span>
                   </a>
                   <a
@@ -299,19 +299,19 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 alt={`Maja Beauty Bar ${currentCategoryInfo.name}`}
                 className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.08] scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816] via-[#1C1816]/75 to-[#1C1816]/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E] via-[#3A1E1E]/80 to-[#3A1E1E]/70" />
             </div>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30 mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#D8B1B7]/20 text-[#F7CEC2] border border-[#D8B1B7]/35 mb-4">
                 Price List · {currentCategoryInfo.name}
               </span>
 
-              <h1 className="font-serif text-4xl sm:text-6xl text-[#FFFDF9] tracking-tight leading-tight">
+              <h1 className="font-serif text-4xl sm:text-6xl text-white tracking-tight leading-tight">
                 {currentCategoryInfo.heroSubtitle}
               </h1>
 
-              <p className="font-serif italic text-xl sm:text-2xl text-[#E5D2BA] mt-2 mb-3">
+              <p className="font-serif italic text-xl sm:text-2xl text-[#F7CEC2] mt-2 mb-3">
                 {currentCategoryInfo.heroTitle}
               </p>
 
@@ -320,8 +320,8 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
               </p>
 
               {/* UAE VAT 5% Banner */}
-              <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-[#C5A880]/40 text-xs text-[#E5D2BA] font-medium shadow-md">
-                <Info className="w-3.5 h-3.5 text-[#C5A880]" />
+              <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-[#B97A86]/40 text-xs text-[#F7CEC2] font-medium shadow-md">
+                <Info className="w-3.5 h-3.5 text-[#F7CEC2]" />
                 <span>All prices are inclusive of 5% UAE VAT</span>
               </div>
 
@@ -344,8 +344,8 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                   onClick={() => handleCategoryChange(cat.id)}
                   className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
                     activeCategory === cat.id
-                      ? 'bg-[#1C1816] text-[#FFFDF9] shadow-lg scale-105'
-                      : 'bg-white/90 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/30 hover:border-[#C5A880]'
+                      ? 'bg-[#3A1E1E] text-white shadow-lg scale-105'
+                      : 'bg-white/90 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/30 hover:border-[#7B2E3A]'
                   }`}
                 >
                   {cat.name}
@@ -356,18 +356,18 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             {/* Live Search Bar */}
             <div className="max-w-md mx-auto mb-12">
               <div className="relative">
-                <Search className="w-4 h-4 text-[#7A6F68] absolute left-4 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-[#8C7474] absolute left-4 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   placeholder={`Search ${currentCategoryInfo.name} treatments (e.g. BIAB, Cut, Tint)...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#C5A880]/40 focus:outline-none focus:border-[#1C1816] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm placeholder:text-[#9B8F86] shadow-sm transition-all font-normal"
+                  className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#B97A86]/40 focus:outline-none focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-xs sm:text-sm placeholder:text-[#8C7474] shadow-sm transition-all font-normal text-[#3A1E1E]"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-[#7A6F68] hover:text-[#1C1816]"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-[#8C7474] hover:text-[#3A1E1E]"
                   >
                     Clear
                   </button>
@@ -391,23 +391,23 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 return (
                   <div
                     key={card.id}
-                    className="bg-white/95 backdrop-blur-sm rounded-[28px] sm:rounded-3xl p-6 sm:p-8 border border-[#C5A880]/35 shadow-[0_10px_35px_rgba(28,24,22,0.04)] hover:shadow-[0_15px_45px_rgba(197,168,128,0.15)] transition-all duration-300 flex flex-col justify-between"
+                    className="bg-white/95 backdrop-blur-sm rounded-[28px] sm:rounded-3xl p-6 sm:p-8 border border-[#D8B1B7]/40 shadow-[0_10px_35px_rgba(58,30,30,0.04)] hover:shadow-[0_15px_45px_rgba(185,122,134,0.15)] transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
                       {/* Card Title & Header */}
-                      <div className="flex items-center justify-between gap-3 mb-2 pb-3 border-b border-[#C5A880]/20">
-                        <h2 className="font-serif italic text-3xl sm:text-4xl text-[#5C2424] font-medium tracking-tight">
+                      <div className="flex items-center justify-between gap-3 mb-2 pb-3 border-b border-[#D8B1B7]/30">
+                        <h2 className="font-serif italic text-3xl sm:text-4xl text-[#7B2E3A] font-medium tracking-tight">
                           {card.title}
                         </h2>
                         {card.badge && (
-                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#8C6D3B] border border-[#C5A880]/40">
+                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#F3E4DB] text-[#7B2E3A] border border-[#D8B1B7]/40">
                             {card.badge}
                           </span>
                         )}
                       </div>
 
                       {card.description && (
-                        <p className="text-xs text-[#7A6F68] mb-5 leading-relaxed">
+                        <p className="text-xs text-[#8C7474] mb-5 leading-relaxed font-light">
                           {card.description}
                         </p>
                       )}
@@ -424,15 +424,15 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                             <div key={idx} className="group/item py-0.5">
                               <div className="flex items-baseline justify-between gap-2">
                                 {/* Item Name */}
-                                <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#7B2E3A] transition-colors">
+                                <span className="text-sm sm:text-base font-normal text-[#3A1E1E] group-hover/item:text-[#7B2E3A] transition-colors">
                                   {displayName}
                                 </span>
 
                                 {/* Dotted Leader Line */}
-                                <span className="flex-1 mx-2 sm:mx-3 border-b border-dotted border-[#D4C3B3]/80 self-end mb-1" />
+                                <span className="flex-1 mx-2 sm:mx-3 border-b border-dotted border-[#D8B1B7]/60 self-end mb-1" />
 
                                 {/* Price Tag - Elegant font-normal / font-medium as specifically requested */}
-                                <span className="font-serif font-normal text-sm sm:text-base text-[#1C1816] whitespace-nowrap tracking-wide">
+                                <span className="font-serif font-normal text-sm sm:text-base text-[#3A1E1E] whitespace-nowrap tracking-wide">
                                   {item.price}
                                 </span>
                               </div>
@@ -446,7 +446,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
 
                               {/* Optional description or subtitle note - smaller & cleaner ("deskripsi bawah itu kecilin lg aja") */}
                               {item.note && (
-                                <div className="text-[10px] sm:text-[11px] text-[#8C7D73] mt-0.5 leading-snug font-light">
+                                <div className="text-[10px] sm:text-[11px] text-[#8C7474] mt-0.5 leading-snug font-light">
                                   {item.note}
                                 </div>
                               )}
@@ -457,12 +457,12 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     </div>
 
                     {/* Below the Card: Direct CTA to WhatsApp in Maja Luxury Brand Palette */}
-                    <div className="pt-5 mt-6 border-t border-[#C5A880]/20">
+                    <div className="pt-5 mt-6 border-t border-[#D8B1B7]/30">
                       <a
                         href={getCardWhatsAppLink(card)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#7B2E3A] hover:bg-[#8C3745] text-[#FFFDF9] font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-[#D8B1B7]/30 group"
+                        className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#7B2E3A] hover:bg-[#8C3745] text-white font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-[#D8B1B7]/30 group"
                       >
                         <div className="w-5 h-5 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:scale-110 transition-transform">
                           <MessageCircle className="w-3.5 h-3.5 fill-[#25D366]" />
@@ -470,7 +470,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                         <span>Book {card.title} via WhatsApp</span>
                       </a>
 
-                      <div className="mt-2.5 text-center text-[10px] text-[#8C7D73]">
+                      <div className="mt-2.5 text-center text-[10px] text-[#8C7474]">
                         Instant WhatsApp Booking · Inclusive of 5% UAE VAT
                       </div>
                     </div>
@@ -481,15 +481,15 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
 
             {/* If no cards matched search */}
             {displayedCards.length === 0 && (
-              <div className="text-center py-16 bg-white/70 rounded-3xl border border-[#C5A880]/25 max-w-md mx-auto">
-                <Sparkles className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
-                <h3 className="font-serif text-2xl text-[#1C1816] font-normal">No Treatments Found</h3>
-                <p className="text-xs text-[#7A6F68] mt-1 mb-4">
+              <div className="text-center py-16 bg-white/70 rounded-3xl border border-[#D8B1B7]/30 max-w-md mx-auto">
+                <Sparkles className="w-8 h-8 text-[#B97A86] mx-auto mb-3" />
+                <h3 className="font-serif text-2xl text-[#3A1E1E] font-normal">No Treatments Found</h3>
+                <p className="text-xs text-[#8C7474] mt-1 mb-4">
                   Try searching with another keyword or reset the filter.
                 </p>
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="px-5 py-2.5 rounded-full text-xs font-medium bg-[#1C1816] text-white"
+                  className="px-5 py-2.5 rounded-full text-xs font-medium bg-[#3A1E1E] text-white"
                 >
                   Clear Search
                 </button>
@@ -497,12 +497,12 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             )}
 
             {/* Bottom Banner */}
-            <div className="mt-16 sm:mt-24 rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#281414] to-[#1C1816] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
+            <div className="mt-16 sm:mt-24 rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
                 <span className="inline-block px-3.5 py-1 rounded-full text-[11px] uppercase tracking-[0.2em] bg-[#D8B1B7]/15 text-[#F7CEC2] border border-[#D8B1B7]/30 font-medium">
                   Appointments & Inquiries
                 </span>
-                <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
+                <h2 className="font-serif italic text-3xl sm:text-5xl text-white font-normal leading-tight">
                   Treat yourself to something beautiful.
                 </h2>
                 <p className="text-xs sm:text-sm text-[#F3E4DB]/90 max-w-lg mx-auto font-light leading-relaxed">
@@ -513,7 +513,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     href={freshaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF5F2] hover:bg-white text-[#3A1E1E] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105"
                   >
                     <Calendar className="w-4 h-4 text-[#7B2E3A]" />
                     <span>Book on Fresha</span>
@@ -522,7 +522,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     href="https://wa.me/971509964626?text=Hi%20Maja%20Beauty%20Bar%2C%20I'd%20like%20to%20book%20an%20appointment."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-maja-wine w-full sm:w-auto px-7 py-3.5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                    className="btn-maja-wine w-full sm:w-auto px-7 py-3.5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all text-white"
                   >
                     <div className="w-4 h-4 rounded-full bg-[#25D366]/20 flex items-center justify-center">
                       <MessageCircle className="w-3.5 h-3.5 fill-[#25D366]" />

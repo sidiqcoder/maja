@@ -23,33 +23,33 @@ export default function Hero({ onExploreServices }) {
         </video>
 
         {/* Multi-layered Cinematic Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816]/95 via-[#1C1816]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1C1816]/75 via-transparent to-[#1C1816]/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#1C1816]/30 to-[#1C1816]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E]/95 via-[#3A1E1E]/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3A1E1E]/75 via-transparent to-[#3A1E1E]/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#3A1E1E]/30 to-[#3A1E1E]/80" />
       </div>
 
       {/* Main Hero Content (Vertically Centered in Viewport) */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto my-auto">
         
         {/* Subtle Luxury Badge */}
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 sm:mb-5 animate-in fade-in duration-700">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F3E7D7] font-medium">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#D8B1B7]/30 mb-4 sm:mb-5 animate-in fade-in duration-700">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#F7CEC2] font-medium">
             Maja Beauty Bar · Meydan, Dubai
           </span>
         </div>
 
         {/* Main Headline - Instrument Serif Font */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-[#FFFDF9] leading-[1.08] max-w-4xl drop-shadow-sm">
-          Because Every Woman Deserves Her <span className="italic font-serif text-[#E2CEB5]">Maja Moment.</span>
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white leading-[1.08] max-w-4xl drop-shadow-sm">
+          Because Every Woman Deserves Her <span className="italic font-serif text-[#F7CEC2]">Maja Moment.</span>
         </h1>
 
         {/* Subtitle Headline */}
-        <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl lg:text-2xl font-light text-[#EFE8DF] tracking-wide max-w-3xl">
+        <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl lg:text-2xl font-light text-[#F3E4DB] tracking-wide max-w-3xl">
           Your Go-To Premium Beauty Routine, All in One Place.
         </p>
 
         {/* Supporting Copy */}
-        <p className="mt-3 text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed font-light">
+        <p className="mt-3 text-xs sm:text-sm md:text-base text-white/85 max-w-2xl leading-relaxed font-light">
           From nails, hair and lashes to brows and relaxing treatments, Maja Beauty Bar brings your favourite beauty essentials together under one roof in Dubai.
         </p>
 
@@ -61,11 +61,11 @@ export default function Hero({ onExploreServices }) {
             href={freshaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs sm:text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl group"
+            className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs sm:text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl group text-white"
           >
-            <Calendar className="w-4 h-4 text-[#1A1614]" />
+            <Calendar className="w-4 h-4 text-white" />
             <span>Book Your Appointment</span>
-            <ArrowRight className="w-4 h-4 text-[#1A1614] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
           </a>
 
           {/* WhatsApp Button */}

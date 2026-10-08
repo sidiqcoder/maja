@@ -15,15 +15,15 @@ export default function CtaSection() {
           alt="Maja Beauty Bar Dubai Ambiance"
           className="w-full h-full object-cover filter brightness-[0.55] contrast-[1.08] scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816] via-[#1C1816]/75 to-[#1C1816]/65" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#1C1816]/40 to-[#1C1816]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E] via-[#3A1E1E]/80 to-[#3A1E1E]/70" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#3A1E1E]/40 to-[#3A1E1E]/90" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
 
         {/* Headline with Instrument Serif Font */}
-        <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#FFFDF9] tracking-tight leading-[1.12]">
-          Ready for Your <span className="italic text-[#E2CEB5]">Maja Moment?</span>
+        <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.12]">
+          Ready for Your <span className="italic text-[#F7CEC2]">Maja Moment?</span>
         </h2>
 
         {/* Supporting Copy */}
@@ -38,11 +38,11 @@ export default function CtaSection() {
             href={freshaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-luminous w-full sm:w-auto px-9 py-4 rounded-full text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-3 shadow-2xl group"
+            className="btn-luminous w-full sm:w-auto px-9 py-4 rounded-full text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-3 shadow-2xl group text-white"
           >
-            <Calendar className="w-4 h-4 text-[#1A1614]" />
+            <Calendar className="w-4 h-4 text-white" />
             <span>Book Online on Fresha</span>
-            <ArrowRight className="w-4 h-4 text-[#1A1614] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
           </a>
 
           <a

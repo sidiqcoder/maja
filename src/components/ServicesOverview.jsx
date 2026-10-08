@@ -50,20 +50,20 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
     >
       
       {/* Subtle organic warm background blobs (ensuring non-solid background) */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E8DAC7]/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-[#E2CEB5]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#F7CEC2]/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-[#D8B1B7]/25 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center my-auto">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
             Our Services
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1816] mt-1.5 leading-tight font-normal">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#3A1E1E] mt-1.5 leading-tight font-normal">
             Everything Your Beauty Routine Needs
           </h2>
-          <div className="w-14 h-0.5 bg-[#C5A880] mx-auto mt-2.5" />
+          <div className="w-14 h-0.5 bg-[#B97A86] mx-auto mt-2.5" />
         </div>
 
         {/* Large Visual Service Cards (Colorist style: Large photos, no text clutter, pure imagery & CTA) */}
@@ -72,7 +72,7 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
             <div
               key={card.id}
               onClick={() => onSelectCategory(card.id)}
-              className="group relative h-[340px] sm:h-[380px] lg:h-[400px] xl:h-[440px] max-h-[55vh] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-[#C5A880]/20"
+              className="group relative h-[340px] sm:h-[380px] lg:h-[400px] xl:h-[440px] max-h-[55vh] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-[#D8B1B7]/40"
             >
               {/* Full Bleed Image */}
               <img
@@ -83,7 +83,7 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
               />
 
               {/* Gradient Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816]/90 via-[#1C1816]/20 to-transparent transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E]/90 via-[#3A1E1E]/25 to-transparent transition-opacity duration-300" />
 
               {/* Top Tag */}
               <div className="absolute top-3.5 left-3.5">
@@ -94,12 +94,12 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
 
               {/* Bottom Card Title & CTA */}
               <div className="absolute bottom-0 inset-x-0 p-5 flex flex-col justify-end text-white">
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#FFFDF9] mb-3 tracking-wide font-normal">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white mb-3 tracking-wide font-normal">
                   {card.title}
                 </h3>
                 
                 {/* Visual CTA Button with Shimmer */}
-                <div className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-[11px] font-medium uppercase tracking-wider text-white transition-all group-hover:bg-[#C5A880] group-hover:text-[#1C1816] group-hover:border-[#C5A880]">
+                <div className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-[11px] font-medium uppercase tracking-wider text-white transition-all group-hover:bg-[#7B2E3A] group-hover:text-white group-hover:border-[#7B2E3A]">
                   <span>{card.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>

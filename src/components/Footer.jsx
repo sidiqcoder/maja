@@ -11,10 +11,10 @@ export default function Footer({ onNavigate }) {
   const waUrl = "https://wa.me/971509964626";
 
   return (
-    <footer className="bg-dark-mesh text-[#EAE2D7] pt-20 pb-12 border-t border-[#C5A880]/20 relative overflow-hidden">
+    <footer className="bg-dark-mesh text-[#F3E4DB] pt-20 pb-12 border-t border-[#B97A86]/25 relative overflow-hidden">
       
-      {/* Subtle gold ambient glow in footer background */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle rose ambient glow in footer background */}
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#D8B1B7]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -42,7 +42,7 @@ export default function Footer({ onNavigate }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Maja Beauty Bar"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#E5D2BA] hover:text-[#E1306C] hover:border-[#E1306C] hover:bg-white/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#F3E4DB] hover:text-[#E1306C] hover:border-[#E1306C] hover:bg-white/10 transition-all duration-300"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -52,7 +52,7 @@ export default function Footer({ onNavigate }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Maja Beauty Bar"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#E5D2BA] hover:text-[#25D366] hover:border-[#25D366] hover:bg-white/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#F3E4DB] hover:text-[#25D366] hover:border-[#25D366] hover:bg-white/10 transition-all duration-300"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
@@ -60,7 +60,7 @@ export default function Footer({ onNavigate }) {
               <a
                 href="tel:+97142649989"
                 aria-label="Call Maja Beauty Bar"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#E5D2BA] hover:text-white hover:border-white hover:bg-white/10 transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#F3E4DB] hover:text-white hover:border-white hover:bg-white/10 transition-all duration-300"
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -69,7 +69,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#D8B1B7] font-medium mb-5">
               Explore
             </h4>
             <ul className="space-y-3 text-sm">
@@ -118,7 +118,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 3: Services Menu */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#D8B1B7] font-medium mb-5">
               Treatments
             </h4>
             <ul className="space-y-3 text-sm">
@@ -167,7 +167,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 4: Contact & Location */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#D8B1B7] font-medium mb-5">
               Visit Maja
             </h4>
             <div className="space-y-3.5 text-sm">
@@ -177,21 +177,21 @@ export default function Footer({ onNavigate }) {
                 rel="noopener noreferrer"
                 className="flex items-start gap-2.5 hover:text-white transition-colors group"
               >
-                <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#D8B1B7] shrink-0 mt-0.5" />
                 <span className="leading-snug">
                   M1M Building, Al Meydan Road, Nad Al Sheba 1, Dubai
                 </span>
               </a>
 
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#C5A880] shrink-0" />
+                <Phone className="w-4 h-4 text-[#D8B1B7] shrink-0" />
                 <a href="tel:+97142649989" className="hover:text-white transition-colors">
                   (04) 264 9989
                 </a>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <MessageCircle className="w-4 h-4 text-[#C5A880] shrink-0" />
+                <MessageCircle className="w-4 h-4 text-[#D8B1B7] shrink-0" />
                 <a href={waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   +971 50 996 4626
                 </a>
@@ -214,7 +214,7 @@ export default function Footer({ onNavigate }) {
             <span>Prices inclusive of 5% VAT</span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-[#C5A880] hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-[#D8B1B7] hover:text-white transition-colors"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

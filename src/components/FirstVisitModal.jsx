@@ -43,7 +43,7 @@ export default function FirstVisitModal() {
       
       {/* Modal Card */}
       <div 
-        className="relative w-full max-w-lg bg-gradient-to-b from-[#FFFDF9] via-[#FAF7F2] to-[#F6EFE6] rounded-[32px] p-8 sm:p-10 shadow-2xl border border-[#B97A86]/40 text-center overflow-hidden"
+        className="relative w-full max-w-lg bg-gradient-to-b from-white via-[#FAF5F2] to-[#F3E4DB] rounded-[32px] p-8 sm:p-10 shadow-2xl border border-[#B97A86]/40 text-center overflow-hidden"
         style={{
           boxShadow: '0 25px 60px -15px rgba(58, 30, 30, 0.4), 0 0 0 1px rgba(216, 177, 183, 0.3)'
         }}
@@ -56,7 +56,7 @@ export default function FirstVisitModal() {
         <button
           onClick={handleClose}
           aria-label="Close welcome offer"
-          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#5C5048] hover:text-[#1C1816] flex items-center justify-center transition-all border border-[#B97A86]/20 shadow-sm"
+          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#8C7474] hover:text-[#3A1E1E] flex items-center justify-center transition-all border border-[#B97A86]/20 shadow-sm"
         >
           <X className="w-4 h-4" />
         </button>
@@ -77,14 +77,14 @@ export default function FirstVisitModal() {
             Your First Maja Sanctuary Visit
           </p>
 
-          <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed max-w-sm mx-auto font-light">
+          <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed max-w-sm mx-auto font-light">
             Welcome to Maja Beauty Bar Dubai. Indulge in our bespoke hair styling, BIAB nail artistry, lash treatments, or lymphatic massage with an exclusive welcome gift.
           </p>
 
           {/* Promo Code Box */}
           <div className="my-6 p-4 rounded-2xl bg-white border border-[#B97A86]/30 shadow-inner flex items-center justify-between max-w-xs mx-auto">
             <div className="text-left">
-              <span className="text-[10px] uppercase tracking-wider text-[#8C7D73] block">
+              <span className="text-[10px] uppercase tracking-wider text-[#8C7474] block">
                 Promo Code
               </span>
               <span className="font-mono text-base font-medium tracking-widest text-[#7B2E3A]">
@@ -93,7 +93,7 @@ export default function FirstVisitModal() {
             </div>
             <button
               onClick={handleCopyCode}
-              className="px-3.5 py-1.5 rounded-lg text-xs font-medium uppercase tracking-wider bg-[#FAF7F2] hover:bg-[#F3E4DB] text-[#3A1E1E] border border-[#B97A86]/40 flex items-center gap-1.5 transition-all"
+              className="px-3.5 py-1.5 rounded-lg text-xs font-medium uppercase tracking-wider bg-white hover:bg-[#F3E4DB] text-[#3A1E1E] border border-[#B97A86]/40 flex items-center gap-1.5 transition-all"
             >
               {copied ? (
                 <>
@@ -116,7 +116,7 @@ export default function FirstVisitModal() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="btn-maja-wine w-full py-3.5 px-5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all"
+              className="btn-maja-wine w-full py-3.5 px-5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all text-white"
             >
               <div className="w-4 h-4 rounded-full bg-[#25D366]/20 flex items-center justify-center">
                 <MessageCircle className="w-3 h-3 fill-[#25D366]" />
@@ -129,7 +129,7 @@ export default function FirstVisitModal() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClose}
-              className="w-full py-3.5 px-5 rounded-full text-xs font-medium uppercase tracking-wider bg-white hover:bg-[#FAF7F2] text-[#3A1E1E] border border-[#B97A86]/30 flex items-center justify-center gap-2 shadow-sm transition-all"
+              className="w-full py-3.5 px-5 rounded-full text-xs font-medium uppercase tracking-wider bg-white hover:bg-[#F3E4DB] text-[#3A1E1E] border border-[#B97A86]/30 flex items-center justify-center gap-2 shadow-sm transition-all"
             >
               <Calendar className="w-3.5 h-3.5 text-[#7B2E3A]" />
               <span>Book Online on Fresha</span>
@@ -137,7 +137,7 @@ export default function FirstVisitModal() {
           </div>
 
           {/* Subtext and Dismiss */}
-          <div className="mt-5 text-[10.5px] text-[#8C7D73] space-y-1 font-light">
+          <div className="mt-5 text-[10.5px] text-[#8C7474] space-y-1 font-light">
             <p>Valid for first-time guests on any individual service · Inclusive of 5% UAE VAT</p>
             <button
               onClick={handleClose}
@@ -153,3 +153,4 @@ export default function FirstVisitModal() {
     </div>
   );
 }
+

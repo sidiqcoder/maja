@@ -24,7 +24,7 @@ export default function PackagesPage() {
   };
 
   return (
-    <div className="pt-28 pb-24 relative overflow-hidden bg-[#FAF7F2]">
+    <div className="pt-28 pb-24 relative overflow-hidden bg-[#FAF5F2]">
       
       {/* Background ambient mesh in Maja brand colors */}
       <div className="absolute top-10 left-1/4 w-[600px] h-[600px] bg-[#F7CEC2]/30 rounded-full blur-3xl pointer-events-none" />
@@ -40,7 +40,7 @@ export default function PackagesPage() {
           <h1 className="font-serif italic text-4xl sm:text-6xl text-[#3A1E1E] mt-3 leading-tight font-normal">
             More of Your Maja Favourites, Beautifully Bundled
           </h1>
-          <p className="mt-4 text-sm sm:text-base text-[#5C5048] max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="mt-4 text-sm sm:text-base text-[#3A1E1E]/80 max-w-2xl mx-auto leading-relaxed font-light">
             Thoughtfully curated packages designed to keep your hair luminous, your nails pristine, and your body contoured throughout the month.
           </p>
           <div className="mt-3 text-xs text-[#7B2E3A] font-medium">
@@ -54,8 +54,8 @@ export default function PackagesPage() {
             onClick={() => setActiveTab('hair')}
             className={`px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'hair'
-                ? 'bg-[#3A1E1E] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3E4DB] border border-[#B97A86]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
             <Scissors className="w-4 h-4 text-[#B97A86]" />
@@ -66,8 +66,8 @@ export default function PackagesPage() {
             onClick={() => setActiveTab('reset')}
             className={`px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all whitespace-nowrap ${
               activeTab === 'reset'
-                ? 'bg-[#3A1E1E] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3E4DB] border border-[#B97A86]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
             <span>The Beauty Reset (Mon &amp; Tue)</span>
@@ -77,8 +77,8 @@ export default function PackagesPage() {
             onClick={() => setActiveTab('lymphatic')}
             className={`px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'lymphatic'
-                ? 'bg-[#3A1E1E] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3E4DB] border border-[#B97A86]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
             <Activity className="w-4 h-4 text-[#B97A86]" />
@@ -89,8 +89,8 @@ export default function PackagesPage() {
             onClick={() => setActiveTab('sculpt')}
             className={`px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'sculpt'
-                ? 'bg-[#3A1E1E] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3E4DB] border border-[#B97A86]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
             <Sparkles className="w-4 h-4 text-[#B97A86]" />
@@ -105,13 +105,13 @@ export default function PackagesPage() {
           <div className="space-y-12 animate-in fade-in duration-300">
             
             {/* Visual Hero Card for Hair Packages */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#D8B1B7]/20 text-[#F7CEC2] border border-[#D8B1B7]/30">
                     Signature Hair Bundles
                   </span>
-                  <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3 font-normal">
+                  <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
                     {hairPackages.title}
                   </h2>
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
@@ -154,7 +154,7 @@ export default function PackagesPage() {
                       {pkg.price}
                     </div>
 
-                    <ul className="space-y-2.5 text-xs sm:text-sm text-[#4A3E39] font-light">
+                    <ul className="space-y-2.5 text-xs sm:text-sm text-[#3A1E1E]/80 font-light">
                       {pkg.features.map((feat, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#B97A86] shrink-0 mt-0.5" />
@@ -189,7 +189,7 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — Hair Packages</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#5C5048] font-light">
+              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
                 {hairPackages.terms.map((t, idx) => (
                   <li key={idx}>• {t}</li>
                 ))}
@@ -207,13 +207,13 @@ export default function PackagesPage() {
           <div className="space-y-12 animate-in fade-in duration-300">
             
             {/* Visual Hero Card */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#F7CEC2] text-[#3A1E1E] font-semibold">
                     Mondays &amp; Tuesdays Only
                   </span>
-                  <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3 font-normal">
+                  <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
                     {beautyReset.title}
                   </h2>
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
@@ -284,7 +284,7 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — The Beauty Reset</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#5C5048] font-light">
+              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
                 {beautyReset.terms.map((t, idx) => (
                   <li key={idx}>• {t}</li>
                 ))}
@@ -302,13 +302,13 @@ export default function PackagesPage() {
           <div className="space-y-12 animate-in fade-in duration-300">
             
             {/* Visual Hero Card */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
                   <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#D8B1B7]/20 text-[#F7CEC2] border border-[#D8B1B7]/30">
                     Signature Detox &amp; Contouring
                   </span>
-                  <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3 font-normal">
+                  <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
                     {lymphaticDrainage.title}
                   </h2>
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
@@ -337,7 +337,7 @@ export default function PackagesPage() {
                 <div className="flex items-center justify-between pb-4 border-b border-[#F3E4DB] mb-5">
                   <div>
                     <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal">60 Mins Packages</h3>
-                    <span className="text-xs text-[#8C7D73]">Multi-session savings</span>
+                    <span className="text-xs text-[#8C7474]">Multi-session savings</span>
                   </div>
                   <div className="flex items-center gap-6 text-xs font-medium uppercase text-[#7B2E3A]">
                     <span>5 Sessions</span>
@@ -348,7 +348,7 @@ export default function PackagesPage() {
                 <div className="space-y-4">
                   {lymphaticDrainage.sessions60.map((row, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs sm:text-sm border-b border-[#F3E4DB]/60 pb-3">
-                      <span className="text-[#2D2622] font-normal">{row.treatment}</span>
+                      <span className="text-[#3A1E1E] font-normal">{row.treatment}</span>
                       <div className="flex items-center gap-8 font-serif font-normal text-[#7B2E3A]">
                         <span>{row.sessions5}</span>
                         <span>{row.sessions10}</span>
@@ -377,7 +377,7 @@ export default function PackagesPage() {
                 <div className="flex items-center justify-between pb-4 border-b border-[#F3E4DB] mb-5">
                   <div>
                     <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal">90 Mins Packages</h3>
-                    <span className="text-xs text-[#8C7D73]">Deep intensive contouring</span>
+                    <span className="text-xs text-[#8C7474]">Deep intensive contouring</span>
                   </div>
                   <div className="flex items-center gap-6 text-xs font-medium uppercase text-[#7B2E3A]">
                     <span>5 Sessions</span>
@@ -388,7 +388,7 @@ export default function PackagesPage() {
                 <div className="space-y-4">
                   {lymphaticDrainage.sessions90.map((row, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs sm:text-sm border-b border-[#F3E4DB]/60 pb-3">
-                      <span className="text-[#2D2622] font-normal">{row.treatment}</span>
+                      <span className="text-[#3A1E1E] font-normal">{row.treatment}</span>
                       <div className="flex items-center gap-8 font-serif font-normal text-[#7B2E3A]">
                         <span>{row.sessions5}</span>
                         <span>{row.sessions10}</span>
@@ -420,7 +420,7 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — Lymphatic Drainage</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#5C5048] font-light">
+              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
                 {lymphaticDrainage.terms.map((t, idx) => (
                   <li key={idx}>• {t}</li>
                 ))}
@@ -438,12 +438,12 @@ export default function PackagesPage() {
           <div className="space-y-12 animate-in fade-in duration-300">
             
             {/* Visual Hero Card */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
               <div className="max-w-3xl">
                 <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#F7CEC2] text-[#3A1E1E] font-semibold">
                   Bespoke Combination Bundles
                 </span>
-                <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3 font-normal">
+                <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
                   Sculpt Your Way
                 </h2>
                 <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
@@ -474,7 +474,7 @@ export default function PackagesPage() {
                       <span>10 Sessions: {sculpt.sessions10}</span>
                     </div>
 
-                    <div className="space-y-2 mb-6 text-xs sm:text-sm text-[#4A3E39]">
+                    <div className="space-y-2 mb-6 text-xs sm:text-sm text-[#3A1E1E]/80">
                       <span className="font-medium text-xs uppercase tracking-wider text-[#3A1E1E] block">
                         Included Treatments:
                       </span>
@@ -508,7 +508,7 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — Sculpt Your Way</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#5C5048] font-light">
+              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
                 {lymphaticDrainage.terms.map((t, idx) => (
                   <li key={idx}>• {t}</li>
                 ))}

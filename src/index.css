@@ -42,55 +42,55 @@ html {
 
 body {
   font-family: 'Garet', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background-color: #FAF7F2;
+  background-color: #FAF5F2;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(226, 206, 181, 0.28) 0px, transparent 60%),
-    radial-gradient(at 85% 35%, rgba(244, 232, 214, 0.45) 0px, transparent 50%),
-    radial-gradient(at 20% 75%, rgba(216, 194, 167, 0.22) 0px, transparent 60%),
-    radial-gradient(at 80% 90%, rgba(246, 240, 231, 0.6) 0px, transparent 50%);
+    radial-gradient(at 15% 15%, rgba(247, 206, 194, 0.3) 0px, transparent 60%),
+    radial-gradient(at 85% 35%, rgba(216, 177, 183, 0.25) 0px, transparent 50%),
+    radial-gradient(at 20% 75%, rgba(243, 228, 219, 0.5) 0px, transparent 60%),
+    radial-gradient(at 80% 90%, rgba(185, 122, 134, 0.15) 0px, transparent 50%);
   background-attachment: fixed;
-  color: #2D2622;
+  color: #3A1E1E;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Luxury Gradients & Non-solid Patterns */
+/* Custom Luxury Gradients in Maja Brand Palette */
 .bg-warm-luxury {
-  background: linear-gradient(135deg, #FAF7F2 0%, #F5ECE0 35%, #F0E4D3 70%, #FAF7F2 100%);
+  background: linear-gradient(135deg, #FAF5F2 0%, #F3E4DB 40%, #F7CEC2 100%);
 }
 
 .bg-warm-canvas {
   background: 
-    radial-gradient(circle at 10% 20%, rgba(235, 222, 207, 0.4) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(226, 206, 181, 0.35) 0%, transparent 50%),
-    linear-gradient(180deg, #FDFBF7 0%, #F8F3EA 50%, #F4ECE1 100%);
+    radial-gradient(circle at 10% 20%, rgba(247, 206, 194, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(216, 177, 183, 0.35) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF5F2 50%, #F3E4DB 100%);
 }
 
 .bg-luxury-card {
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 246, 239, 0.88) 100%);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(243, 228, 219, 0.45) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 168, 128, 0.25);
+  border: 1px solid rgba(185, 122, 134, 0.25);
 }
 
 .bg-dark-mesh {
   background: 
-    radial-gradient(at 0% 0%, rgba(68, 52, 42, 0.4) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(45, 34, 28, 0.5) 0px, transparent 50%),
-    linear-gradient(180deg, #181513 0%, #201B18 50%, #151210 100%);
+    radial-gradient(at 0% 0%, rgba(123, 46, 58, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(58, 30, 30, 0.6) 0px, transparent 50%),
+    linear-gradient(180deg, #2D1414 0%, #3A1E1E 50%, #1F0D0D 100%);
 }
 
-/* Shimmering / Glowing Bright CTA button inspired by thecoloristhairsalon */
+/* Shimmering Signature Luminous CTA button in Maja Wine & Rose Gold */
 .btn-luminous {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #C5A880 0%, #E8D7C2 50%, #B8966C 100%);
-  color: #1A1614;
+  background: linear-gradient(135deg, #7B2E3A 0%, #8C3745 50%, #5E202A 100%);
+  color: #FFFFFF;
   font-weight: 500;
   letter-spacing: 0.08em;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(197, 168, 128, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+  box-shadow: 0 4px 20px rgba(123, 46, 58, 0.35), 0 0 0 1px rgba(216, 177, 183, 0.35) inset;
 }
 
 .btn-luminous::before {
@@ -100,15 +100,15 @@ body {
   left: -150%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(247, 206, 194, 0.45), transparent);
   transform: skewX(-25deg);
   animation: shineMovement 3.5s infinite ease-in-out;
 }
 
 .btn-luminous:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 30px rgba(197, 168, 128, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
-  background: linear-gradient(135deg, #D4BA95 0%, #FFF2E0 50%, #C5A880 100%);
+  box-shadow: 0 8px 30px rgba(123, 46, 58, 0.5), 0 0 0 1px rgba(247, 206, 194, 0.6) inset;
+  background: linear-gradient(135deg, #8C3745 0%, #9E4353 50%, #7B2E3A 100%);
 }
 
 /* Luxury Maja Brand Button (Wine & Rose Gold Glow) */
@@ -116,7 +116,7 @@ body {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #7B2E3A 0%, #8C3745 50%, #5E202A 100%);
-  color: #FFFDF9;
+  color: #FFFFFF;
   font-weight: 500;
   letter-spacing: 0.08em;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -145,7 +145,7 @@ body {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #3A1E1E 0%, #4D2B2B 50%, #2A1414 100%);
-  color: #FFFDF9;
+  color: #FFFFFF;
   font-weight: 500;
   letter-spacing: 0.08em;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -199,11 +199,11 @@ body {
 
 /* Glassmorphism navbar */
 .glass-nav {
-  background: linear-gradient(180deg, rgba(253, 251, 247, 0.94) 0%, rgba(247, 241, 233, 0.90) 100%);
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.94) 0%, rgba(243, 228, 219, 0.88) 100%);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border-bottom: 1px solid rgba(197, 168, 128, 0.25);
-  box-shadow: 0 4px 30px rgba(45, 38, 34, 0.04);
+  border-bottom: 1px solid rgba(185, 122, 134, 0.25);
+  box-shadow: 0 4px 30px rgba(58, 30, 30, 0.04);
 }
 
 /* Smooth typography */

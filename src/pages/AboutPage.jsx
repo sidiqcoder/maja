@@ -54,8 +54,8 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
     <div className="pt-28 pb-24 relative overflow-hidden">
       
       {/* Background gradients */}
-      <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-[#E8DAC7]/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-[#E2CEB5]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-[#F7CEC2]/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-[#D8B1B7]/25 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -65,11 +65,11 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             onClick={() => handleTabChange('about')}
             className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'about'
-                ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/30'
             }`}
           >
-            <Users className="w-4 h-4 text-[#C5A880]" />
+            <Users className="w-4 h-4 text-[#B97A86]" />
             <span>About Us & Meet the Team</span>
           </button>
 
@@ -77,11 +77,11 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             onClick={() => handleTabChange('careers')}
             className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'careers'
-                ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
-                : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
+                ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
+                : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/30'
             }`}
           >
-            <Briefcase className="w-4 h-4 text-[#C5A880]" />
+            <Briefcase className="w-4 h-4 text-[#B97A86]" />
             <span>Careers / Join Our Team</span>
           </button>
         </div>
@@ -92,17 +92,17 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             
             {/* Story & Philosophy Header */}
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
                 Our Story & Philosophy
               </span>
-              <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] mt-3 leading-tight">
+              <h1 className="font-serif text-4xl sm:text-6xl text-[#3A1E1E] mt-3 leading-tight">
                 Meet the Team Behind Maja
               </h1>
-              <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4 mb-6" />
-              <p className="text-base sm:text-lg text-[#3E342F] leading-relaxed font-light">
+              <div className="w-16 h-0.5 bg-[#B97A86] mx-auto mt-4 mb-6" />
+              <p className="text-base sm:text-lg text-[#3A1E1E]/90 leading-relaxed font-light">
                 At Maja, beauty is personal. It’s about finding the right people, the right treatments, and a welcoming space where you can simply feel like yourself.
               </p>
-              <p className="mt-3 text-sm sm:text-base text-[#6E6157] leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-[#3A1E1E]/80 leading-relaxed font-light">
                 Our team brings together talented beauty professionals, each with their own speciality, experience and signature services. From the perfect blowdry to intricate nail art, expert brows and restorative lymphatic massages, there’s a Maja expert for every part of your beauty routine.
               </p>
             </div>
@@ -110,10 +110,10 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             {/* Team Members Grid (Mockups as instructed in line 61) */}
             <div>
               <div className="text-center mb-10">
-                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
+                <span className="text-xs uppercase tracking-widest text-[#7B2E3A] font-medium">
                   Artisans of Care
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-1">
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#3A1E1E] mt-1">
                   Our Beauty Experts
                 </h2>
               </div>
@@ -122,7 +122,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                 {teamMembers.map((member) => (
                   <div
                     key={member.id}
-                    className="bg-luxury-card rounded-3xl overflow-hidden border border-[#C5A880]/30 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group transform hover:-translate-y-2"
+                    className="bg-luxury-card rounded-3xl overflow-hidden border border-[#D8B1B7]/40 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group transform hover:-translate-y-2"
                   >
                     <div>
                       {/* Stylized Mockup Portrait */}
@@ -133,7 +133,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                         <div className="absolute top-3 right-3">
-                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#E5D2BA] border border-white/20">
+                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#F7CEC2] border border-white/20">
                             {member.tag}
                           </span>
                         </div>
@@ -141,13 +141,13 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
 
                       {/* Bio Details */}
                       <div className="p-6">
-                        <h3 className="font-serif text-2xl text-[#1C1816] font-medium">
+                        <h3 className="font-serif text-2xl text-[#3A1E1E] font-medium">
                           {member.name}
                         </h3>
-                        <p className="text-xs uppercase tracking-wider text-[#9E7D47] font-medium mt-0.5 mb-3">
+                        <p className="text-xs uppercase tracking-wider text-[#7B2E3A] font-medium mt-0.5 mb-3">
                           {member.role}
                         </p>
-                        <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
+                        <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-normal">
                           {member.bio}
                         </p>
                       </div>
@@ -155,9 +155,9 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
 
                     {/* Specialties Pill Badges */}
                     <div className="p-6 pt-0">
-                      <div className="pt-3 border-t border-[#C5A880]/15 flex flex-wrap gap-1.5">
+                      <div className="pt-3 border-t border-[#D8B1B7]/30 flex flex-wrap gap-1.5">
                         {member.specialties.map((spec, i) => (
-                          <span key={i} className="text-[10px] px-2 py-0.5 rounded-md bg-[#C5A880]/15 text-[#5C4524] font-medium">
+                          <span key={i} className="text-[10px] px-2.5 py-1 rounded-md bg-[#F3E4DB] text-[#7B2E3A] border border-[#D8B1B7]/40 font-medium">
                             {spec}
                           </span>
                         ))}
@@ -169,12 +169,12 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             </div>
 
             {/* Philosophy Highlight Banner */}
-            <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] rounded-3xl p-8 sm:p-14 text-white border border-[#D8B1B7]/30 shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] rounded-3xl p-8 sm:p-14 text-white border border-[#D8B1B7]/30 shadow-2xl relative overflow-hidden">
               <div className="max-w-3xl relative z-10">
                 <span className="text-xs uppercase tracking-widest text-[#F7CEC2] font-medium">
                   Our Commitment
                 </span>
-                <h3 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-3 mb-4">
+                <h3 className="font-serif text-3xl sm:text-5xl text-white mt-3 mb-4">
                   More Than a Beauty Team
                 </h3>
                 <p className="text-sm sm:text-base text-[#F3E4DB]/90 leading-relaxed font-light">
@@ -186,7 +186,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                 <div className="mt-8">
                   <button
                     onClick={() => handleTabChange('careers')}
-                    className="btn-maja-wine px-7 py-3 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-all"
+                    className="btn-maja-wine px-7 py-3 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-all text-white"
                   >
                     <span>Explore Career Opportunities</span>
                     <ArrowRight className="w-4 h-4 text-[#F7CEC2]" />
@@ -204,44 +204,44 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             
             {/* Career Header (Ref: The Hideaway & Blush N Curls) */}
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
                 Careers at Maja
               </span>
-              <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] mt-3 leading-tight">
+              <h1 className="font-serif text-4xl sm:text-6xl text-[#3A1E1E] mt-3 leading-tight">
                 Your Next Chapter Could Start at Maja
               </h1>
-              <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4 mb-6" />
-              <p className="text-base sm:text-lg text-[#3E342F] leading-relaxed font-light">
+              <div className="w-16 h-0.5 bg-[#B97A86] mx-auto mt-4 mb-6" />
+              <p className="text-base sm:text-lg text-[#3A1E1E]/90 leading-relaxed font-light">
                 We believe the best beauty experiences come from people who genuinely care about their craft and the people they work with.
               </p>
-              <p className="mt-3 text-sm sm:text-base text-[#6E6157] leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-[#3A1E1E]/80 leading-relaxed font-light">
                 At Maja, you’ll be part of a team where creativity, skill and personality come together. Whether your speciality is hair, nails, lashes, beauty or wellness, there’s space to bring your talent to the chair and continue growing along the way.
               </p>
             </div>
 
             {/* Current Open Positions */}
             <div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#1C1816] mb-6 text-center">
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#3A1E1E] mb-6 text-center">
                 Current Opportunities in Dubai
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {openPositions.map((pos, idx) => (
                   <div
                     key={idx}
-                    className="bg-luxury-card rounded-2xl p-6 border border-[#C5A880]/30 shadow-md flex items-start justify-between gap-4"
+                    className="bg-luxury-card rounded-2xl p-6 border border-[#D8B1B7]/40 shadow-md flex items-start justify-between gap-4"
                   >
                     <div>
-                      <h4 className="font-serif text-xl text-[#1C1816] font-medium">
+                      <h4 className="font-serif text-xl text-[#3A1E1E] font-medium">
                         {pos.title}
                       </h4>
-                      <p className="text-xs text-[#9E7D47] font-medium mt-1">
+                      <p className="text-xs text-[#7B2E3A] font-medium mt-1">
                         {pos.type}
                       </p>
-                      <p className="text-xs text-[#7A6F68] mt-2">
+                      <p className="text-xs text-[#8C7474] mt-2 font-normal">
                         Requirements: {pos.experience}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-green-100 text-green-800 shrink-0">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#F3E4DB] text-[#7B2E3A] border border-[#D8B1B7]/40 shrink-0">
                       Hiring Now
                     </span>
                   </div>
@@ -250,15 +250,15 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             </div>
 
             {/* Application Form (Modeled after Blush N Curls & The Hideaway) */}
-            <div className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#C5A880]/30 shadow-xl">
+            <div className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#D8B1B7]/40 shadow-xl">
               <div className="text-center mb-8">
-                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
+                <span className="text-xs uppercase tracking-widest text-[#7B2E3A] font-medium">
                   Application Form
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-1">
+                <h3 className="font-serif text-3xl sm:text-4xl text-[#3A1E1E] mt-1">
                   Apply to Join the Maja Family
                 </h3>
-                <p className="text-xs sm:text-sm text-[#7A6F68] mt-2">
+                <p className="text-xs sm:text-sm text-[#8C7474] mt-2 font-light">
                   Tell us about yourself, your experience and what you could bring to our salon.
                 </p>
               </div>
@@ -268,13 +268,13 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                   <div className="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="font-serif text-2xl text-[#1C1816]">Application Received!</h4>
-                  <p className="text-sm text-[#5C5048] mt-2 max-w-md mx-auto">
+                  <h4 className="font-serif text-2xl text-[#3A1E1E]">Application Received!</h4>
+                  <p className="text-sm text-[#3A1E1E]/80 mt-2 max-w-md mx-auto font-light">
                     Thank you, {formData.fullName}. We have received your application. Our salon director will review your portfolio and get in touch if an opportunity arises.
                   </p>
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="mt-6 px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#1C1816] text-white"
+                    className="mt-6 px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#3A1E1E] text-white"
                   >
                     Submit Another Application
                   </button>
@@ -283,7 +283,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                 <form onSubmit={handleFormSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -293,12 +293,12 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Elena Rostova"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -308,14 +308,14 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="yourname@gmail.com"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -325,19 +325,19 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+971 50 000 0000"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                         Area of Expertise *
                       </label>
                       <select
                         name="expertise"
                         value={formData.expertise}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                       >
                         <option value="Hair Stylist & Colorist">Hair Stylist & Colorist</option>
                         <option value="Nail Artist & BIAB Specialist">Nail Artist & BIAB Specialist</option>
@@ -350,7 +350,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                    <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                       Instagram / Portfolio Link (Optional)
                     </label>
                     <input
@@ -359,12 +359,12 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                       value={formData.portfolio}
                       onChange={handleInputChange}
                       placeholder="https://instagram.com/yourhandle"
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                    <label className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-1.5">
                       Tell us about yourself and your experience *
                     </label>
                     <textarea
@@ -374,33 +374,33 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                       value={formData.about}
                       onChange={handleInputChange}
                       placeholder="Share your background, previous salons, signature treatments, and why you'd love to join Maja Beauty Bar..."
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#C5A880]/30 focus:border-[#C5A880] focus:ring-2 focus:ring-[#C5A880]/20 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                     />
                   </div>
 
                   {/* CV Upload Simulation */}
-                  <div className="p-4 rounded-xl border-2 border-dashed border-[#C5A880]/40 text-center bg-white/50 hover:bg-white/80 transition-colors cursor-pointer">
-                    <UploadCloud className="w-6 h-6 text-[#9E7D47] mx-auto mb-1" />
-                    <span className="text-xs font-medium text-[#1C1816] block">
+                  <div className="p-4 rounded-xl border-2 border-dashed border-[#B97A86]/40 text-center bg-white/50 hover:bg-white/80 transition-colors cursor-pointer">
+                    <UploadCloud className="w-6 h-6 text-[#7B2E3A] mx-auto mb-1" />
+                    <span className="text-xs font-medium text-[#3A1E1E] block">
                       Upload CV / Resume (PDF or DOCX)
                     </span>
-                    <span className="text-[11px] text-[#7A6F68]">
+                    <span className="text-[11px] text-[#8C7474]">
                       Max file size 10MB
                     </span>
                   </div>
 
                   <button
                     type="submit"
-                    className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl"
+                    className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl text-white"
                   >
-                    <Send className="w-4 h-4 text-[#1A1614]" />
+                    <Send className="w-4 h-4 text-white" />
                     <span>Submit Application</span>
                   </button>
                 </form>
               )}
 
-              <div className="mt-8 pt-6 border-t border-[#C5A880]/20 text-center text-xs text-[#7A6F68]">
-                For direct career inquiries, email us at <span className="font-medium text-[#1C1816]">careers@majabeautybar.ae</span> or message via WhatsApp.
+              <div className="mt-8 pt-6 border-t border-[#D8B1B7]/30 text-center text-xs text-[#8C7474]">
+                For direct career inquiries, email us at <span className="font-medium text-[#3A1E1E]">careers@majabeautybar.ae</span> or message via WhatsApp.
               </div>
             </div>
 

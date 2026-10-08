@@ -93,7 +93,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#2D2622]">
+    <div className="min-h-screen flex flex-col bg-[#FAF5F2] text-[#3A1E1E]">
       {/* Top Luxury Navbar */}
       <Navbar 
         activePage={activePage}

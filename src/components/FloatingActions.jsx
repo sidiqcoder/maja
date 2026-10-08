@@ -10,7 +10,7 @@ export default function FloatingActions() {
       
       {/* Floating Instagram Button (Above WhatsApp as requested) */}
       <div className="group relative flex items-center">
-        <span className="hidden md:block absolute right-16 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[#1C1816]/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+        <span className="hidden md:block absolute right-16 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[#3A1E1E]/95 border border-[#D8B1B7]/30 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
           Follow @majabeauty.ae
         </span>
         <a
@@ -26,7 +26,7 @@ export default function FloatingActions() {
 
       {/* Floating WhatsApp Button with Pulsing Animation */}
       <div className="group relative flex items-center">
-        <span className="hidden md:block absolute right-16 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[#1C1816]/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+        <span className="hidden md:block absolute right-16 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[#3A1E1E]/95 border border-[#D8B1B7]/30 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
           Chat with Maja Concierge
         </span>
         <a

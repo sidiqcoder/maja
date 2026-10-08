@@ -95,7 +95,7 @@ export default function ReferPage() {
   };
 
   return (
-    <div className="pt-28 pb-24 relative overflow-hidden bg-[#FAF7F2]">
+    <div className="pt-28 pb-24 relative overflow-hidden bg-[#FAF5F2]">
       
       {/* Background ambient luxury mesh in Maja Peach, Blush & Nude palette */}
       <div className="absolute top-10 right-1/4 w-[600px] h-[600px] bg-[#F7CEC2]/35 rounded-full blur-3xl pointer-events-none" />
@@ -115,7 +115,7 @@ export default function ReferPage() {
             The Referral Circle
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-[#5C5048] max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#3A1E1E]/80 max-w-2xl mx-auto font-light leading-relaxed">
             Because beauty rituals are always sweeter shared. Introduce your friends to the sanctuary of Maja Beauty Bar and celebrate together with exclusive club benefits.
           </p>
 
@@ -163,7 +163,7 @@ export default function ReferPage() {
                 <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
                   AED 50 & AED 50
                 </h3>
-                <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
                   Your referred bestie enjoys <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> her first visit. Once completed, <strong className="text-[#3A1E1E] font-medium">AED 50 credit</strong> is credited to your salon account.
                 </p>
               </div>
@@ -185,7 +185,7 @@ export default function ReferPage() {
                 <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
                   Birthday Privilege
                 </h3>
-                <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
                   Celebrate your special day at Maja with a complimentary Davines hair care upgrade or signature nail art accent during your birthday month.
                 </p>
               </div>
@@ -207,7 +207,7 @@ export default function ReferPage() {
                 <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
                   Loyalty Rituals
                 </h3>
-                <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
                   Enjoy priority booking access for Eid & holiday seasons, curated complimentary herbal refreshments, and invitations to private Maja beauty masterclasses.
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function ReferPage() {
               <h2 className="font-serif italic text-3xl sm:text-4xl text-[#3A1E1E] font-normal">
                 Generate Your Maja Pass
               </h2>
-              <p className="text-xs sm:text-sm text-[#7A6F68] mt-2 font-light">
+              <p className="text-xs sm:text-sm text-[#8C7474] mt-2 font-light">
                 Enter your name to personalise your WhatsApp booking invitation for your friends.
               </p>
             </div>
@@ -256,7 +256,7 @@ export default function ReferPage() {
                       setReferrerName(e.target.value);
                       if (inputError) setInputError(false);
                     }}
-                    className={`w-full px-4 py-3.5 rounded-xl bg-white border transition-all text-sm text-[#1C1816] placeholder:text-[#A89C94] focus:outline-none ${
+                    className={`w-full px-4 py-3.5 rounded-xl bg-white border transition-all text-sm text-[#3A1E1E] placeholder:text-[#8C7474] focus:outline-none ${
                       inputError 
                         ? 'border-red-500 ring-2 ring-red-200' 
                         : 'border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#D8B1B7]/30'
@@ -286,7 +286,7 @@ export default function ReferPage() {
                 className="mt-8 pt-8 border-t border-[#B97A86]/25 space-y-6 transition-all duration-300"
               >
                 {/* Visual VIP Pass Card */}
-                <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] rounded-2xl p-6 text-white border border-[#D8B1B7]/40 shadow-xl relative overflow-hidden">
+                <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] rounded-2xl p-6 text-white border border-[#D8B1B7]/40 shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-[#D8B1B7]/15 rounded-full blur-2xl pointer-events-none" />
                   
                   <div className="flex items-center justify-between mb-4">
@@ -298,7 +298,7 @@ export default function ReferPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif italic text-2xl sm:text-3xl text-[#FFFDF9] font-normal leading-tight mb-1">
+                  <h3 className="font-serif italic text-2xl sm:text-3xl text-white font-normal leading-tight mb-1">
                     Special Invitation from {currentName}
                   </h3>
                   <p className="text-xs text-[#F3E4DB]/80 font-light leading-relaxed mb-4">
@@ -327,7 +327,7 @@ export default function ReferPage() {
                     </div>
                     <span>Open Direct WhatsApp Chat with Maja</span>
                   </a>
-                  <p className="text-[11px] text-[#7A6F68] mt-2 text-center">
+                  <p className="text-[11px] text-[#8C7474] mt-2 text-center">
                     This connects straight to Maja Concierge (+971 50 996 4626) with your referral note pre-filled.
                   </p>
                 </div>
@@ -373,14 +373,14 @@ export default function ReferPage() {
                 </div>
 
                 {/* Readonly link preview */}
-                <div className="bg-[#FAF7F2] rounded-xl p-3 border border-[#B97A86]/30">
+                <div className="bg-[#F3E4DB]/40 rounded-xl p-3 border border-[#B97A86]/30">
                   <input
                     ref={linkInputRef}
                     type="text"
                     readOnly
                     value={directWhatsAppChatUrl}
                     onClick={(e) => e.target.select()}
-                    className="w-full bg-transparent text-[11px] text-[#5C5048] font-mono select-all focus:outline-none truncate"
+                    className="w-full bg-transparent text-[11px] text-[#3A1E1E]/80 font-mono select-all focus:outline-none truncate"
                   />
                 </div>
 
@@ -396,7 +396,7 @@ export default function ReferPage() {
             <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
             <span>Maja Girls Club · Terms &amp; Policies</span>
           </div>
-          <ul className="space-y-2 text-xs text-[#5C5048] leading-relaxed font-light">
+          <ul className="space-y-2 text-xs text-[#3A1E1E]/80 leading-relaxed font-light">
             <li>• Referral gift of AED 50 is applicable for first-time guests with a minimum treatment spend of AED 200.</li>
             <li>• Earned AED 50 credits are added to the referrer’s account once the friend completes her visit, valid for 6 months.</li>
             <li>• All service prices and reward credits are inclusive of 5% UAE VAT.</li>
