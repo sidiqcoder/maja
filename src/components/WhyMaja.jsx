@@ -32,7 +32,7 @@ export default function WhyMaja() {
   return (
     <section 
       id="why-maja" 
-      className="relative min-h-screen lg:h-screen lg:max-h-[1080px] flex items-center justify-center overflow-hidden pt-20 pb-8"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20 lg:py-24"
     >
       
       {/* Background layered ambient textures (non-solid) */}
@@ -42,69 +42,25 @@ export default function WhyMaja() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center my-auto">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-4 sm:mb-5 lg:mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
             Why Maja
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#3A1E1E] mt-1.5 leading-tight font-normal">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#3A1E1E] mt-2 leading-tight font-normal">
             Beauty, Elevated to Its Highest Standard
           </h2>
-          <div className="w-14 h-0.5 bg-[#B97A86] mx-auto mt-2" />
+          <div className="w-14 h-0.5 bg-[#B97A86] mx-auto mt-3" />
         </div>
 
-        {/* Highlights & Trust Metrics: 3 Separate Cards (Compact Row) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 mb-4 lg:mb-5 max-w-5xl mx-auto">
-          
-          {/* Card 1: Star & Experience Combined */}
-          <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#D8B1B7]/40 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#3A1E1E] font-normal leading-none">
-              4.8 ★ · 5 Years
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#8C7474] font-medium mt-1">
-              394+ Verified Clients
-            </span>
-            <span className="text-[11px] text-[#7B2E3A] font-medium mt-0.5">
-              Top-Rated &amp; 5 Years Expertise in Dubai
-            </span>
-          </div>
-
-          {/* Card 2: 5 Suites */}
-          <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#D8B1B7]/40 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#3A1E1E] font-normal leading-none">
-              5 Suites
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#8C7474] font-medium mt-1">
-              Complete Destination
-            </span>
-            <span className="text-[11px] text-[#7B2E3A] font-medium mt-0.5">
-              Hair · Nails · Brows · Waxing · Spa
-            </span>
-          </div>
-
-          {/* Card 3: Dubai Location */}
-          <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#D8B1B7]/40 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#3A1E1E] font-normal leading-none">
-              Dubai
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#8C7474] font-medium mt-1">
-              Prime Location
-            </span>
-            <span className="text-[11px] text-[#7B2E3A] font-medium mt-0.5">
-              M1M Building, Nad Al Sheba 1
-            </span>
-          </div>
-
-        </div>
-
-        {/* 3 Cards with Photos as Requested (Fitted Proportionately) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+        {/* 3 Cards with Photos */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {cards.map((card) => (
             <div
               key={card.id}
               className="group bg-luxury-card rounded-3xl overflow-hidden border border-[#D8B1B7]/40 shadow-lg hover:shadow-xl transition-all duration-500 flex flex-col justify-between transform hover:-translate-y-1"
             >
               {/* Photo Top with Scrim & Badge */}
-              <div className="relative h-36 sm:h-40 lg:h-44 w-full overflow-hidden">
+              <div className="relative h-44 sm:h-48 lg:h-52 w-full overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}

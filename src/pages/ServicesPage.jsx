@@ -432,21 +432,21 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                                 <span className="flex-1 mx-2 sm:mx-3 border-b border-dotted border-[#D8B1B7]/60 self-end mb-1" />
 
                                 {/* Price Tag - Elegant font-normal / font-medium as specifically requested */}
-                                <span className="font-serif font-normal text-sm sm:text-base text-[#3A1E1E] whitespace-nowrap tracking-wide">
+                                <span className="font-serif font-normal text-sm sm:text-base text-[#3A1E1E] whitespace-nowrap tracking-wide shrink-0">
                                   {item.price}
                                 </span>
                               </div>
 
-                              {/* Variant placed on its own line ("di enter aja") */}
+                              {/* Variant placed on its own line ("di enter aja") - constrained to the left */}
                               {variantTag && (
-                                <div className="text-[11px] sm:text-xs text-[#B97A86] font-normal tracking-wide mt-0.5">
+                                <div className="text-[11px] sm:text-xs text-[#B97A86] font-normal tracking-wide mt-0.5 max-w-[calc(100%-5.5rem)] sm:max-w-[calc(100%-6.5rem)] pr-2">
                                   {variantTag}
                                 </div>
                               )}
 
-                              {/* Optional description or subtitle note - smaller & cleaner ("deskripsi bawah itu kecilin lg aja") */}
+                              {/* Optional description or subtitle note - constrained so it never extends into or under the price column */}
                               {item.note && (
-                                <div className="text-[10px] sm:text-[11px] text-[#8C7474] mt-0.5 leading-snug font-light">
+                                <div className="text-[10px] sm:text-[11px] text-[#8C7474] mt-0.5 leading-snug font-light max-w-[calc(100%-5.5rem)] sm:max-w-[calc(100%-6.5rem)] pr-2">
                                   {item.note}
                                 </div>
                               )}

@@ -254,7 +254,7 @@ export default function PackagesPage() {
                     <div className="space-y-3">
                       {cat.items.map((item, i) => (
                         <div key={i} className="flex items-center justify-between gap-2 text-xs sm:text-sm">
-                          <span className="text-[#3E342F] leading-snug font-light">{item.name}</span>
+                          <span className="text-[#3A1E1E] leading-snug font-light">{item.name}</span>
                           <span className="font-serif font-normal text-[#7B2E3A] shrink-0 text-sm">{item.price}</span>
                         </div>
                       ))}
