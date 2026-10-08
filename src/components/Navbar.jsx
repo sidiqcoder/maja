@@ -188,7 +188,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             {/* About Us Dropdown (Pure CSS Hover) */}
             <div className="relative group">
               <button
-                onClick={() => handleNavClick('about')}
+                onClick={() => handleNavClick('about', 'about')}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
                   activePage === 'about' 
                     ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
@@ -205,7 +205,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                   style={{ backgroundColor: '#FFFFFF' }}
                 >
                   <button
-                    onClick={() => handleNavClick('about')}
+                    onClick={() => handleNavClick('about', 'about')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
                     <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
@@ -217,12 +217,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     </div>
                   </button>
                   <button
-                    onClick={() => {
-                      handleNavClick('about');
-                      setTimeout(() => {
-                        document.getElementById('career-section')?.scrollIntoView({ behavior: 'smooth' });
-                      }, 200);
-                    }}
+                    onClick={() => handleNavClick('about', 'careers')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F6EFE6] transition-colors group/item"
                   >
                     <div className="w-8 h-8 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#8C6D3B] group-hover/item:bg-[#C5A880] group-hover/item:text-white transition-colors shrink-0">
@@ -359,7 +354,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               Packages & Offers
             </button>
             <button
-              onClick={() => handleNavClick('about')}
+              onClick={() => handleNavClick('about', 'about')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
                 activePage === 'about' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
@@ -367,12 +362,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               About Us & Meet the Team
             </button>
             <button
-              onClick={() => {
-                handleNavClick('about');
-                setTimeout(() => {
-                  document.getElementById('career-section')?.scrollIntoView({ behavior: 'smooth' });
-                }, 200);
-              }}
+              onClick={() => handleNavClick('about', 'careers')}
               className="text-left py-2.5 px-4 rounded-xl text-base font-medium text-[#4A3E39]"
             >
               Careers / Join Our Team

@@ -11,6 +11,7 @@ import ReferPage from './pages/ReferPage';
 export default function App() {
   const [activePage, setActivePage] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [aboutTab, setAboutTab] = useState('about');
 
   // Handle URL pathname and hash routing on initial load and back/forward navigation
   useEffect(() => {
@@ -37,10 +38,14 @@ export default function App() {
       } else if (target === 'services') {
         setActivePage('services');
         setSelectedCategory('all');
-      } else if (['packages', 'about', 'refer'].includes(target)) {
+      } else if (['packages', 'refer'].includes(target)) {
         setActivePage(target);
+      } else if (target === 'about' || target === 'about-us') {
+        setActivePage('about');
+        setAboutTab('about');
       } else if (target === 'careers' || target === 'career') {
         setActivePage('about');
+        setAboutTab('careers');
       } else {
         setActivePage('home');
       }
@@ -55,14 +60,18 @@ export default function App() {
     };
   }, []);
 
-  const navigateTo = (page, category = null) => {
+  const navigateTo = (page, subOption = null) => {
     setActivePage(page);
     let newPath = '/';
 
     if (page === 'services') {
-      const cat = category || 'all';
+      const cat = subOption || 'all';
       setSelectedCategory(cat);
       newPath = cat === 'all' ? '/services' : `/${cat}`;
+    } else if (page === 'about') {
+      const tab = subOption === 'careers' ? 'careers' : 'about';
+      setAboutTab(tab);
+      newPath = tab === 'careers' ? '/careers' : '/about';
     } else if (page === 'home') {
       newPath = '/';
     } else {
@@ -71,7 +80,7 @@ export default function App() {
 
     // Update browser URL smoothly without reloading
     if (window.location.pathname !== newPath) {
-      window.history.pushState({ page, category }, '', newPath);
+      window.history.pushState({ page, subOption }, '', newPath);
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -83,6 +92,7 @@ export default function App() {
       <Navbar 
         activePage={activePage}
         selectedCategory={selectedCategory}
+        aboutTab={aboutTab}
         onNavigate={navigateTo}
       />
 
@@ -107,7 +117,10 @@ export default function App() {
         )}
 
         {activePage === 'about' && (
-          <AboutPage />
+          <AboutPage 
+            initialTab={aboutTab}
+            onTabChange={(tab) => navigateTo('about', tab)}
+          />
         )}
 
         {activePage === 'refer' && (

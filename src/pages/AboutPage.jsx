@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { teamMembers, openPositions } from '../data/teamData';
 import { 
   Users, 
@@ -12,8 +12,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState('about');
+export default function AboutPage({ initialTab = 'about', onTabChange }) {
+  const [activeTab, setActiveTab] = useState(initialTab || 'about');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -24,6 +24,21 @@ export default function AboutPage() {
     about: '',
     portfolio: ''
   });
+
+  // Synchronize with prop changes from navbar/URL
+  useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    if (onTabChange) {
+      onTabChange(tab);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +62,7 @@ export default function AboutPage() {
         {/* Navigation Tabs between About Us and Careers */}
         <div className="flex items-center justify-center gap-3 mb-14">
           <button
-            onClick={() => setActiveTab('about')}
+            onClick={() => handleTabChange('about')}
             className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'about'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
@@ -59,7 +74,7 @@ export default function AboutPage() {
           </button>
 
           <button
-            onClick={() => setActiveTab('careers')}
+            onClick={() => handleTabChange('careers')}
             className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'careers'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
@@ -170,7 +185,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-8">
                   <button
-                    onClick={() => setActiveTab('careers')}
+                    onClick={() => handleTabChange('careers')}
                     className="btn-luminous px-7 py-3 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2"
                   >
                     <span>Explore Career Opportunities</span>
