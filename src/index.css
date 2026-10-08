@@ -111,6 +111,53 @@ body {
   background: linear-gradient(135deg, #D4BA95 0%, #FFF2E0 50%, #C5A880 100%);
 }
 
+/* Luxury Maja Brand Button (Wine & Rose Gold Glow) */
+.btn-maja-wine {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #7B2E3A 0%, #8C3745 50%, #5E202A 100%);
+  color: #FFFDF9;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(123, 46, 58, 0.35), 0 0 0 1px rgba(216, 177, 183, 0.3) inset;
+}
+
+.btn-maja-wine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  animation: shineMovement 3.5s infinite ease-in-out;
+}
+
+.btn-maja-wine:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(123, 46, 58, 0.5), 0 0 0 1px rgba(247, 206, 194, 0.6) inset;
+  background: linear-gradient(135deg, #8C3745 0%, #9E4353 50%, #7B2E3A 100%);
+}
+
+.btn-maja-mocha {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3A1E1E 0%, #4D2B2B 50%, #2A1414 100%);
+  color: #FFFDF9;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(58, 30, 30, 0.35), 0 0 0 1px rgba(216, 177, 183, 0.25) inset;
+}
+
+.btn-maja-mocha:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(58, 30, 30, 0.5), 0 0 0 1px rgba(247, 206, 194, 0.5) inset;
+  background: linear-gradient(135deg, #4D2B2B 0%, #5E3636 50%, #3A1E1E 100%);
+}
+
 @keyframes shineMovement {
   0% { left: -150%; }
   35% { left: 150%; }

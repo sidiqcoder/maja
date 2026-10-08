@@ -413,48 +413,64 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                       )}
 
                       {/* List of Treatments with Dotted Leaders */}
-                      <div className="space-y-3.5 sm:space-y-4 my-3">
-                        {visibleItems.map((item, idx) => (
-                          <div key={idx} className="group/item">
-                            <div className="flex items-baseline justify-between gap-2">
-                              {/* Item Name */}
-                              <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#8C6D3B] transition-colors">
-                                {item.name}
-                              </span>
+                      <div className="space-y-3 sm:space-y-3.5 my-3">
+                        {visibleItems.map((item, idx) => {
+                          // Extract parenthesized variants (e.g. Med / Long / XL, Aloe Vera/Avocado/Coconut) to line-break cleanly
+                          const parenMatch = item.name.match(/^(.*?)\s*(\([^)]+\))$/);
+                          const displayName = parenMatch ? parenMatch[1].trim() : item.name;
+                          const variantTag = parenMatch ? parenMatch[2].trim() : null;
 
-                              {/* Dotted Leader Line */}
-                              <span className="flex-1 mx-2 sm:mx-3 border-b-2 border-dotted border-[#D4C3B3]/80 self-end mb-1" />
+                          return (
+                            <div key={idx} className="group/item py-0.5">
+                              <div className="flex items-baseline justify-between gap-2">
+                                {/* Item Name */}
+                                <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#7B2E3A] transition-colors">
+                                  {displayName}
+                                </span>
 
-                              {/* Price Tag */}
-                              <span className="font-serif font-bold text-sm sm:text-base text-[#1C1816] whitespace-nowrap tracking-wide">
-                                {item.price}
-                              </span>
-                            </div>
+                                {/* Dotted Leader Line */}
+                                <span className="flex-1 mx-2 sm:mx-3 border-b border-dotted border-[#D4C3B3]/80 self-end mb-1" />
 
-                            {/* Optional description or subtitle note */}
-                            {item.note && (
-                              <div className="text-[11px] sm:text-xs text-[#7A6F68] mt-0.5 leading-snug font-normal">
-                                {item.note}
+                                {/* Price Tag - Elegant font-normal / font-medium as specifically requested */}
+                                <span className="font-serif font-normal text-sm sm:text-base text-[#1C1816] whitespace-nowrap tracking-wide">
+                                  {item.price}
+                                </span>
                               </div>
-                            )}
-                          </div>
-                        ))}
+
+                              {/* Variant placed on its own line ("di enter aja") */}
+                              {variantTag && (
+                                <div className="text-[11px] sm:text-xs text-[#B97A86] font-normal tracking-wide mt-0.5">
+                                  {variantTag}
+                                </div>
+                              )}
+
+                              {/* Optional description or subtitle note - smaller & cleaner ("deskripsi bawah itu kecilin lg aja") */}
+                              {item.note && (
+                                <div className="text-[10px] sm:text-[11px] text-[#8C7D73] mt-0.5 leading-snug font-light">
+                                  {item.note}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
-                    {/* Below the Card: Direct CTA to WhatsApp */}
+                    {/* Below the Card: Direct CTA to WhatsApp in Maja Luxury Brand Palette */}
                     <div className="pt-5 mt-6 border-t border-[#C5A880]/20">
                       <a
                         href={getCardWhatsAppLink(card)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 group"
+                        className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#7B2E3A] hover:bg-[#8C3745] text-[#FFFDF9] font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-[#D8B1B7]/30 group"
                       >
-                        <MessageCircle className="w-4 h-4 fill-white/20 group-hover:scale-110 transition-transform" />
+                        <div className="w-5 h-5 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:scale-110 transition-transform">
+                          <MessageCircle className="w-3.5 h-3.5 fill-[#25D366]" />
+                        </div>
                         <span>Book {card.title} via WhatsApp</span>
                       </a>
 
-                      <div className="mt-2 text-center text-[10px] text-[#8C7D73]">
+                      <div className="mt-2.5 text-center text-[10px] text-[#8C7D73]">
                         Instant WhatsApp Booking · Inclusive of 5% UAE VAT
                       </div>
                     </div>
@@ -481,33 +497,46 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             )}
 
             {/* Bottom Banner */}
-            <div className="mt-16 sm:mt-24 rounded-3xl bg-[#1C1816] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#C5A880]/30">
+            <div className="mt-16 sm:mt-24 rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#281414] to-[#1C1816] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+                <span className="inline-block px-3.5 py-1 rounded-full text-[11px] uppercase tracking-[0.2em] bg-[#D8B1B7]/15 text-[#F7CEC2] border border-[#D8B1B7]/30 font-medium">
+                  Appointments & Inquiries
+                </span>
                 <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
                   Treat yourself to something beautiful.
                 </h2>
-                <p className="text-xs sm:text-sm text-[#E8DAC7] max-w-lg mx-auto font-light">
-                  Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our team.
+                <p className="text-xs sm:text-sm text-[#F3E4DB]/90 max-w-lg mx-auto font-light leading-relaxed">
+                  Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our concierge team.
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
                   <a
                     href={freshaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105"
                   >
-                    <Calendar className="w-4 h-4 text-[#8C6D3B]" />
+                    <Calendar className="w-4 h-4 text-[#7B2E3A]" />
                     <span>Book on Fresha</span>
                   </a>
                   <a
-                    href="https://wa.me/971509964626"
+                    href="https://wa.me/971509964626?text=Hi%20Maja%20Beauty%20Bar%2C%20I'd%20like%20to%20book%20an%20appointment."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                    className="btn-maja-wine w-full sm:w-auto px-7 py-3.5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white/20" />
+                    <div className="w-4 h-4 rounded-full bg-[#25D366]/20 flex items-center justify-center">
+                      <MessageCircle className="w-3.5 h-3.5 fill-[#25D366]" />
+                    </div>
                     <span>Chat on WhatsApp</span>
                   </a>
+                </div>
+
+                {/* Cancellation Policy & VAT notice */}
+                <div className="pt-4 border-t border-white/10 mt-6 text-[11px] text-[#F3E4DB]/70 max-w-md mx-auto space-y-1">
+                  <p>All prices are inclusive of 5% UAE VAT.</p>
+                  <p className="text-[10.5px] text-[#F7CEC2]/80">
+                    <strong>Cancellation Policy:</strong> Free cancellation or rescheduling up to 24 hours prior to appointment.
+                  </p>
                 </div>
               </div>
             </div>

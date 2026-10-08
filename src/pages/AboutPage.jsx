@@ -169,27 +169,27 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
             </div>
 
             {/* Philosophy Highlight Banner */}
-            <div className="bg-dark-mesh rounded-3xl p-8 sm:p-14 text-white border border-[#C5A880]/30 shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#1C1816] rounded-3xl p-8 sm:p-14 text-white border border-[#D8B1B7]/30 shadow-2xl relative overflow-hidden">
               <div className="max-w-3xl relative z-10">
-                <span className="text-xs uppercase tracking-widest text-[#E5D2BA] font-medium">
+                <span className="text-xs uppercase tracking-widest text-[#F7CEC2] font-medium">
                   Our Commitment
                 </span>
                 <h3 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-3 mb-4">
                   More Than a Beauty Team
                 </h3>
-                <p className="text-sm sm:text-base text-white/85 leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-[#F3E4DB]/90 leading-relaxed font-light">
                   What makes Maja special is our people. Different talents, different personalities, one shared goal: to make every visit feel worth coming back for.
                 </p>
-                <p className="mt-3 text-sm text-white/75 leading-relaxed font-light">
+                <p className="mt-3 text-sm text-[#F3E4DB]/80 leading-relaxed font-light">
                   Whether you’re here for your regular BIAB, a fresh blowdry, your favourite brow treatment or a moment to completely unwind, we’re here to make you feel looked after.
                 </p>
                 <div className="mt-8">
                   <button
                     onClick={() => handleTabChange('careers')}
-                    className="btn-luminous px-7 py-3 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2"
+                    className="btn-maja-wine px-7 py-3 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-xl hover:scale-105 transition-all"
                   >
                     <span>Explore Career Opportunities</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 text-[#F7CEC2]" />
                   </button>
                 </div>
               </div>

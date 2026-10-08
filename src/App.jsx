@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage';
 import PackagesPage from './pages/PackagesPage';
 import AboutPage from './pages/AboutPage';
 import ReferPage from './pages/ReferPage';
+import FirstVisitModal from './components/FirstVisitModal';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
@@ -46,6 +47,11 @@ export default function App() {
       } else if (target === 'careers' || target === 'career') {
         setActivePage('about');
         setAboutTab('careers');
+      } else if (target === 'contact' || target === 'visit-us' || target === 'visitus') {
+        setActivePage('home');
+        setTimeout(() => {
+          document.getElementById('visit-us')?.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
       } else {
         setActivePage('home');
       }
@@ -130,6 +136,9 @@ export default function App() {
 
       {/* Floating Action Buttons (Animated WhatsApp & Instagram) */}
       <FloatingActions />
+
+      {/* First Visit 20% OFF Website Pop-up */}
+      <FirstVisitModal />
 
       {/* Bottom Footer */}
       <Footer 

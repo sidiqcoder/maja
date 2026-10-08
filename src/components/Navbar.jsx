@@ -40,7 +40,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
   };
 
   const freshaUrl = "https://www.fresha.com/a/maja-beauty-bar-dubai-m1m-building-al-meydan-d8xwkzcg?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
-  const igUrl = "https://www.instagram.com/majabeautybar";
+  const igUrl = "https://www.instagram.com/majabeauty.ae";
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${

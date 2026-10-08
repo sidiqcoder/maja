@@ -3,7 +3,7 @@ import { MessageCircle, Instagram } from 'lucide-react';
 
 export default function FloatingActions() {
   const waUrl = "https://wa.me/971509964626?text=Hi%20Maja%20Beauty%20Bar%2C%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment.";
-  const igUrl = "https://www.instagram.com/majabeautybar";
+  const igUrl = "https://www.instagram.com/majabeauty.ae";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3.5 pointer-events-auto">
@@ -11,7 +11,7 @@ export default function FloatingActions() {
       {/* Floating Instagram Button (Above WhatsApp as requested) */}
       <div className="group relative flex items-center">
         <span className="hidden md:block absolute right-16 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[#1C1816]/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
-          Follow @majabeautybar
+          Follow @majabeauty.ae
         </span>
         <a
           href={igUrl}

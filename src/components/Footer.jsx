@@ -7,7 +7,7 @@ export default function Footer({ onNavigate }) {
   };
 
   const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Maja+Beauty Bar+Al+Meydan+Road+Dubai";
-  const igUrl = "https://www.instagram.com/majabeautybar";
+  const igUrl = "https://www.instagram.com/majabeauty.ae";
   const waUrl = "https://wa.me/971509964626";
 
   return (

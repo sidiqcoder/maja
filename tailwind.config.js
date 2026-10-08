@@ -8,6 +8,14 @@ export default {
     extend: {
       colors: {
         maja: {
+          // Official Maja Brand Palette
+          blush: '#D8B1B7',
+          dustyRose: '#B97A86',
+          wine: '#7B2E3A',
+          mocha: '#3A1E1E',
+          nude: '#F3E4DB',
+          peach: '#F7CEC2',
+          // Theme Accents
           bg: '#FAF7F2',
           card: '#F6F1EA',
           light: '#FDFBF7',
@@ -18,7 +26,7 @@ export default {
           dark: '#1C1816',
           charcoal: '#2D2622',
           muted: '#7A6F68',
-          border: '#E8DECة',
+          border: '#E8DAC7',
           borderLight: 'rgba(197, 168, 128, 0.22)',
         }
       },
