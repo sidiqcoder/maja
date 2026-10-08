@@ -12,40 +12,68 @@ export default function App() {
   const [activePage, setActivePage] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Handle URL hash routing on initial load and back/forward navigation
+  // Handle URL pathname and hash routing on initial load and back/forward navigation
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (['home', 'services', 'packages', 'about', 'refer'].includes(hash)) {
-        setActivePage(hash);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (['nails', 'hair', 'lashes-brows', 'waxing', 'massages'].includes(hash)) {
+    const handleUrlRouting = () => {
+      // Check both pathname and hash
+      const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      const target = hash || path;
+
+      const categoryMap = {
+        'nails': 'nails',
+        'hair': 'hair',
+        'lashes-brows': 'lashes-brows',
+        'lashes': 'lashes-brows',
+        'brows': 'lashes-brows',
+        'waxing': 'waxing',
+        'massages': 'massages',
+        'massage': 'massages',
+      };
+
+      if (categoryMap[target]) {
         setActivePage('services');
-        setSelectedCategory(hash);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setSelectedCategory(categoryMap[target]);
+      } else if (target === 'services') {
+        setActivePage('services');
+        setSelectedCategory('all');
+      } else if (['packages', 'about', 'refer'].includes(target)) {
+        setActivePage(target);
+      } else if (target === 'careers' || target === 'career') {
+        setActivePage('about');
+      } else {
+        setActivePage('home');
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    handleUrlRouting();
+    window.addEventListener('popstate', handleUrlRouting);
+    window.addEventListener('hashchange', handleUrlRouting);
+    return () => {
+      window.removeEventListener('popstate', handleUrlRouting);
+      window.removeEventListener('hashchange', handleUrlRouting);
+    };
   }, []);
 
   const navigateTo = (page, category = null) => {
     setActivePage(page);
-    if (category) {
-      setSelectedCategory(category);
-      window.location.hash = category;
-    } else {
-      window.location.hash = page;
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    let newPath = '/';
 
-  const handleSelectCategoryFromHome = (category) => {
-    setSelectedCategory(category);
-    setActivePage('services');
-    window.location.hash = category;
+    if (page === 'services') {
+      const cat = category || 'all';
+      setSelectedCategory(cat);
+      newPath = cat === 'all' ? '/services' : `/${cat}`;
+    } else if (page === 'home') {
+      newPath = '/';
+    } else {
+      newPath = `/${page}`;
+    }
+
+    // Update browser URL smoothly without reloading
+    if (window.location.pathname !== newPath) {
+      window.history.pushState({ page, category }, '', newPath);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -54,16 +82,15 @@ export default function App() {
       {/* Top Luxury Navbar */}
       <Navbar 
         activePage={activePage}
-        setActivePage={(page) => navigateTo(page)}
         selectedCategory={selectedCategory}
-        setSelectedCategory={(cat) => setSelectedCategory(cat)}
+        onNavigate={navigateTo}
       />
 
       {/* Main Content Area */}
       <main className="flex-1">
         {activePage === 'home' && (
           <HomePage 
-            onSelectCategory={handleSelectCategoryFromHome}
+            onSelectCategory={(cat) => navigateTo('services', cat)}
             onNavigateToServices={() => navigateTo('services', 'all')}
           />
         )}
@@ -71,6 +98,7 @@ export default function App() {
         {activePage === 'services' && (
           <ServicesPage 
             initialCategory={selectedCategory}
+            onSelectCategory={(cat) => navigateTo('services', cat)}
           />
         )}
 
@@ -97,4 +125,3 @@ export default function App() {
     </div>
   );
 }
-

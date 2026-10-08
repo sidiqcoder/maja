@@ -14,7 +14,7 @@ import {
   Briefcase
 } from 'lucide-react';
 
-export default function Navbar({ activePage, setActivePage, selectedCategory, setSelectedCategory }) {
+export default function Navbar({ activePage, setActivePage, selectedCategory, setSelectedCategory, onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,12 +27,16 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
   }, []);
 
   const handleNavClick = (page, category = null) => {
-    setActivePage(page);
-    if (category) {
-      setSelectedCategory(category);
+    if (onNavigate) {
+      onNavigate(page, category);
+    } else {
+      if (setActivePage) setActivePage(page);
+      if (category && setSelectedCategory) {
+        setSelectedCategory(category);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const freshaUrl = "https://www.fresha.com/a/maja-beauty-bar-dubai-m1m-building-al-meydan-d8xwkzcg?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
