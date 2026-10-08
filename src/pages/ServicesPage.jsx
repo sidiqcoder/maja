@@ -431,8 +431,8 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                                 {/* Dotted Leader Line */}
                                 <span className="flex-1 mx-2 sm:mx-3 border-b border-dotted border-[#D8B1B7]/60 self-end mb-1" />
 
-                                {/* Price Tag - Elegant font-normal / font-medium as specifically requested */}
-                                <span className="font-serif font-normal text-sm sm:text-base text-[#3A1E1E] whitespace-nowrap tracking-wide shrink-0">
+                                {/* Price Tag - Elegant font-normal in Garet font as requested */}
+                                <span className="font-sans font-normal text-sm sm:text-base text-[#3A1E1E] whitespace-nowrap tracking-wide shrink-0">
                                   {item.price}
                                 </span>
                               </div>

@@ -150,7 +150,7 @@ export default function PackagesPage() {
                     <h3 className="font-serif italic text-2xl text-[#3A1E1E] mb-2 font-normal">
                       {pkg.title}
                     </h3>
-                    <div className="font-serif text-3xl text-[#7B2E3A] font-normal mb-6">
+                    <div className="font-sans text-2xl sm:text-3xl text-[#7B2E3A] font-normal mb-6">
                       {pkg.price}
                     </div>
 
@@ -255,7 +255,7 @@ export default function PackagesPage() {
                       {cat.items.map((item, i) => (
                         <div key={i} className="flex items-center justify-between gap-2 text-xs sm:text-sm">
                           <span className="text-[#3A1E1E] leading-snug font-light">{item.name}</span>
-                          <span className="font-serif font-normal text-[#7B2E3A] shrink-0 text-sm">{item.price}</span>
+                          <span className="font-sans font-normal text-[#7B2E3A] shrink-0 text-xs sm:text-sm">{item.price}</span>
                         </div>
                       ))}
                     </div>
@@ -349,7 +349,7 @@ export default function PackagesPage() {
                   {lymphaticDrainage.sessions60.map((row, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs sm:text-sm border-b border-[#F3E4DB]/60 pb-3">
                       <span className="text-[#3A1E1E] font-normal">{row.treatment}</span>
-                      <div className="flex items-center gap-8 font-serif font-normal text-[#7B2E3A]">
+                      <div className="flex items-center gap-8 font-sans font-normal text-[#7B2E3A]">
                         <span>{row.sessions5}</span>
                         <span>{row.sessions10}</span>
                       </div>
@@ -389,7 +389,7 @@ export default function PackagesPage() {
                   {lymphaticDrainage.sessions90.map((row, idx) => (
                     <div key={idx} className="flex items-center justify-between text-xs sm:text-sm border-b border-[#F3E4DB]/60 pb-3">
                       <span className="text-[#3A1E1E] font-normal">{row.treatment}</span>
-                      <div className="flex items-center gap-8 font-serif font-normal text-[#7B2E3A]">
+                      <div className="flex items-center gap-8 font-sans font-normal text-[#7B2E3A]">
                         <span>{row.sessions5}</span>
                         <span>{row.sessions10}</span>
                       </div>
@@ -469,7 +469,7 @@ export default function PackagesPage() {
                     <h3 className="font-serif italic text-3xl text-[#3A1E1E] mt-3 mb-2 font-normal">
                       {sculpt.title}
                     </h3>
-                    <div className="flex items-center gap-6 text-lg font-serif font-normal text-[#7B2E3A] mb-6">
+                    <div className="flex items-center gap-6 text-base sm:text-lg font-sans font-normal text-[#7B2E3A] mb-6">
                       <span>5 Sessions: {sculpt.sessions5}</span>
                       <span>10 Sessions: {sculpt.sessions10}</span>
                     </div>
