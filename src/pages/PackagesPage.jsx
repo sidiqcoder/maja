@@ -32,7 +32,7 @@ export default function PackagesPage() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
             Curated Bundles & Exclusive Offers
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] mt-3 leading-tight">
@@ -47,7 +47,7 @@ export default function PackagesPage() {
         <div className="flex items-center justify-center gap-3 mb-14 overflow-x-auto pb-2 scrollbar-none">
           <button
             onClick={() => setActiveTab('hair')}
-            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
+            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'hair'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
@@ -59,7 +59,7 @@ export default function PackagesPage() {
 
           <button
             onClick={() => setActiveTab('reset')}
-            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all whitespace-nowrap ${
+            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all whitespace-nowrap ${
               activeTab === 'reset'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
@@ -70,7 +70,7 @@ export default function PackagesPage() {
 
           <button
             onClick={() => setActiveTab('lymphatic')}
-            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
+            className={`px-6 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 whitespace-nowrap ${
               activeTab === 'lymphatic'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
@@ -89,7 +89,7 @@ export default function PackagesPage() {
             <div className="relative rounded-3xl overflow-hidden bg-dark-mesh text-white p-8 sm:p-12 lg:p-16 border border-[#C5A880]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30">
                     Signature Hair Bundles
                   </span>
                   <h2 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3">
@@ -124,7 +124,7 @@ export default function PackagesPage() {
                 >
                   <div>
                     {pkg.badge && (
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A880] text-[#1C1816] mb-3">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880] text-[#1C1816] mb-3">
                         {pkg.badge}
                       </span>
                     )}
@@ -152,7 +152,7 @@ export default function PackagesPage() {
                       href={getWaLink(pkg.title, pkg.price)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3 px-4 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2 shadow-sm transition-all"
+                      className="w-full py-3 px-4 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2 shadow-sm transition-all"
                     >
                       <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                       <span>Book on WhatsApp</span>
@@ -164,7 +164,7 @@ export default function PackagesPage() {
 
             {/* Terms and Conditions Box as Requested */}
             <div className="p-6 sm:p-8 rounded-2xl bg-white/70 border border-[#C5A880]/30 shadow-sm">
-              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold mb-3 flex items-center gap-2">
+              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium mb-3 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
                 <span>Terms & Conditions — Hair Packages</span>
               </h4>
@@ -186,7 +186,7 @@ export default function PackagesPage() {
             <div className="relative rounded-3xl overflow-hidden bg-dark-mesh text-white p-8 sm:p-12 lg:p-16 border border-[#C5A880]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C5A880] text-[#1C1816]">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#C5A880] text-[#1C1816]">
                     {beautyReset.badge}
                   </span>
                   <h2 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3">
@@ -222,7 +222,7 @@ export default function PackagesPage() {
                       <h3 className="font-serif text-2xl text-[#1C1816]">
                         {cat.name}
                       </h3>
-                      <span className="text-[10px] uppercase tracking-wider text-[#9E7D47] font-semibold">
+                      <span className="text-[10px] uppercase tracking-wider text-[#9E7D47] font-medium">
                         Mon & Tue Privilege
                       </span>
                     </div>
@@ -242,7 +242,7 @@ export default function PackagesPage() {
                       href={getWaLink(`Beauty Reset (${cat.name})`, 'Mon-Tue Offer')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-2.5 px-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-1.5 transition-all"
+                      className="w-full py-2.5 px-3 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-1.5 transition-all"
                     >
                       <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                       <span>Book on WhatsApp</span>
@@ -254,7 +254,7 @@ export default function PackagesPage() {
 
             {/* Terms and Conditions Box */}
             <div className="p-6 sm:p-8 rounded-2xl bg-white/70 border border-[#C5A880]/30 shadow-sm">
-              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold mb-3 flex items-center gap-2">
+              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium mb-3 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
                 <span>Terms & Conditions — The Beauty Reset</span>
               </h4>
@@ -276,7 +276,7 @@ export default function PackagesPage() {
             <div className="relative rounded-3xl overflow-hidden bg-dark-mesh text-white p-8 sm:p-12 lg:p-16 border border-[#C5A880]/30 shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30">
                     Signature Detox & Contouring
                   </span>
                   <h2 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-4 mb-3">
@@ -310,7 +310,7 @@ export default function PackagesPage() {
                     <h3 className="font-serif text-2xl text-[#1C1816]">60 Mins Packages</h3>
                     <span className="text-xs text-[#7A6F68]">Multi-session savings</span>
                   </div>
-                  <div className="flex items-center gap-6 text-xs font-bold uppercase text-[#9E7D47]">
+                  <div className="flex items-center gap-6 text-xs font-medium uppercase text-[#9E7D47]">
                     <span>5 Sessions</span>
                     <span>10 Sessions</span>
                   </div>
@@ -333,7 +333,7 @@ export default function PackagesPage() {
                     href={getWaLink('60 Mins Lymphatic Drainage Package', '5 or 10 Sessions')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                     <span>Inquire on WhatsApp</span>
@@ -348,7 +348,7 @@ export default function PackagesPage() {
                     <h3 className="font-serif text-2xl text-[#1C1816]">90 Mins Packages</h3>
                     <span className="text-xs text-[#7A6F68]">Deep intensive contouring</span>
                   </div>
-                  <div className="flex items-center gap-6 text-xs font-bold uppercase text-[#9E7D47]">
+                  <div className="flex items-center gap-6 text-xs font-medium uppercase text-[#9E7D47]">
                     <span>5 Sessions</span>
                     <span>10 Sessions</span>
                   </div>
@@ -371,7 +371,7 @@ export default function PackagesPage() {
                     href={getWaLink('90 Mins Lymphatic Drainage Package', '5 or 10 Sessions')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                     <span>Inquire on WhatsApp</span>
@@ -389,7 +389,7 @@ export default function PackagesPage() {
                   className="bg-warm-canvas rounded-3xl p-8 border border-[#C5A880]/40 shadow-xl flex flex-col justify-between"
                 >
                   <div>
-                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A880] text-[#1C1816]">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880] text-[#1C1816]">
                       Bespoke Experience
                     </span>
                     <h3 className="font-serif text-3xl text-[#1C1816] mt-3 mb-2">
@@ -401,7 +401,7 @@ export default function PackagesPage() {
                     </div>
 
                     <div className="space-y-2 mb-6 text-xs sm:text-sm text-[#4A3E39]">
-                      <span className="font-bold text-xs uppercase tracking-wider text-[#1C1816] block">
+                      <span className="font-medium text-xs uppercase tracking-wider text-[#1C1816] block">
                         Included Treatments:
                       </span>
                       {sculpt.includes.map((inc, i) => (
@@ -417,7 +417,7 @@ export default function PackagesPage() {
                     href={getWaLink(sculpt.title, `5 Sessions ${sculpt.sessions5} / 10 Sessions ${sculpt.sessions10}`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                     <span>Book on WhatsApp</span>
@@ -428,7 +428,7 @@ export default function PackagesPage() {
 
             {/* Terms & Conditions Box */}
             <div className="p-6 sm:p-8 rounded-2xl bg-white/70 border border-[#C5A880]/30 shadow-sm">
-              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold mb-3 flex items-center gap-2">
+              <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium mb-3 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
                 <span>Terms & Conditions — Lymphatic Drainage</span>
               </h4>

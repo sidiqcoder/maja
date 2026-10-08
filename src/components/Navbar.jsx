@@ -69,7 +69,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               onClick={() => handleNavClick('home')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activePage === 'home' 
-                  ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
+                  ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
                   : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
               }`}
             >
@@ -82,7 +82,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                 onClick={() => handleNavClick('services', 'all')}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
                   activePage === 'services' 
-                    ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
+                    ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
                     : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
                 }`}
               >
@@ -104,7 +104,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">NAILS</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">NAILS</div>
                       <div className="text-[11px] text-[#5C5048]">BIAB, Manicure, Pedicure & Art</div>
                     </div>
                   </button>
@@ -117,7 +117,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Scissors className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">HAIR</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">HAIR</div>
                       <div className="text-[11px] text-[#5C5048]">Cut, Blow-dry, Balayage & Care</div>
                     </div>
                   </button>
@@ -130,7 +130,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Eye className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">LASHES & BROWS</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">LASHES & BROWS</div>
                       <div className="text-[11px] text-[#5C5048]">Extensions, YUMI Lift & Tint</div>
                     </div>
                   </button>
@@ -143,7 +143,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Feather className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">WAXING</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">WAXING</div>
                       <div className="text-[11px] text-[#5C5048]">Gentle Full Body & Brazilian</div>
                     </div>
                   </button>
@@ -156,7 +156,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Activity className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">MASSAGES</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">MASSAGES</div>
                       <div className="text-[11px] text-[#5C5048]">Lymphatic Drainage & Sculpt</div>
                     </div>
                   </button>
@@ -164,7 +164,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                   <div className="pt-2 border-t border-[#C5A880]/25">
                     <button
                       onClick={() => handleNavClick('services', 'all')}
-                      className="w-full text-center py-2.5 px-3 rounded-xl bg-[#FAF6F0] hover:bg-[#C5A880] text-xs font-bold uppercase tracking-wider text-[#8C6D3B] hover:text-[#1C1816] transition-colors"
+                      className="w-full text-center py-2.5 px-3 rounded-xl bg-[#FAF6F0] hover:bg-[#C5A880] text-xs font-medium uppercase tracking-wider text-[#8C6D3B] hover:text-[#1C1816] transition-colors"
                     >
                       View All Services & Pricing →
                     </button>
@@ -178,7 +178,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               onClick={() => handleNavClick('packages')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activePage === 'packages' 
-                  ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
+                  ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
                   : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
               }`}
             >
@@ -191,7 +191,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                 onClick={() => handleNavClick('about')}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5 ${
                   activePage === 'about' 
-                    ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
+                    ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
                     : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
                 }`}
               >
@@ -212,7 +212,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Users className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">ABOUT & TEAM</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">ABOUT & TEAM</div>
                       <div className="text-[11px] text-[#5C5048]">Meet Our Beauty Experts</div>
                     </div>
                   </button>
@@ -229,7 +229,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                       <Briefcase className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="font-bold text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">CAREERS</div>
+                      <div className="font-medium text-xs tracking-wider text-[#1C1816] group-hover/item:text-[#8C6D3B]">CAREERS</div>
                       <div className="text-[11px] text-[#5C5048]">Join the Maja Team</div>
                     </div>
                   </button>
@@ -242,7 +242,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               onClick={() => handleNavClick('refer')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activePage === 'refer' 
-                  ? 'text-[#1C1816] bg-[#C5A880]/20 font-bold shadow-sm' 
+                  ? 'text-[#1C1816] bg-[#C5A880]/20 shadow-sm' 
                   : 'text-[#4A3E39] hover:text-[#1C1816] hover:bg-[#FAF7F2]'
               }`}
             >
@@ -268,7 +268,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               href={freshaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-luminous px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
+              className="btn-luminous px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider flex items-center gap-2"
             >
               <Calendar className="w-3.5 h-3.5 text-[#1A1614]" />
               <span>Book Online</span>
@@ -305,7 +305,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <button
               onClick={() => handleNavClick('home')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
-                activePage === 'home' ? 'bg-[#C5A880]/20 font-bold text-[#1C1816]' : 'text-[#4A3E39]'
+                activePage === 'home' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
             >
               Home
@@ -313,7 +313,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <button
               onClick={() => handleNavClick('services', 'all')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
-                activePage === 'services' ? 'bg-[#C5A880]/20 font-bold text-[#1C1816]' : 'text-[#4A3E39]'
+                activePage === 'services' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
             >
               Our Services
@@ -321,31 +321,31 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <div className="pl-6 space-y-1.5 pb-2">
               <button 
                 onClick={() => handleNavClick('services', 'nails')}
-                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1"
+                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1 font-normal"
               >
                 • Nails & BIAB
               </button>
               <button 
                 onClick={() => handleNavClick('services', 'hair')}
-                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1"
+                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1 font-normal"
               >
                 • Hair & Colour
               </button>
               <button 
                 onClick={() => handleNavClick('services', 'lashes-brows')}
-                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1"
+                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1 font-normal"
               >
                 • Lashes & Brows
               </button>
               <button 
                 onClick={() => handleNavClick('services', 'waxing')}
-                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1"
+                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1 font-normal"
               >
                 • Waxing Treatments
               </button>
               <button 
                 onClick={() => handleNavClick('services', 'massages')}
-                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1"
+                className="block text-sm text-[#7A6F68] hover:text-[#1C1816] py-1 font-normal"
               >
                 • Lymphatic Drainage & Massages
               </button>
@@ -353,7 +353,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <button
               onClick={() => handleNavClick('packages')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
-                activePage === 'packages' ? 'bg-[#C5A880]/20 font-bold text-[#1C1816]' : 'text-[#4A3E39]'
+                activePage === 'packages' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
             >
               Packages & Offers
@@ -361,7 +361,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <button
               onClick={() => handleNavClick('about')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
-                activePage === 'about' ? 'bg-[#C5A880]/20 font-bold text-[#1C1816]' : 'text-[#4A3E39]'
+                activePage === 'about' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
             >
               About Us & Meet the Team
@@ -380,7 +380,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
             <button
               onClick={() => handleNavClick('refer')}
               className={`text-left py-2.5 px-4 rounded-xl text-base font-medium ${
-                activePage === 'refer' ? 'bg-[#C5A880]/20 font-bold text-[#1C1816]' : 'text-[#4A3E39]'
+                activePage === 'refer' ? 'bg-[#C5A880]/20 text-[#1C1816]' : 'text-[#4A3E39]'
               }`}
             >
               Refer a Friend (Maja Girls Club)
@@ -392,7 +392,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               href={freshaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-luminous w-full py-3 rounded-full text-center text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2"
+              className="btn-luminous w-full py-3 rounded-full text-center text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4 text-[#1A1614]" />
               <span>Book on Fresha</span>
@@ -401,7 +401,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
               href="https://wa.me/971509964626"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-full text-center text-sm font-semibold bg-[#25D366] text-white flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full text-center text-sm font-medium bg-[#25D366] text-white flex items-center justify-center gap-2"
             >
               <span>Message on WhatsApp</span>
             </a>

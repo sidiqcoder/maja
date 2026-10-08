@@ -43,10 +43,10 @@ export default function WhyMaja() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-4 sm:mb-5 lg:mb-6">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
             Why Maja
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1816] mt-1.5 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1816] mt-1.5 leading-tight font-normal">
             Beauty, Elevated to Its Highest Standard
           </h2>
           <div className="w-14 h-0.5 bg-[#C5A880] mx-auto mt-2" />
@@ -57,10 +57,10 @@ export default function WhyMaja() {
           
           {/* Card 1: Star & Experience Combined */}
           <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#C5A880]/30 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-medium leading-none">
+            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-normal leading-none">
               4.8 ★ · 5 Years
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-medium mt-1">
               394+ Verified Clients
             </span>
             <span className="text-[11px] text-[#9E7D47] font-medium mt-0.5">
@@ -70,10 +70,10 @@ export default function WhyMaja() {
 
           {/* Card 2: 5 Suites */}
           <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#C5A880]/30 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-medium leading-none">
+            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-normal leading-none">
               5 Suites
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-medium mt-1">
               Complete Destination
             </span>
             <span className="text-[11px] text-[#9E7D47] font-medium mt-0.5">
@@ -83,10 +83,10 @@ export default function WhyMaja() {
 
           {/* Card 3: Dubai Location */}
           <div className="bg-luxury-card rounded-2xl py-3 px-5 border border-[#C5A880]/30 shadow-md hover:shadow-lg transition-all text-center flex flex-col justify-center items-center">
-            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-medium leading-none">
+            <span className="font-serif text-2xl sm:text-3xl text-[#1C1816] font-normal leading-none">
               Dubai
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-semibold mt-1">
+            <span className="text-[10px] uppercase tracking-wider text-[#7A6F68] font-medium mt-1">
               Prime Location
             </span>
             <span className="text-[11px] text-[#9E7D47] font-medium mt-0.5">
@@ -114,7 +114,7 @@ export default function WhyMaja() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816]/75 via-transparent to-transparent" />
                 
                 <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/40 backdrop-blur-md text-[#FFFDF9] border border-white/20">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/40 backdrop-blur-md text-[#FFFDF9] border border-white/20">
                     {card.badge}
                   </span>
                 </div>
@@ -123,17 +123,17 @@ export default function WhyMaja() {
               {/* Card Content */}
               <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-[#1C1816] mb-1.5 leading-snug">
+                  <h3 className="font-serif text-lg sm:text-xl text-[#1C1816] mb-1.5 leading-snug font-normal">
                     {card.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-[13px] text-[#4A3E39] leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-[13px] text-[#4A3E39] leading-relaxed line-clamp-3 font-normal">
                     {card.description}
                   </p>
 
                   {card.brandsList && (
                     <div className="mt-2.5 p-2 rounded-xl bg-[#C5A880]/10 border border-[#C5A880]/25">
-                      <span className="text-[10.5px] font-semibold tracking-wide text-[#7E6032] block truncate">
+                      <span className="text-[10.5px] font-medium tracking-wide text-[#7E6032] block truncate">
                         {card.brandsList}
                       </span>
                     </div>
@@ -143,7 +143,7 @@ export default function WhyMaja() {
                 {/* Card Bottom Tag */}
                 <div className="mt-3 pt-2.5 border-t border-[#C5A880]/20 flex items-center justify-between text-[10.5px] text-[#7A6F68]">
                   <span>{card.footerTag}</span>
-                  <span className="font-semibold text-[#8C6D3B]">Maja Standard</span>
+                  <span className="font-medium text-[#8C6D3B]">Maja Standard</span>
                 </div>
               </div>
             </div>

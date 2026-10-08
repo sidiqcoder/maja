@@ -48,7 +48,7 @@ export default function AboutPage() {
         <div className="flex items-center justify-center gap-3 mb-14">
           <button
             onClick={() => setActiveTab('about')}
-            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all flex items-center gap-2 ${
+            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'about'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
           <button
             onClick={() => setActiveTab('careers')}
-            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all flex items-center gap-2 ${
+            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
               activeTab === 'careers'
                 ? 'bg-[#1C1816] text-[#FFFDF9] shadow-xl scale-105'
                 : 'bg-white/80 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/25'
@@ -77,7 +77,7 @@ export default function AboutPage() {
             
             {/* Story & Philosophy Header */}
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
                 Our Story & Philosophy
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] mt-3 leading-tight">
@@ -95,7 +95,7 @@ export default function AboutPage() {
             {/* Team Members Grid (Mockups as instructed in line 61) */}
             <div>
               <div className="text-center mb-10">
-                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-semibold">
+                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
                   Artisans of Care
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-1">
@@ -118,7 +118,7 @@ export default function AboutPage() {
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                         <div className="absolute top-3 right-3">
-                          <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#E5D2BA] border border-white/20">
+                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#E5D2BA] border border-white/20">
                             {member.tag}
                           </span>
                         </div>
@@ -126,10 +126,10 @@ export default function AboutPage() {
 
                       {/* Bio Details */}
                       <div className="p-6">
-                        <h3 className="font-serif text-2xl text-[#1C1816] font-semibold">
+                        <h3 className="font-serif text-2xl text-[#1C1816] font-medium">
                           {member.name}
                         </h3>
-                        <p className="text-xs uppercase tracking-wider text-[#9E7D47] font-bold mt-0.5 mb-3">
+                        <p className="text-xs uppercase tracking-wider text-[#9E7D47] font-medium mt-0.5 mb-3">
                           {member.role}
                         </p>
                         <p className="text-xs sm:text-sm text-[#4A3E39] leading-relaxed">
@@ -156,7 +156,7 @@ export default function AboutPage() {
             {/* Philosophy Highlight Banner */}
             <div className="bg-dark-mesh rounded-3xl p-8 sm:p-14 text-white border border-[#C5A880]/30 shadow-2xl relative overflow-hidden">
               <div className="max-w-3xl relative z-10">
-                <span className="text-xs uppercase tracking-widest text-[#E5D2BA] font-semibold">
+                <span className="text-xs uppercase tracking-widest text-[#E5D2BA] font-medium">
                   Our Commitment
                 </span>
                 <h3 className="font-serif text-3xl sm:text-5xl text-[#FFFDF9] mt-3 mb-4">
@@ -171,7 +171,7 @@ export default function AboutPage() {
                 <div className="mt-8">
                   <button
                     onClick={() => setActiveTab('careers')}
-                    className="btn-luminous px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2"
+                    className="btn-luminous px-7 py-3 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2"
                   >
                     <span>Explore Career Opportunities</span>
                     <ArrowRight className="w-4 h-4" />
@@ -189,7 +189,7 @@ export default function AboutPage() {
             
             {/* Career Header (Ref: The Hideaway & Blush N Curls) */}
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
                 Careers at Maja
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] mt-3 leading-tight">
@@ -216,17 +216,17 @@ export default function AboutPage() {
                     className="bg-luxury-card rounded-2xl p-6 border border-[#C5A880]/30 shadow-md flex items-start justify-between gap-4"
                   >
                     <div>
-                      <h4 className="font-serif text-xl text-[#1C1816] font-semibold">
+                      <h4 className="font-serif text-xl text-[#1C1816] font-medium">
                         {pos.title}
                       </h4>
-                      <p className="text-xs text-[#9E7D47] font-semibold mt-1">
+                      <p className="text-xs text-[#9E7D47] font-medium mt-1">
                         {pos.type}
                       </p>
                       <p className="text-xs text-[#7A6F68] mt-2">
                         Requirements: {pos.experience}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-800 shrink-0">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-green-100 text-green-800 shrink-0">
                       Hiring Now
                     </span>
                   </div>
@@ -237,7 +237,7 @@ export default function AboutPage() {
             {/* Application Form (Modeled after Blush N Curls & The Hideaway) */}
             <div className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#C5A880]/30 shadow-xl">
               <div className="text-center mb-8">
-                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-semibold">
+                <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
                   Application Form
                 </span>
                 <h3 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-1">
@@ -259,7 +259,7 @@ export default function AboutPage() {
                   </p>
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="mt-6 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#1C1816] text-white"
+                    className="mt-6 px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#1C1816] text-white"
                   >
                     Submit Another Application
                   </button>
@@ -268,7 +268,7 @@ export default function AboutPage() {
                 <form onSubmit={handleFormSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -283,7 +283,7 @@ export default function AboutPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -300,7 +300,7 @@ export default function AboutPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -315,7 +315,7 @@ export default function AboutPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                      <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                         Area of Expertise *
                       </label>
                       <select
@@ -335,7 +335,7 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                    <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                       Instagram / Portfolio Link (Optional)
                     </label>
                     <input
@@ -349,7 +349,7 @@ export default function AboutPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#4A3E39] mb-1.5">
+                    <label className="block text-xs font-medium uppercase tracking-wider text-[#4A3E39] mb-1.5">
                       Tell us about yourself and your experience *
                     </label>
                     <textarea
@@ -366,7 +366,7 @@ export default function AboutPage() {
                   {/* CV Upload Simulation */}
                   <div className="p-4 rounded-xl border-2 border-dashed border-[#C5A880]/40 text-center bg-white/50 hover:bg-white/80 transition-colors cursor-pointer">
                     <UploadCloud className="w-6 h-6 text-[#9E7D47] mx-auto mb-1" />
-                    <span className="text-xs font-semibold text-[#1C1816] block">
+                    <span className="text-xs font-medium text-[#1C1816] block">
                       Upload CV / Resume (PDF or DOCX)
                     </span>
                     <span className="text-[11px] text-[#7A6F68]">
@@ -376,7 +376,7 @@ export default function AboutPage() {
 
                   <button
                     type="submit"
-                    className="btn-luminous w-full py-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl"
+                    className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl"
                   >
                     <Send className="w-4 h-4 text-[#1A1614]" />
                     <span>Submit Application</span>
@@ -385,7 +385,7 @@ export default function AboutPage() {
               )}
 
               <div className="mt-8 pt-6 border-t border-[#C5A880]/20 text-center text-xs text-[#7A6F68]">
-                For direct career inquiries, email us at <span className="font-semibold text-[#1C1816]">careers@majabeautybar.ae</span> or message via WhatsApp.
+                For direct career inquiries, email us at <span className="font-medium text-[#1C1816]">careers@majabeautybar.ae</span> or message via WhatsApp.
               </div>
             </div>
 

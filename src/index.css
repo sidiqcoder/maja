@@ -22,16 +22,7 @@
   font-family: 'Garet';
   src: url('/fonts/garet/Garet-Book.woff2') format('woff2'),
        url('/fonts/garet/Garet-Book.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garet';
-  src: url('/fonts/garet/Garet-Heavy.woff2') format('woff2'),
-       url('/fonts/garet/Garet-Heavy.ttf') format('truetype');
-  font-weight: 700;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
@@ -60,6 +51,8 @@ body {
   background-attachment: fixed;
   color: #2D2622;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Luxury Gradients & Non-solid Patterns */
@@ -94,8 +87,8 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, #C5A880 0%, #E8D7C2 50%, #B8966C 100%);
   color: #1A1614;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 20px rgba(197, 168, 128, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 }

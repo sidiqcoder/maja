@@ -38,7 +38,7 @@ export default function CtaSection() {
             href={freshaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-luminous w-full sm:w-auto px-9 py-4 rounded-full text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-3 shadow-2xl group"
+            className="btn-luminous w-full sm:w-auto px-9 py-4 rounded-full text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-3 shadow-2xl group"
           >
             <Calendar className="w-4 h-4 text-[#1A1614]" />
             <span>Book Online on Fresha</span>
@@ -49,7 +49,7 @@ export default function CtaSection() {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold tracking-wide bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-medium tracking-wide bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-105"
           >
             <MessageCircle className="w-4 h-4 text-[#25D366]" />
             <span>Chat via WhatsApp</span>

@@ -72,7 +72,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
         
         {/* Top Header & Hero Area */}
         <div id="pricelist-menu-start" className="text-center max-w-3xl mx-auto mb-10 pt-4">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#8C6D3B] font-bold">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#8C6D3B] font-medium">
             PRICE LIST
           </span>
 
@@ -107,7 +107,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             <button
               key={cat.id}
               onClick={() => handleCategoryChange(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
                 activeCategory === cat.id
                   ? 'bg-[#4A2525] text-[#FFFDF9] shadow-lg scale-105'
                   : 'bg-white/90 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/30 hover:border-[#C5A880]'
@@ -127,12 +127,12 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
               placeholder="Search treatments (e.g. BIAB, Gelish, Balayage, YUMI)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#C5A880]/40 focus:outline-none focus:border-[#4A2525] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm placeholder:text-[#9B8F86] shadow-sm transition-all"
+              className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#C5A880]/40 focus:outline-none focus:border-[#4A2525] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm placeholder:text-[#9B8F86] shadow-sm transition-all font-normal"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#7A6F68] hover:text-[#1C1816]"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-[#7A6F68] hover:text-[#1C1816]"
               >
                 Clear
               </button>
@@ -166,7 +166,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                       {card.title}
                     </h2>
                     {card.badge && (
-                      <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A880]/20 text-[#8C6D3B] border border-[#C5A880]/40">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#8C6D3B] border border-[#C5A880]/40">
                         {card.badge}
                       </span>
                     )}
@@ -184,7 +184,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                       <div key={idx} className="group/item">
                         <div className="flex items-baseline justify-between gap-2">
                           {/* Item Name */}
-                          <span className="text-sm sm:text-base font-medium text-[#1C1816] group-hover/item:text-[#8C6D3B] transition-colors">
+                          <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#8C6D3B] transition-colors">
                             {item.name}
                           </span>
 
@@ -199,7 +199,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
 
                         {/* Optional description or subtitle note */}
                         {item.note && (
-                          <div className="text-[11px] sm:text-xs text-[#7A6F68] mt-0.5 leading-snug">
+                          <div className="text-[11px] sm:text-xs text-[#7A6F68] mt-0.5 leading-snug font-normal">
                             {item.note}
                           </div>
                         )}
@@ -214,7 +214,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                     href={getCardWhatsAppLink(card)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 group"
+                    className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 group"
                   >
                     <MessageCircle className="w-4 h-4 fill-white/20 group-hover:scale-110 transition-transform" />
                     <span>Book {card.title} via WhatsApp</span>
@@ -233,13 +233,13 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
         {displayedCards.length === 0 && (
           <div className="text-center py-16 bg-white/70 rounded-3xl border border-[#C5A880]/25 max-w-md mx-auto">
             <Sparkles className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
-            <h3 className="font-serif text-2xl text-[#1C1816]">No Treatments Found</h3>
+            <h3 className="font-serif text-2xl text-[#1C1816] font-normal">No Treatments Found</h3>
             <p className="text-xs text-[#7A6F68] mt-1 mb-4">
               Try searching with another keyword or reset the filter.
             </p>
             <button
               onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
-              className="px-5 py-2.5 rounded-full text-xs font-semibold bg-[#1C1816] text-white"
+              className="px-5 py-2.5 rounded-full text-xs font-medium bg-[#1C1816] text-white"
             >
               Reset Search & Filters
             </button>
@@ -252,7 +252,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
               Treat yourself to something beautiful.
             </h2>
-            <p className="text-xs sm:text-sm text-[#E8DAC7] max-w-lg mx-auto">
+            <p className="text-xs sm:text-sm text-[#E8DAC7] max-w-lg mx-auto font-light">
               Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our team.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
@@ -260,7 +260,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 href={freshaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
               >
                 <Calendar className="w-4 h-4 text-[#8C6D3B]" />
                 <span>Book on Fresha</span>
@@ -269,7 +269,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 href="https://wa.me/971509964626"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-white/20" />
                 <span>Chat on WhatsApp</span>

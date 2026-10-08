@@ -61,7 +61,7 @@ export default function Hero({ onExploreServices }) {
             href={freshaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl group"
+            className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs sm:text-sm font-medium uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-2xl group"
           >
             <Calendar className="w-4 h-4 text-[#1A1614]" />
             <span>Book Your Appointment</span>
@@ -73,7 +73,7 @@ export default function Hero({ onExploreServices }) {
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium tracking-wide bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <MessageCircle className="w-4 h-4 text-[#25D366]" />
             <span>Message on WhatsApp</span>

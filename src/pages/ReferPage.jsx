@@ -100,7 +100,7 @@ export default function ReferPage() {
         
         {/* 1. Header (Mirrored from Blush N Curls) */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/30 text-xs font-semibold uppercase tracking-wider text-[#9E7D47] mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/30 text-xs font-medium uppercase tracking-wider text-[#9E7D47] mb-4">
             <span>Share the Love</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl text-[#1C1816] leading-tight">
@@ -160,7 +160,7 @@ export default function ReferPage() {
           <div className="bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#C5A880]/35 shadow-2xl">
             
             <div className="text-center mb-8">
-              <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+              <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
                 Your Referral Link
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-2">
@@ -176,7 +176,7 @@ export default function ReferPage() {
               <div>
                 <label 
                   htmlFor="referrerName"
-                  className="block text-xs font-bold uppercase tracking-wider text-[#1C1816] mb-2"
+                  className="block text-xs font-medium uppercase tracking-wider text-[#1C1816] mb-2"
                 >
                   Your Name *
                 </label>
@@ -206,7 +206,7 @@ export default function ReferPage() {
               {/* Generate Button */}
               <button
                 type="submit"
-                className="btn-luminous w-full py-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+                className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
               >
                 <span>Generate My Referral Link</span>
                 <ArrowRight className="w-4 h-4" />
@@ -221,7 +221,7 @@ export default function ReferPage() {
               >
                 {/* 1. Referral Link Display Box */}
                 <div className="bg-[#FFFDF9] rounded-2xl p-5 border border-[#C5A880]/40 shadow-sm">
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#1C1816] mb-2">
+                  <label className="block text-[11px] font-medium uppercase tracking-wider text-[#1C1816] mb-2">
                     Booking Link for Your Friend
                   </label>
                   <div className="flex gap-2 items-stretch">
@@ -236,7 +236,7 @@ export default function ReferPage() {
                     <button
                       type="button"
                       onClick={handleCopy}
-                      className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shrink-0 ${
+                      className={`px-5 py-2.5 rounded-xl text-xs font-medium uppercase tracking-wider transition-all flex items-center gap-1.5 shrink-0 ${
                         copied 
                           ? 'bg-[#25D366] text-white shadow-md' 
                           : 'bg-[#1C1816] hover:bg-[#3E342F] text-white'
@@ -266,7 +266,7 @@ export default function ReferPage() {
                     href={shareWhatsAppUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2.5 shadow-lg hover:shadow-xl transition-all"
+                    className="w-full py-4 px-6 rounded-xl text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center gap-2.5 shadow-lg hover:shadow-xl transition-all"
                   >
                     <MessageCircle className="w-4 h-4 fill-white/20" />
                     <span>Share on WhatsApp</span>
@@ -285,7 +285,7 @@ export default function ReferPage() {
         {/* 4. What You Both Get (Rewards section from Blush N Curls) */}
         <div className="mb-20 max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
               Rewards
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#1C1816] mt-2">
@@ -311,7 +311,7 @@ export default function ReferPage() {
                   Applied to their very first visit at Maja Beauty Bar on any salon or spa treatment (minimum spend AED 200).
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-semibold text-[#8C6D3B]">
+              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-medium text-[#8C6D3B]">
                 First Visit Privilege
               </div>
             </div>
@@ -332,7 +332,7 @@ export default function ReferPage() {
                   Automatically added to your client account after your friend completes her first appointment.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-semibold text-[#8C6D3B]">
+              <div className="mt-6 pt-4 border-t border-[#C5A880]/20 text-[11px] font-medium text-[#8C6D3B]">
                 Unlimited Referrals
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function ReferPage() {
         {/* 5. Frequently Asked Questions (Blush N Curls FAQ style) */}
         <div className="max-w-3xl mx-auto mb-20">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium">
               Good to Know
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1816] mt-2">
@@ -354,7 +354,7 @@ export default function ReferPage() {
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 border border-[#C5A880]/30 shadow-md divide-y divide-[#C5A880]/20">
             
             <div className="py-4 first:pt-0">
-              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+              <h4 className="font-medium text-sm sm:text-base text-[#1C1816] mb-1.5">
                 How many friends can I refer?
               </h4>
               <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
@@ -363,7 +363,7 @@ export default function ReferPage() {
             </div>
 
             <div className="py-4">
-              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+              <h4 className="font-medium text-sm sm:text-base text-[#1C1816] mb-1.5">
                 When do I get my AED 50 credit?
               </h4>
               <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
@@ -372,7 +372,7 @@ export default function ReferPage() {
             </div>
 
             <div className="py-4">
-              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+              <h4 className="font-medium text-sm sm:text-base text-[#1C1816] mb-1.5">
                 What treatments qualify for the referral offer?
               </h4>
               <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
@@ -381,7 +381,7 @@ export default function ReferPage() {
             </div>
 
             <div className="py-4 last:pb-0">
-              <h4 className="font-semibold text-sm sm:text-base text-[#1C1816] mb-1.5">
+              <h4 className="font-medium text-sm sm:text-base text-[#1C1816] mb-1.5">
                 How does my friend claim the AED 50 discount?
               </h4>
               <p className="text-xs sm:text-sm text-[#5C5048] leading-relaxed">
@@ -394,7 +394,7 @@ export default function ReferPage() {
 
         {/* 6. Terms and Conditions (Deck page 30 & Menu page 5) */}
         <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-2xl bg-white/60 border border-[#C5A880]/25 shadow-sm mb-16">
-          <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-bold mb-3 flex items-center gap-2">
+          <h4 className="text-xs uppercase tracking-widest text-[#9E7D47] font-medium mb-3 flex items-center gap-2">
             <AlertCircle className="w-4 h-4" />
             <span>Terms &amp; Conditions — Maja Girls Club Referral</span>
           </h4>
@@ -416,7 +416,7 @@ export default function ReferPage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={scrollToGenerate}
-              className="btn-luminous py-3.5 px-8 rounded-xl text-xs font-bold uppercase tracking-wider"
+              className="btn-luminous py-3.5 px-8 rounded-xl text-xs font-medium uppercase tracking-wider"
             >
               Generate My Link
             </button>
@@ -424,7 +424,7 @@ export default function ReferPage() {
               href="https://wa.me/971509964626"
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3.5 px-8 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/30 transition-colors"
+              className="py-3.5 px-8 rounded-xl text-xs font-medium uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/30 transition-colors"
             >
               Contact Maja on WhatsApp
             </a>

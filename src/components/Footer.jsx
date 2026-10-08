@@ -69,7 +69,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-semibold mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
               Explore
             </h4>
             <ul className="space-y-3 text-sm">
@@ -118,7 +118,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 3: Services Menu */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-semibold mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
               Treatments
             </h4>
             <ul className="space-y-3 text-sm">
@@ -167,7 +167,7 @@ export default function Footer({ onNavigate }) {
 
           {/* Column 4: Contact & Location */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-semibold mb-5">
+            <h4 className="text-xs uppercase tracking-widest text-[#C5A880] font-medium mb-5">
               Visit Maja
             </h4>
             <div className="space-y-3.5 text-sm">

@@ -29,11 +29,11 @@ export default function VisitUs() {
         
         {/* Section Header with Instrument Serif Typography */}
         <div className="text-center max-w-3xl mx-auto mb-5 sm:mb-6">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#E5D2BA] font-semibold">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#E5D2BA] font-medium">
             Visit Us
           </span>
           
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FFFDF9] mt-1.5 leading-tight tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#FFFDF9] mt-1.5 leading-tight tracking-tight font-normal">
             Ready for Your <span className="italic font-serif text-[#E2CEB5]">Maja Moment?</span>
           </h2>
           <p className="font-serif text-base sm:text-xl text-[#E5D2BA] mt-0.5 font-light">
@@ -47,7 +47,7 @@ export default function VisitUs() {
               href={freshaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-luminous w-full sm:w-auto px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-2xl group"
+              className="btn-luminous w-full sm:w-auto px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-2xl group"
             >
               <Calendar className="w-3.5 h-3.5 text-[#1A1614]" />
               <span>Book Appointment</span>
@@ -57,7 +57,7 @@ export default function VisitUs() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
+              className="w-full sm:w-auto px-5 py-2 rounded-full text-xs font-medium uppercase tracking-wider bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 flex items-center justify-center gap-2 transition-all hover:scale-105"
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
               <span>Message on WhatsApp</span>
@@ -82,20 +82,20 @@ export default function VisitUs() {
                 <div className="w-9 h-9 rounded-xl bg-[#C5A880]/20 flex items-center justify-center text-[#E5D2BA] group-hover:bg-[#C5A880] group-hover:text-[#1C1816] transition-colors">
                   <MapPin className="w-4.5 h-4.5" />
                 </div>
-                <span className="inline-flex items-center gap-1 text-[10.5px] font-semibold text-[#E5D2BA] group-hover:text-white">
+                <span className="inline-flex items-center gap-1 text-[10.5px] font-medium text-[#E5D2BA] group-hover:text-white">
                   Open in Google Maps
                   <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </div>
 
-              <h3 className="font-serif text-lg sm:text-xl text-[#FFFDF9] mt-2 mb-0.5 font-medium">
+              <h3 className="font-serif text-lg sm:text-xl text-[#FFFDF9] mt-2 mb-0.5 font-normal">
                 Maja Beauty Bar
               </h3>
               <p className="text-[11.5px] text-white/80 leading-relaxed font-light">
                 M1M Building, Al Meydan Road<br />
                 Nad Al Sheba 1, Dubai, United Arab Emirates
               </p>
-              <div className="mt-2 inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[#E5D2BA] group-hover:text-white">
+              <div className="mt-2 inline-flex items-center gap-1.5 text-[10.5px] font-medium uppercase tracking-wider text-[#E5D2BA] group-hover:text-white">
                 <Navigation className="w-3 h-3" />
                 <span>Get Driving Directions →</span>
               </div>
@@ -108,13 +108,13 @@ export default function VisitUs() {
                   <Clock className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-base sm:text-lg text-[#FFFDF9] mb-0.5 font-medium">
+                  <h3 className="font-serif text-base sm:text-lg text-[#FFFDF9] mb-0.5 font-normal">
                     Opening Hours
                   </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-[#E5D2BA]">
+                  <p className="text-xs sm:text-sm font-medium text-[#E5D2BA]">
                     11:00 AM – 09:00 PM
                   </p>
-                  <p className="text-[10.5px] text-white/70">
+                  <p className="text-[10.5px] text-white/70 font-light">
                     Open Daily · Monday through Sunday
                   </p>
                 </div>
@@ -132,8 +132,8 @@ export default function VisitUs() {
                 <div className="w-6 h-6 rounded-lg bg-[#C5A880]/20 flex items-center justify-center text-[#E5D2BA] mb-1.5 group-hover:bg-[#C5A880] group-hover:text-[#1C1816] transition-colors">
                   <Phone className="w-3 h-3" />
                 </div>
-                <div className="text-[9.5px] text-white/60">Phone Call</div>
-                <div className="text-[11.5px] font-bold text-[#FFFDF9] mt-0.5">(04) 264 9989</div>
+                <div className="text-[9.5px] text-white/60 font-light">Phone Call</div>
+                <div className="text-[11.5px] font-medium text-[#FFFDF9] mt-0.5">(04) 264 9989</div>
               </a>
 
               {/* WhatsApp */}
@@ -146,8 +146,8 @@ export default function VisitUs() {
                 <div className="w-6 h-6 rounded-lg bg-[#25D366]/20 flex items-center justify-center text-[#25D366] mb-1.5 group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                   <MessageCircle className="w-3 h-3" />
                 </div>
-                <div className="text-[9.5px] text-white/60">WhatsApp Direct</div>
-                <div className="text-[11.5px] font-bold text-[#FFFDF9] mt-0.5">+971 50 996 4626</div>
+                <div className="text-[9.5px] text-white/60 font-light">WhatsApp Direct</div>
+                <div className="text-[11.5px] font-medium text-[#FFFDF9] mt-0.5">+971 50 996 4626</div>
               </a>
 
             </div>
@@ -173,7 +173,7 @@ export default function VisitUs() {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-[#1C1816]/90 backdrop-blur-md text-white border border-[#C5A880]/50 text-[10.5px] font-semibold flex items-center gap-1.5 hover:bg-[#C5A880] hover:text-[#1C1816] transition-colors shadow-lg"
+              className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-[#1C1816]/90 backdrop-blur-md text-white border border-[#C5A880]/50 text-[10.5px] font-medium flex items-center gap-1.5 hover:bg-[#C5A880] hover:text-[#1C1816] transition-colors shadow-lg"
             >
               <Navigation className="w-3 h-3" />
               <span>Open in Google Maps App</span>

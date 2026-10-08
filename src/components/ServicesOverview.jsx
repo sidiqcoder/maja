@@ -57,10 +57,10 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#A6865A] font-semibold">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#A6865A] font-medium">
             Our Services
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1816] mt-1.5 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1C1816] mt-1.5 leading-tight font-normal">
             Everything Your Beauty Routine Needs
           </h2>
           <div className="w-14 h-0.5 bg-[#C5A880] mx-auto mt-2.5" />
@@ -87,19 +87,19 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
 
               {/* Top Tag */}
               <div className="absolute top-3.5 left-3.5">
-                <span className="px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/30">
+                <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/30">
                   {card.tag}
                 </span>
               </div>
 
               {/* Bottom Card Title & CTA */}
               <div className="absolute bottom-0 inset-x-0 p-5 flex flex-col justify-end text-white">
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#FFFDF9] mb-3 tracking-wide">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#FFFDF9] mb-3 tracking-wide font-normal">
                   {card.title}
                 </h3>
                 
                 {/* Visual CTA Button with Shimmer */}
-                <div className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-[11px] font-semibold uppercase tracking-wider text-white transition-all group-hover:bg-[#C5A880] group-hover:text-[#1C1816] group-hover:border-[#C5A880]">
+                <div className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-[11px] font-medium uppercase tracking-wider text-white transition-all group-hover:bg-[#C5A880] group-hover:text-[#1C1816] group-hover:border-[#C5A880]">
                   <span>{card.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
