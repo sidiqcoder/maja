@@ -1,60 +1,78 @@
 // Complete Services & Pricelist Data for Maja Beauty Bar Dubai
-// Derived from MAJA_Beauty_Bar_Website_Deck.pdf and (New) Maja MENU.pdf
+// Derived from MAJA_Beauty_Bar_Website_Deck.pdf, landing page.txt, and official brand assets
 
 export const serviceCategories = [
   { 
     id: 'all', 
     name: 'All Services',
-    heroTitle: 'Our Complete Menu',
-    heroSubtitle: 'Beauty, Tailored to You',
-    description: 'Explore our full menu of luxury salon and spa rituals across all suites.',
-    brands: 'Luxio · Davines · YUMI · Keune · Schwarzkopf',
-    image: '/images/services/nails.jpg'
+    heroTitle: 'Beauty, Your Way',
+    heroSubtitle: 'From nails to hair, lashes, brows and body treatments, discover everything you need for your beauty routine at Maja Beauty Bar.',
+    description: 'Our services are designed to help you look polished, feel confident and enjoy a little time for yourself in our serene Dubai sanctuary.',
+    brands: 'Schwarzkopf · Davines · Keune · Luxio · The GelBottle · YUMI · Lycon',
+    image: '/images/services/hero-salon.jpg',
+    deckHeadline: 'Beauty, Your Way',
+    ctaLabel: 'Explore All Services',
+    highlights: ['Nails & BIAB', 'Hair & Balayage', 'Lashes & Brows', 'Smooth Waxing', 'Lymphatic Massages']
   },
   { 
     id: 'nails', 
     name: 'Nails',
     heroTitle: 'Our Nail Menu',
     heroSubtitle: 'Nails, Made to Be Noticed',
+    deckHeadline: 'Beautifully finished nails for every mood, occasion and personal style.',
     description: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The GelBottle for a polished, long lasting finish.',
-    brands: 'Luxio · The GelBottle · Essie · Orly',
-    image: '/images/services/nails.jpg'
+    brands: 'Luxio · The GelBottle · Essie · Orly · Erra Gel · Brunson',
+    image: '/images/services/service-nails.jpg',
+    ctaLabel: 'See Nail Pricing',
+    highlights: ['BIAB Nails', 'Russian Manicure', 'Gelish & Essie', 'Custom Nail Art', 'Acrigel Extensions']
   },
   { 
     id: 'hair', 
     name: 'Hair',
     heroTitle: 'Our Hair Menu',
-    heroSubtitle: 'Crown Yourself in Radiance',
+    heroSubtitle: 'Your Hair, Your Way',
+    deckHeadline: 'From fresh cuts and beautiful colour to nourishing treatments, our hair services bring together expert care and effortless results.',
     description: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
-    brands: 'Davines · Keune · Schwarzkopf',
-    image: '/images/services/hair.jpg'
+    brands: 'Davines · Keune · Schwarzkopf Professional',
+    image: '/images/services/service-hair.jpg',
+    ctaLabel: 'See Hair Pricing',
+    highlights: ['Bespoke Balayage', 'Precision Cuts', 'Davines Nourishing', 'Signature Blow Dries', 'Gloss & Tint']
   },
   { 
     id: 'lashes-brows', 
     name: 'Lashes & Brows',
     heroTitle: 'Our Lashes & Brows Menu',
-    heroSubtitle: 'Framing Every Expression',
+    heroSubtitle: 'Small Details Can Make a Big Difference',
+    deckHeadline: 'Enhance your natural features with our selection of lash and brow treatments, tailored to create a look that feels effortless and beautifully defined.',
     description: 'Lash extensions, tinting, lamination and threading to define and frame your features, with YUMI used for our lash treatments for a refined, natural looking finish.',
-    brands: 'YUMI Lashes · Professional Tint',
-    image: '/images/services/lashes.jpg'
+    brands: 'YUMI Lashes & Brows · Professional Tint',
+    image: '/images/services/service-lashes.jpg',
+    ctaLabel: 'See Lashes & Brows Pricing',
+    highlights: ['YUMI Lash Lift', 'Brow Lamination', 'Classic & Hybrid Extensions', 'Threading & Tinting', 'Lash Fill']
   },
   { 
     id: 'waxing', 
     name: 'Waxing',
     heroTitle: 'Our Waxing Menu',
-    heroSubtitle: 'Silky Smooth, Gentle Touch',
+    heroSubtitle: 'Smooth, Clean and Confident',
+    deckHeadline: 'Our professional waxing services leave your skin feeling smooth and refreshed, with a comfortable experience from start to finish.',
     description: 'Professional waxing treatments focused on smooth results and skin comfort, with careful techniques for a clean finish while keeping your skin feeling comfortable and cared for.',
-    brands: 'Sensitive Strip-less Hot Wax',
-    image: '/images/services/waxing.jpg'
+    brands: 'Lycon Sensitive Hot Wax · Strip Wax',
+    image: '/images/services/service-waxing.jpg',
+    ctaLabel: 'See Waxing Pricing',
+    highlights: ['Full Body Packages', 'Bikini & Brazilian', 'Sensitive Hot Wax', 'Facial & Arm Waxing', 'Comfort Finish']
   },
   { 
     id: 'massages', 
     name: 'Massages',
     heroTitle: 'Our Massage Menu',
-    heroSubtitle: 'Unwind, Sculpt & Restore',
+    heroSubtitle: 'A Little Time for Yourself Goes a Long Way',
+    deckHeadline: 'Relax, reset and recharge with our selection of massage and lymphatic treatments, made to help you slow down, unwind and feel refreshed.',
     description: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
-    brands: 'Manual Lymphatic Drainage · Sculpt · Red Light',
-    image: '/images/services/massage.jpg'
+    brands: 'Manual Lymphatic Drainage · Wood Therapy · Contour Protocol',
+    image: '/images/services/service-massage.jpg',
+    ctaLabel: 'See Massage Pricing',
+    highlights: ['Lymphatic Drainage', 'Wood Contouring Therapy', 'Swedish & Deep Tissue', 'Head & Back Relief', 'Sculpt Packages']
   },
 ];
 

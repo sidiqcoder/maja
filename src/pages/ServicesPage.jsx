@@ -6,7 +6,12 @@ import {
   Search, 
   Info, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  CheckCircle2,
+  Scissors,
+  Eye,
+  Activity,
+  Feather
 } from 'lucide-react';
 
 export default function ServicesPage({ initialCategory = 'all', onSelectCategory }) {
@@ -27,18 +32,15 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
     if (onSelectCategory) {
       onSelectCategory(catId);
     }
-    // Scroll smoothly to top of menu
-    const menuEl = document.getElementById('pricelist-menu-start');
-    if (menuEl) {
-      menuEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const currentCategoryInfo = serviceCategories.find((c) => c.id === activeCategory) || serviceCategories[0];
+  const showcaseCategories = serviceCategories.filter((c) => c.id !== 'all');
 
-  // Filter cards based on activeCategory and searchQuery
+  // Filter cards based on activeCategory and searchQuery for pricelist view
   const displayedCards = pricelistCards.filter((card) => {
-    const matchesCategory = activeCategory === 'all' || card.category === activeCategory;
+    const matchesCategory = card.category === activeCategory;
     if (!matchesCategory) return false;
 
     if (!searchQuery.trim()) return true;
@@ -61,224 +63,459 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
     return `https://wa.me/971509964626?text=${encodeURIComponent(text)}`;
   };
 
+  const getGeneralWhatsAppLink = (subject = 'Services') => {
+    const text = `Hi Maja Beauty Bar, I'm interested in booking an appointment for ${subject}. Could you please share the next available times?`;
+    return `https://wa.me/971509964626?text=${encodeURIComponent(text)}`;
+  };
+
+  const getCategoryIcon = (catId) => {
+    switch (catId) {
+      case 'nails':
+        return <Sparkles className="w-4 h-4 text-[#C5A880]" />;
+      case 'hair':
+        return <Scissors className="w-4 h-4 text-[#C5A880]" />;
+      case 'lashes-brows':
+        return <Eye className="w-4 h-4 text-[#C5A880]" />;
+      case 'waxing':
+        return <Feather className="w-4 h-4 text-[#C5A880]" />;
+      case 'massages':
+        return <Activity className="w-4 h-4 text-[#C5A880]" />;
+      default:
+        return <Sparkles className="w-4 h-4 text-[#C5A880]" />;
+    }
+  };
+
   return (
-    <div className="pt-24 sm:pt-28 pb-24 relative overflow-hidden bg-[#FAF7F2] min-h-screen">
-      
-      {/* Decorative luxury gradient blobs */}
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#E8DAC7]/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 left-0 w-[500px] h-[500px] bg-[#E2CEB5]/30 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-[#FAF7F2] text-[#2D2622]">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Top Header & Hero Area */}
-        <div id="pricelist-menu-start" className="text-center max-w-3xl mx-auto mb-10 pt-4">
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#8C6D3B] font-medium">
-            PRICE LIST
-          </span>
-
-          <h1 className="font-serif italic text-4xl sm:text-6xl text-[#4A2525] mt-2 mb-3 leading-tight font-normal">
-            {currentCategoryInfo.heroTitle || 'Our Treatment Menu'}
-          </h1>
-
-          <p className="font-serif italic text-xl sm:text-2xl text-[#8C6D3B] tracking-wide mb-3">
-            {currentCategoryInfo.heroSubtitle || 'Beauty, Tailored to You'}
-          </p>
-
-          <p className="text-xs sm:text-sm text-[#5C5048] max-w-2xl mx-auto leading-relaxed">
-            {currentCategoryInfo.description}
-          </p>
-          
-          {/* Inclusive of 5% UAE VAT Banner (landing page.txt line 53) */}
-          <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A880]/15 border border-[#C5A880]/30 text-xs text-[#5C4524] font-medium shadow-sm">
-            <Info className="w-3.5 h-3.5 text-[#8C6D3B]" />
-            <span>All prices are inclusive of 5% UAE VAT</span>
-          </div>
-
-          {currentCategoryInfo.brands && (
-            <div className="mt-3 text-[11px] tracking-wider uppercase text-[#8C6D3B]/90 font-medium">
-              Featured Brands: {currentCategoryInfo.brands}
+      {/* ========================================================================= */}
+      {/* 1. VIEW A: ALL SERVICES HUB / OVERVIEW (Route: /services)                */}
+      {/* ========================================================================= */}
+      {activeCategory === 'all' ? (
+        <div>
+          {/* Hero Section with Salon Ambiance Photo (matching lovable /services) */}
+          <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden text-white">
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/images/services/hero-salon.jpg"
+                alt="Maja Beauty Bar Dubai Salon Ambiance"
+                className="w-full h-full object-cover filter brightness-[0.52] contrast-[1.05] scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816] via-[#1C1816]/75 to-[#1C1816]/65" />
+              <div className="absolute inset-0 bg-radial-gradient from-transparent via-[#1C1816]/40 to-[#1C1816]/90" />
             </div>
-          )}
-        </div>
 
-        {/* Categories Tab Bar */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {serviceCategories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => handleCategoryChange(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
-                activeCategory === cat.id
-                  ? 'bg-[#4A2525] text-[#FFFDF9] shadow-lg scale-105'
-                  : 'bg-white/90 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/30 hover:border-[#C5A880]'
-              }`}
-            >
-              {cat.name}
-            </button>
-          ))}
-        </div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30 mb-5">
+                Our Services · More Than Beauty
+              </span>
 
-        {/* Search Bar for treatments */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="relative">
-            <Search className="w-4 h-4 text-[#7A6F68] absolute left-4 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search treatments (e.g. BIAB, Gelish, Balayage, YUMI)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#C5A880]/40 focus:outline-none focus:border-[#4A2525] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm placeholder:text-[#9B8F86] shadow-sm transition-all font-normal"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-[#7A6F68] hover:text-[#1C1816]"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-        </div>
+              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#FFFDF9] tracking-tight leading-[1.12]">
+                Beauty, <span className="italic text-[#E2CEB5]">Your Way</span>
+              </h1>
 
-        {/* Grouped Pricelist Cards Grid (Matching https://maja-beauty-dubai.lovable.app/nails) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 sm:gap-8 lg:gap-10">
-          {displayedCards.map((card) => {
-            // If search is active, highlight or filter items within card
-            const visibleItems = searchQuery.trim()
-              ? card.items.filter(
-                  (item) =>
-                    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    (item.note && item.note.toLowerCase().includes(searchQuery.toLowerCase()))
-                )
-              : card.items;
+              <p className="mt-5 text-base sm:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
+                From nails to hair, lashes, brows and body treatments, discover everything you need for your beauty routine under one roof in Dubai.
+              </p>
 
-            if (visibleItems.length === 0) return null;
+              <p className="mt-3 text-xs sm:text-sm text-white/70 max-w-xl mx-auto">
+                Our services are designed to help you look polished, feel confident and enjoy a little time for yourself.
+              </p>
 
-            return (
-              <div
-                key={card.id}
-                className="bg-white/95 backdrop-blur-sm rounded-[28px] sm:rounded-3xl p-6 sm:p-8 border border-[#C5A880]/35 shadow-[0_10px_35px_rgba(28,24,22,0.04)] hover:shadow-[0_15px_45px_rgba(197,168,128,0.15)] transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Card Title & Header (Cursive/Italic Serif styling like Lovable) */}
-                  <div className="flex items-center justify-between gap-3 mb-2 pb-3 border-b border-[#C5A880]/20">
-                    <h2 className="font-serif italic text-3xl sm:text-4xl text-[#5C2424] font-medium tracking-tight">
-                      {card.title}
-                    </h2>
-                    {card.badge && (
-                      <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#8C6D3B] border border-[#C5A880]/40">
-                        {card.badge}
-                      </span>
-                    )}
-                  </div>
+              {/* Quick Navigation Category Pills */}
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto">
+                {serviceCategories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleCategoryChange(cat.id)}
+                    className={`px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all duration-300 ${
+                      activeCategory === cat.id
+                        ? 'bg-[#C5A880] text-[#1C1816] shadow-lg font-medium scale-105'
+                        : 'bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/25'
+                    }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
 
-                  {card.description && (
-                    <p className="text-xs text-[#7A6F68] mb-5 leading-relaxed">
-                      {card.description}
-                    </p>
-                  )}
+          {/* 5 Suite Showcase Sections (Alternating Luxury Layout) */}
+          <section className="py-20 lg:py-28 relative">
+            {/* Ambient luxury blobs */}
+            <div className="absolute top-10 right-0 w-[600px] h-[600px] bg-[#E8DAC7]/40 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-10 left-0 w-[550px] h-[550px] bg-[#E2CEB5]/30 rounded-full blur-3xl pointer-events-none" />
 
-                  {/* List of Treatments with Dotted Leaders */}
-                  <div className="space-y-3.5 sm:space-y-4 my-3">
-                    {visibleItems.map((item, idx) => (
-                      <div key={idx} className="group/item">
-                        <div className="flex items-baseline justify-between gap-2">
-                          {/* Item Name */}
-                          <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#8C6D3B] transition-colors">
-                            {item.name}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20 lg:space-y-28">
+              {showcaseCategories.map((cat, idx) => {
+                const isEven = idx % 2 === 0;
+
+                return (
+                  <div
+                    key={cat.id}
+                    className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center ${
+                      isEven ? '' : 'lg:grid-flow-dense'
+                    }`}
+                  >
+                    {/* Image Column */}
+                    <div className={`lg:col-span-6 ${isEven ? '' : 'lg:col-start-7'}`}>
+                      <div className="relative group overflow-hidden rounded-3xl shadow-2xl border border-[#C5A880]/30 bg-black aspect-[4/3] sm:aspect-[16/11]">
+                        <img
+                          src={cat.image}
+                          alt={`Maja Beauty Bar ${cat.name}`}
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.95]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider bg-[#1C1816]/80 text-[#E5D2BA] backdrop-blur-md border border-white/20">
+                            Category 0{idx + 1}
                           </span>
+                        </div>
+                      </div>
+                    </div>
 
-                          {/* Dotted Leader Line */}
-                          <span className="flex-1 mx-2 sm:mx-3 border-b-2 border-dotted border-[#D4C3B3]/80 self-end mb-1" />
-
-                          {/* Price Tag */}
-                          <span className="font-serif font-bold text-sm sm:text-base text-[#1C1816] whitespace-nowrap tracking-wide">
-                            {item.price}
+                    {/* Content Column */}
+                    <div className={`lg:col-span-6 ${isEven ? '' : 'lg:col-start-1'}`}>
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2">
+                          {getCategoryIcon(cat.id)}
+                          <span className="text-xs uppercase tracking-[0.25em] text-[#8C6D3B] font-medium">
+                            Suite 0{idx + 1} · {cat.name}
                           </span>
                         </div>
 
-                        {/* Optional description or subtitle note */}
-                        {item.note && (
-                          <div className="text-[11px] sm:text-xs text-[#7A6F68] mt-0.5 leading-snug font-normal">
-                            {item.note}
+                        <h2 className="font-serif text-3xl sm:text-5xl text-[#1C1816] tracking-tight leading-tight">
+                          {cat.name}
+                        </h2>
+
+                        {cat.deckHeadline && (
+                          <p className="font-serif italic text-lg sm:text-xl text-[#8C6D3B] leading-snug">
+                            "{cat.deckHeadline}"
+                          </p>
+                        )}
+
+                        <p className="text-sm sm:text-base text-[#5C5048] leading-relaxed font-normal">
+                          {cat.description}
+                        </p>
+
+                        {/* Highlight Pills */}
+                        {cat.highlights && (
+                          <div className="pt-2 pb-2 flex flex-wrap gap-2">
+                            {cat.highlights.map((h, i) => (
+                              <span
+                                key={i}
+                                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#C5A880]/15 text-[#5C4524] border border-[#C5A880]/25 font-normal"
+                              >
+                                <CheckCircle2 className="w-3 h-3 text-[#8C6D3B]" />
+                                <span>{h}</span>
+                              </span>
+                            ))}
                           </div>
                         )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Below the Card: Direct CTA to WhatsApp (as requested by user & landing page.txt line 53) */}
-                <div className="pt-5 mt-6 border-t border-[#C5A880]/20">
+                        {cat.brands && (
+                          <p className="text-xs text-[#8C7D73] font-medium">
+                            <span className="text-[#8C6D3B]">Featured Brands:</span> {cat.brands}
+                          </p>
+                        )}
+
+                        {/* Action Buttons */}
+                        <div className="pt-4 flex flex-wrap items-center gap-3.5">
+                          <button
+                            onClick={() => handleCategoryChange(cat.id)}
+                            className="btn-luminous px-6 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider inline-flex items-center gap-2.5 shadow-md group"
+                          >
+                            <span>{cat.ctaLabel || `Explore ${cat.name} Pricing`}</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </button>
+
+                          <a
+                            href={getGeneralWhatsAppLink(cat.name)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-3.5 rounded-full text-xs font-medium tracking-wide bg-white hover:bg-[#F3ECE1] text-[#2D2622] border border-[#C5A880]/40 inline-flex items-center gap-2 transition-all shadow-sm"
+                          >
+                            <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                            <span>Inquire on WhatsApp</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Bottom Banner */}
+          <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="rounded-3xl bg-gradient-to-br from-[#2D2622] via-[#221D1A] to-[#1C1816] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl border border-[#C5A880]/30">
+              <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+                <span className="text-xs uppercase tracking-widest text-[#E5D2BA] font-medium">
+                  Appointments & Inquiries
+                </span>
+                <h3 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
+                  Ready for Your Maja Moment?
+                </h3>
+                <p className="text-xs sm:text-base text-white/80 max-w-lg mx-auto font-light leading-relaxed">
+                  Discover the treatment that feels right for you and book your next visit with the Maja team.
+                </p>
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href={getCardWhatsAppLink(card)}
+                    href={freshaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 group"
+                    className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white/20 group-hover:scale-110 transition-transform" />
-                    <span>Book {card.title} via WhatsApp</span>
+                    <Calendar className="w-4 h-4 text-[#1A1614]" />
+                    <span>Book on Fresha</span>
                   </a>
-
-                  <div className="mt-2 text-center text-[10px] text-[#8C7D73]">
-                    Instant WhatsApp Booking · Inclusive of 5% UAE VAT
-                  </div>
+                  <a
+                    href="https://wa.me/971509964626"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/30 flex items-center justify-center gap-2 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white/20" />
+                    <span>Message on WhatsApp</span>
+                  </a>
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* If no cards matched search */}
-        {displayedCards.length === 0 && (
-          <div className="text-center py-16 bg-white/70 rounded-3xl border border-[#C5A880]/25 max-w-md mx-auto">
-            <Sparkles className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
-            <h3 className="font-serif text-2xl text-[#1C1816] font-normal">No Treatments Found</h3>
-            <p className="text-xs text-[#7A6F68] mt-1 mb-4">
-              Try searching with another keyword or reset the filter.
-            </p>
-            <button
-              onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
-              className="px-5 py-2.5 rounded-full text-xs font-medium bg-[#1C1816] text-white"
-            >
-              Reset Search & Filters
-            </button>
-          </div>
-        )}
-
-        {/* Bottom Banner Section (Lovable inspired bottom section) */}
-        <div className="mt-16 sm:mt-24 rounded-3xl bg-[#4A2525] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#C5A880]/30">
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
-              Treat yourself to something beautiful.
-            </h2>
-            <p className="text-xs sm:text-sm text-[#E8DAC7] max-w-lg mx-auto font-light">
-              Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our team.
-            </p>
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-              <a
-                href={freshaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
-              >
-                <Calendar className="w-4 h-4 text-[#8C6D3B]" />
-                <span>Book on Fresha</span>
-              </a>
-              <a
-                href="https://wa.me/971509964626"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
-              >
-                <MessageCircle className="w-4 h-4 fill-white/20" />
-                <span>Chat on WhatsApp</span>
-              </a>
             </div>
+          </section>
+        </div>
+      ) : (
+
+        /* ========================================================================= */
+        /* 2. VIEW B: SPECIFIC CATEGORY PRICELIST (e.g. /nails, /hair, etc.)        */
+        /* ========================================================================= */
+        <div>
+          {/* Category Hero with Drive Image & Dark Scrim */}
+          <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-24 overflow-hidden text-white">
+            <div className="absolute inset-0 z-0">
+              <img
+                src={currentCategoryInfo.image}
+                alt={`Maja Beauty Bar ${currentCategoryInfo.name}`}
+                className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.08] scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1816] via-[#1C1816]/75 to-[#1C1816]/60" />
+            </div>
+
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#C5A880]/20 text-[#E5D2BA] border border-[#C5A880]/30 mb-4">
+                Price List · {currentCategoryInfo.name}
+              </span>
+
+              <h1 className="font-serif text-4xl sm:text-6xl text-[#FFFDF9] tracking-tight leading-tight">
+                {currentCategoryInfo.heroSubtitle}
+              </h1>
+
+              <p className="font-serif italic text-xl sm:text-2xl text-[#E5D2BA] mt-2 mb-3">
+                {currentCategoryInfo.heroTitle}
+              </p>
+
+              <p className="mt-3 text-sm sm:text-base text-white/85 max-w-2xl mx-auto font-light leading-relaxed">
+                {currentCategoryInfo.description}
+              </p>
+
+              {/* UAE VAT 5% Banner */}
+              <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-[#C5A880]/40 text-xs text-[#E5D2BA] font-medium shadow-md">
+                <Info className="w-3.5 h-3.5 text-[#C5A880]" />
+                <span>All prices are inclusive of 5% UAE VAT</span>
+              </div>
+
+              {currentCategoryInfo.brands && (
+                <div className="mt-3 text-xs tracking-wider uppercase text-white/70 font-medium">
+                  Featured Brands: {currentCategoryInfo.brands}
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* Pricelist Content Area */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
+            
+            {/* Category Navigation Tabs */}
+            <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 mb-10 no-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {serviceCategories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => handleCategoryChange(cat.id)}
+                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
+                    activeCategory === cat.id
+                      ? 'bg-[#1C1816] text-[#FFFDF9] shadow-lg scale-105'
+                      : 'bg-white/90 text-[#5C5048] hover:bg-[#F3ECE1] border border-[#C5A880]/30 hover:border-[#C5A880]'
+                  }`}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+
+            {/* Live Search Bar */}
+            <div className="max-w-md mx-auto mb-12">
+              <div className="relative">
+                <Search className="w-4 h-4 text-[#7A6F68] absolute left-4 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  placeholder={`Search ${currentCategoryInfo.name} treatments (e.g. BIAB, Cut, Tint)...`}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-11 pr-10 py-3 rounded-full bg-white border border-[#C5A880]/40 focus:outline-none focus:border-[#1C1816] focus:ring-2 focus:ring-[#C5A880]/20 text-xs sm:text-sm placeholder:text-[#9B8F86] shadow-sm transition-all font-normal"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-[#7A6F68] hover:text-[#1C1816]"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Grouped Pricelist Cards Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 sm:gap-8 lg:gap-10">
+              {displayedCards.map((card) => {
+                const visibleItems = searchQuery.trim()
+                  ? card.items.filter(
+                      (item) =>
+                        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        (item.note && item.note.toLowerCase().includes(searchQuery.toLowerCase()))
+                    )
+                  : card.items;
+
+                if (visibleItems.length === 0) return null;
+
+                return (
+                  <div
+                    key={card.id}
+                    className="bg-white/95 backdrop-blur-sm rounded-[28px] sm:rounded-3xl p-6 sm:p-8 border border-[#C5A880]/35 shadow-[0_10px_35px_rgba(28,24,22,0.04)] hover:shadow-[0_15px_45px_rgba(197,168,128,0.15)] transition-all duration-300 flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Card Title & Header */}
+                      <div className="flex items-center justify-between gap-3 mb-2 pb-3 border-b border-[#C5A880]/20">
+                        <h2 className="font-serif italic text-3xl sm:text-4xl text-[#5C2424] font-medium tracking-tight">
+                          {card.title}
+                        </h2>
+                        {card.badge && (
+                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#C5A880]/20 text-[#8C6D3B] border border-[#C5A880]/40">
+                            {card.badge}
+                          </span>
+                        )}
+                      </div>
+
+                      {card.description && (
+                        <p className="text-xs text-[#7A6F68] mb-5 leading-relaxed">
+                          {card.description}
+                        </p>
+                      )}
+
+                      {/* List of Treatments with Dotted Leaders */}
+                      <div className="space-y-3.5 sm:space-y-4 my-3">
+                        {visibleItems.map((item, idx) => (
+                          <div key={idx} className="group/item">
+                            <div className="flex items-baseline justify-between gap-2">
+                              {/* Item Name */}
+                              <span className="text-sm sm:text-base font-normal text-[#1C1816] group-hover/item:text-[#8C6D3B] transition-colors">
+                                {item.name}
+                              </span>
+
+                              {/* Dotted Leader Line */}
+                              <span className="flex-1 mx-2 sm:mx-3 border-b-2 border-dotted border-[#D4C3B3]/80 self-end mb-1" />
+
+                              {/* Price Tag */}
+                              <span className="font-serif font-bold text-sm sm:text-base text-[#1C1816] whitespace-nowrap tracking-wide">
+                                {item.price}
+                              </span>
+                            </div>
+
+                            {/* Optional description or subtitle note */}
+                            {item.note && (
+                              <div className="text-[11px] sm:text-xs text-[#7A6F68] mt-0.5 leading-snug font-normal">
+                                {item.note}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Below the Card: Direct CTA to WhatsApp */}
+                    <div className="pt-5 mt-6 border-t border-[#C5A880]/20">
+                      <a
+                        href={getCardWhatsAppLink(card)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 group"
+                      >
+                        <MessageCircle className="w-4 h-4 fill-white/20 group-hover:scale-110 transition-transform" />
+                        <span>Book {card.title} via WhatsApp</span>
+                      </a>
+
+                      <div className="mt-2 text-center text-[10px] text-[#8C7D73]">
+                        Instant WhatsApp Booking · Inclusive of 5% UAE VAT
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* If no cards matched search */}
+            {displayedCards.length === 0 && (
+              <div className="text-center py-16 bg-white/70 rounded-3xl border border-[#C5A880]/25 max-w-md mx-auto">
+                <Sparkles className="w-8 h-8 text-[#C5A880] mx-auto mb-3" />
+                <h3 className="font-serif text-2xl text-[#1C1816] font-normal">No Treatments Found</h3>
+                <p className="text-xs text-[#7A6F68] mt-1 mb-4">
+                  Try searching with another keyword or reset the filter.
+                </p>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="px-5 py-2.5 rounded-full text-xs font-medium bg-[#1C1816] text-white"
+                >
+                  Clear Search
+                </button>
+              </div>
+            )}
+
+            {/* Bottom Banner */}
+            <div className="mt-16 sm:mt-24 rounded-3xl bg-[#1C1816] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#C5A880]/30">
+              <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+                <h2 className="font-serif italic text-3xl sm:text-5xl text-[#FAF7F2] font-normal leading-tight">
+                  Treat yourself to something beautiful.
+                </h2>
+                <p className="text-xs sm:text-sm text-[#E8DAC7] max-w-lg mx-auto font-light">
+                  Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our team.
+                </p>
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+                  <a
+                    href={freshaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1C1816] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                  >
+                    <Calendar className="w-4 h-4 text-[#8C6D3B]" />
+                    <span>Book on Fresha</span>
+                  </a>
+                  <a
+                    href="https://wa.me/971509964626"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white/20" />
+                    <span>Chat on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+      )}
 
-      </div>
     </div>
   );
 }
