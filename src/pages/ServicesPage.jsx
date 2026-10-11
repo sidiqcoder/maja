@@ -97,7 +97,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
           <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden text-white">
             <div className="absolute inset-0 z-0">
               <img
-                src="/images/services/hero-salon.jpg"
+                src="/images/services/services-hero-beauty-your-way.jpg"
                 alt="Maja Beauty Bar Dubai Salon Ambiance"
                 className="w-full h-full object-cover filter brightness-[0.52] contrast-[1.05] scale-105"
               />

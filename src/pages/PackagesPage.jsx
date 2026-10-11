@@ -433,17 +433,26 @@ export default function PackagesPage() {
             
             {/* Visual Hero Card */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 lg:p-16 border border-[#D8B1B7]/30 shadow-2xl">
-              <div className="max-w-3xl">
-                <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#F7CEC2] text-[#3A1E1E] font-semibold">
-                  Bespoke Combination Bundles
-                </span>
-                <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
-                  Sculpt Your Way
-                </h2>
-                <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
-                  A personalized mix of full body contouring, red light therapy, ice madero, and targeted facial lymphatic treatments tailored to your body's journey.
-                </p>
-             
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-[#F7CEC2] text-[#3A1E1E] font-semibold">
+                    Bespoke Combination Bundles
+                  </span>
+                  <h2 className="font-serif italic text-3xl sm:text-5xl text-white mt-4 mb-3 font-normal">
+                    Sculpt Your Way
+                  </h2>
+                  <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
+                    A personalized mix of full body contouring, red light therapy, ice madero, and targeted facial lymphatic treatments tailored to your body's journey.
+                  </p>
+                </div>
+
+                <div className="lg:col-span-5">
+                  <img
+                    src={lymphaticDrainage.sculptImage || '/images/packages/sculpt-your-way-new.jpeg'}
+                    alt="Sculpt Your Way Maja"
+                    className="w-full h-72 sm:h-80 object-cover rounded-2xl shadow-xl border border-white/20"
+                  />
+                </div>
               </div>
             </div>
 

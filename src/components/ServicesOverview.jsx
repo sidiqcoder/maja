@@ -8,27 +8,27 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
   const serviceCards = [
     {
       id: 'nails',
-      image: '/images/services/nails.jpg',
+      image: '/images/services/lp-nails.jpeg',
       cta: 'Explore Nails',
     },
     {
       id: 'hair',
-      image: '/images/services/hair.jpg',
+      image: '/images/services/lp-hair.jpeg',
       cta: 'Explore Hair',
     },
     {
       id: 'lashes-brows',
-      image: '/images/services/lashes.jpg',
+      image: '/images/services/lp-lashes.jpeg',
       cta: 'Explore Lashes & Brows',
     },
     {
       id: 'waxing',
-      image: '/images/services/waxing.jpg',
+      image: '/images/services/lp-waxing.jpeg',
       cta: 'Explore Waxing',
     },
     {
       id: 'massages',
-      image: '/images/services/massage.jpg',
+      image: '/images/services/lp-massage.jpeg',
       cta: 'Explore Massages',
     },
   ];

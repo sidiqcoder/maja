@@ -4,14 +4,14 @@ export default function WhyMaja() {
   const cards = [
     {
       id: 'experience',
-      image: '/images/why-maja/experience.jpg',
+      image: '/images/why-maja/why-rating.jpg',
       badge: 'Client Satisfaction & Trust',
       title: '4.8 ★ & 5 Years Experience',
       description: '5 years of salon excellence in Dubai. Our certified team ensures every visit is relaxed and finished to perfection.',
     },
     {
       id: 'products',
-      image: '/images/why-maja/products.jpg',
+      image: '/images/why-maja/why-product.jpg',
       badge: 'Trusted Quality',
       title: 'Premium Products',
       description: 'We choose trusted global brands for exceptional, long-lasting beauty results.',
@@ -19,7 +19,7 @@ export default function WhyMaja() {
     },
     {
       id: 'destination',
-      image: '/images/why-maja/destination.jpg',
+      image: '/images/why-maja/why-destination.png',
       badge: 'Complete Luxury Space',
       title: 'One Beauty Destination',
       description: 'Nails, hair, lashes, brows, and spa — all under one chic roof in Nad Al Sheba.',

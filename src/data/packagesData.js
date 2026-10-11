@@ -5,7 +5,7 @@ export const packagesData = {
   hairPackages: {
     title: 'Hair Packages',
     subtitle: 'From signature balayage to unlimited blow-dries, enjoy salon perfection on repeat.',
-    image: '/images/packages/hair-tab.jpg',
+    image: '/images/packages/hair-package-new.png',
     secondaryImage: '/images/packages/hair-post.jpg',
     items: [
       {
@@ -70,7 +70,7 @@ export const packagesData = {
     title: 'The Beauty Reset',
     subtitle: 'A curated selection of Maja favourites available exclusively on Mondays & Tuesdays.',
     badge: 'Mondays & Tuesdays Only',
-    image: '/images/packages/reset-tab.jpg',
+    image: '/images/packages/beauty-reset-new.jpeg',
     secondaryImage: '/images/packages/reset-post.jpg',
     categories: [
       {
@@ -127,7 +127,8 @@ export const packagesData = {
   lymphaticDrainage: {
     title: 'Lymphatic Drainage & Body Sculpting',
     subtitle: 'Transformative contouring, detoxifying lymphatic drainage, and red light therapies in curated multi-session bundles.',
-    image: '/images/packages/sculpt-tab.jpg',
+    image: '/images/packages/lymphatic-new.jpeg',
+    sculptImage: '/images/packages/sculpt-your-way-new.jpeg',
     secondaryImage: '/images/packages/lymphatic-post.jpg',
     sessions60: [
       { treatment: 'Booty & Legs Sculpt', sessions5: 'AED 1,000', sessions10: 'AED 1,800' },

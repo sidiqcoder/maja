@@ -9,7 +9,7 @@ export const serviceCategories = [
     heroSubtitle: 'From nails to hair, lashes, brows and body treatments, discover everything you need for your beauty routine at Maja Beauty Bar.',
     description: 'Our services are designed to help you look polished, feel confident and enjoy a little time for yourself in our serene Dubai sanctuary.',
     brands: 'Schwarzkopf · Davines · Keune · Luxio · The Gel Bottle · Essie',
-    image: '/images/services/hero-salon.jpg',
+    image: '/images/services/services-hero-beauty-your-way.jpg',
     deckHeadline: 'Beauty, Your Way',
     ctaLabel: 'Explore All Services',
     highlights: ['Nails & BIAB', 'Hair & Balayage', 'Lashes & Brows', 'Smooth Waxing', 'Lymphatic Massages']
@@ -22,7 +22,7 @@ export const serviceCategories = [
     deckHeadline: 'Beautifully finished nails for every mood, occasion and personal style.',
     description: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The Gel Bottle for a polished, long lasting finish.',
     brands: 'Luxio · The Gel Bottle · Essie · Orly · Erra Gel · Brunson · Nano · Mal Beauty',
-    image: '/images/services/service-nails.jpg',
+    image: '/images/services/service-nails-new.jpeg',
     ctaLabel: 'See Nail Pricing',
     highlights: ['Biab Nails', 'Gelish Manicure', 'Nail Extension', 'Custom nail Art', 'Nail Treatment']
   },
@@ -34,7 +34,7 @@ export const serviceCategories = [
     deckHeadline: 'From fresh cuts and beautiful colour to nourishing treatments, our hair services bring together expert care and effortless results.',
     description: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
     brands: 'Schwarzkopf · Keune · Davines',
-    image: '/images/services/service-hair.jpg',
+    image: '/images/services/service-hair-new.jpeg',
     ctaLabel: 'See Hair Pricing',
     highlights: ['Signature Blow Dries', 'Precision Hair Cut', 'Hair Treatments', 'Roots Color', 'Balayage', 'Hair Styles']
   },
@@ -46,7 +46,7 @@ export const serviceCategories = [
     deckHeadline: 'Enhance your natural features with our selection of lash and brow treatments, tailored to create a look that feels effortless and beautifully defined.',
     description: 'Lash extensions, tinting, lamination and threading to define and frame your features for a refined, natural looking finish.',
     brands: 'Lashes & Brows · Professional Tint',
-    image: '/images/services/service-lashes.jpg',
+    image: '/images/services/lp-lashes.jpeg',
     ctaLabel: 'See Lashes & Brows Pricing',
     highlights: ['Lashes extension', 'Eyelash & Brow lamination', 'Threading & Tinting', 'Lashes Refill']
   },
@@ -57,7 +57,7 @@ export const serviceCategories = [
     heroSubtitle: 'Smooth, Clean and Confident',
     deckHeadline: 'Our professional waxing services leave your skin feeling smooth and refreshed, with a comfortable experience from start to finish.',
     description: 'Professional waxing treatments focused on smooth results and skin comfort, with careful techniques for a clean finish while keeping your skin feeling comfortable and cared for.',
-    image: '/images/services/service-waxing.jpg',
+    image: '/images/services/service-waxing-new.jpeg',
     ctaLabel: 'See Waxing Pricing',
     highlights: ['Full body packages', 'Brazilian Waxing', 'Face Waxing']
   },
@@ -68,7 +68,7 @@ export const serviceCategories = [
     heroSubtitle: 'A Little Time for Yourself Goes a Long Way',
     deckHeadline: 'Relax, reset and recharge with our selection of massage and lymphatic treatments, made to help you slow down, unwind and feel refreshed.',
     description: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
-    image: '/images/services/service-massage.jpg',
+    image: '/images/services/service-massage-new.jpeg',
     ctaLabel: 'See Massage Pricing',
     highlights: ['Lymphatic Drainage', 'Madero Therapy', 'Hot Stone Massage', 'Relaxation & Deep Tissue', 'Warm Herbal Massage']
   },
