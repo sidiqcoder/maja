@@ -22,7 +22,7 @@ export const serviceCategories = [
     deckHeadline: 'Beautifully finished nails for every mood, occasion and personal style.',
     description: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The Gel Bottle for a polished, long lasting finish.',
     brands: 'Luxio · The Gel Bottle · Essie · Orly · Erra Gel · Brunson · Nano · Mal Beauty',
-    image: '/images/services/service-nails-new.jpeg',
+    image: '/images/services/service-nails-fresh.jpg',
     ctaLabel: 'See Nail Pricing',
     highlights: ['Biab Nails', 'Gelish Manicure', 'Nail Extension', 'Custom nail Art', 'Nail Treatment']
   },
@@ -68,7 +68,7 @@ export const serviceCategories = [
     heroSubtitle: 'A Little Time for Yourself Goes a Long Way',
     deckHeadline: 'Relax, reset and recharge with our selection of massage and lymphatic treatments, made to help you slow down, unwind and feel refreshed.',
     description: 'A range of relaxing and lymphatic treatments designed to help you unwind, release tension and leave feeling refreshed, lighter and well cared for.',
-    image: '/images/services/service-massage-new.jpeg',
+    image: '/images/services/service-massage-fresh.jpg',
     ctaLabel: 'See Massage Pricing',
     highlights: ['Lymphatic Drainage', 'Madero Therapy', 'Hot Stone Massage', 'Relaxation & Deep Tissue', 'Warm Herbal Massage']
   },
