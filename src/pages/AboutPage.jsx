@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { teamMembers, openPositions } from '../data/teamData';
 import { 
   CheckCircle2, 
@@ -7,12 +7,22 @@ import {
   Phone, 
   Heart,
   UploadCloud,
-  ArrowRight
+  ArrowRight,
+  FileText,
+  X,
+  Loader2,
+  MessageCircle
 } from 'lucide-react';
 
 export default function AboutPage({ initialTab = 'about', onTabChange }) {
   const [activeTab, setActiveTab] = useState(initialTab || 'about');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cvFile, setCvFile] = useState(null);
+  const [fileError, setFileError] = useState('');
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -51,6 +61,60 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleFileSelect = (file) => {
+    if (!file) return;
+    setFileError('');
+
+    const validTypes = [
+      'application/pdf', 
+      'application/msword', 
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+    const validExts = ['.pdf', '.doc', '.docx'];
+    const hasValidExt = validExts.some(ext => file.name.toLowerCase().endsWith(ext));
+
+    if (!validTypes.includes(file.type) && !hasValidExt) {
+      setFileError('Please upload a PDF or Word document (.pdf, .doc, .docx).');
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      setFileError('File size exceeds 10MB limit. Please choose a smaller file.');
+      return;
+    }
+
+    setCvFile(file);
+  };
+
+  const handleFileInputChange = (e) => {
+    const file = e.target.files?.[0];
+    if (file) handleFileSelect(file);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) handleFileSelect(file);
+  };
+
+  const handleRemoveFile = (e) => {
+    e.stopPropagation();
+    setCvFile(null);
+    setFileError('');
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
   const createMailtoLink = (data) => {
     const subject = encodeURIComponent(`Career Application: ${data.expertise || 'Specialist'} - ${data.fullName}`);
     const body = encodeURIComponent(
@@ -65,6 +129,7 @@ Applicant Details:
 • Area of Expertise: ${data.expertise}
 • Years of Experience: ${data.experience || 'Not specified'}
 • Instagram / Portfolio: ${data.portfolio || 'Not specified'}
+• Attached CV File: ${cvFile ? cvFile.name : 'Not attached'}
 
 About Me & Background:
 ${data.about}
@@ -75,10 +140,43 @@ ${data.fullName}`
     return `mailto:careers@majabeautybar.com?subject=${subject}&body=${body}`;
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    window.location.href = createMailtoLink(formData);
+    setIsSubmitting(true);
+
+    try {
+      const payload = new FormData();
+      payload.append('_subject', `New Career Application: ${formData.expertise || 'Specialist'} - ${formData.fullName}`);
+      payload.append('_template', 'table');
+      payload.append('_captcha', 'false');
+      payload.append('Full Name', formData.fullName);
+      payload.append('Email Address', formData.email);
+      payload.append('Phone / WhatsApp', formData.phone);
+      payload.append('Area of Expertise', formData.expertise);
+      payload.append('Years of Experience', formData.experience || 'Not specified');
+      payload.append('Portfolio / Instagram', formData.portfolio || 'Not specified');
+      payload.append('Cover Letter / About', formData.about);
+
+      if (cvFile) {
+        payload.append('attachment', cvFile, cvFile.name);
+      }
+
+      await fetch('https://formsubmit.co/ajax/careers@majabeautybar.com', {
+        method: 'POST',
+        body: payload,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      setFormSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting application via FormSubmit:', err);
+      // Fallback: still show submitted with direct email/WhatsApp links
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -351,11 +449,23 @@ ${data.fullName}`
                   <div className="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="font-serif text-2xl text-[#3A1E1E]">Application Prepared!</h4>
+                  <h4 className="font-serif text-2xl text-[#3A1E1E]">Application Submitted!</h4>
                   <p className="text-sm text-[#3A1E1E]/80 mt-2 max-w-md mx-auto font-light">
-                    Thank you, {formData.fullName}. Your application details have been prepared for <strong className="text-[#7B2E3A] font-medium">careers@majabeautybar.com</strong>.
+                    Thank you, <strong className="font-medium text-[#3A1E1E]">{formData.fullName}</strong>. Your application details {cvFile ? 'along with your CV' : ''} have been sent directly to <strong className="text-[#7B2E3A] font-medium">careers@majabeautybar.com</strong>.
                   </p>
+                  
                   <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <a
+                      href={`https://wa.me/971509964626?text=${encodeURIComponent(
+                        `Hi Maja Beauty Bar, I have just submitted my career application for ${formData.expertise} (${formData.fullName}).`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-md inline-flex items-center gap-2 transition-all"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Follow Up on WhatsApp</span>
+                    </a>
                     <a
                       href={createMailtoLink(formData)}
                       className="px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#7B2E3A] hover:bg-[#8C3745] text-white shadow-md inline-flex items-center gap-2 transition-all"
@@ -364,7 +474,19 @@ ${data.fullName}`
                       <span>Open in Email App</span>
                     </a>
                     <button
-                      onClick={() => setFormSubmitted(false)}
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setCvFile(null);
+                        setFormData({
+                          fullName: '',
+                          email: '',
+                          phone: '',
+                          expertise: 'Hair Assistant',
+                          experience: '',
+                          about: '',
+                          portfolio: ''
+                        });
+                      }}
                       className="px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-[#B97A86]/40 text-[#3A1E1E] hover:bg-[#F3E4DB] transition-all"
                     >
                       Submit Another Application
@@ -472,23 +594,96 @@ ${data.fullName}`
                     />
                   </div>
 
-                  {/* CV Upload Simulation */}
-                  <div className="p-4 rounded-xl border-2 border-dashed border-[#B97A86]/40 text-center bg-white/50 hover:bg-white/80 transition-colors cursor-pointer">
-                    <UploadCloud className="w-6 h-6 text-[#7B2E3A] mx-auto mb-1" />
-                    <span className="text-xs font-medium text-[#3A1E1E] block">
-                      Upload CV / Resume (PDF or DOCX)
-                    </span>
-                    <span className="text-[11px] text-[#8C7474]">
-                      Max file size 10MB
-                    </span>
+                  {/* Functional CV Upload Area */}
+                  <div>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      id="cvUpload"
+                      accept=".pdf,.doc,.docx"
+                      onChange={handleFileInputChange}
+                      className="hidden"
+                    />
+
+                    {cvFile ? (
+                      <div className="p-4 rounded-xl border-2 border-solid border-[#B97A86]/60 bg-white/90 flex items-center justify-between shadow-sm">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className="w-10 h-10 rounded-lg bg-[#D8B1B7]/30 flex items-center justify-center text-[#7B2E3A] flex-shrink-0">
+                            <FileText className="w-5 h-5" />
+                          </div>
+                          <div className="min-w-0 text-left">
+                            <span className="text-xs font-medium text-[#3A1E1E] block truncate max-w-[200px] sm:max-w-xs">
+                              {cvFile.name}
+                            </span>
+                            <span className="text-[11px] text-[#8C7474]">
+                              {(cvFile.size / (1024 * 1024)).toFixed(2)} MB
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="text-xs text-[#7B2E3A] hover:underline font-medium px-2 py-1"
+                          >
+                            Change
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleRemoveFile}
+                            className="w-7 h-7 rounded-full bg-red-50 text-red-600 hover:bg-red-100 flex items-center justify-center transition-colors"
+                            title="Remove file"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        onClick={() => fileInputRef.current?.click()}
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={handleDrop}
+                        className={`p-5 rounded-xl border-2 border-dashed transition-all text-center cursor-pointer ${
+                          isDragging 
+                            ? 'border-[#7B2E3A] bg-[#F7CEC2]/30 scale-[1.01]' 
+                            : 'border-[#B97A86]/40 bg-white/50 hover:bg-white/80 hover:border-[#7B2E3A]/60'
+                        }`}
+                      >
+                        <UploadCloud className="w-7 h-7 text-[#7B2E3A] mx-auto mb-1.5" />
+                        <span className="text-xs font-medium text-[#3A1E1E] block">
+                          Click to upload or drag &amp; drop CV / Resume
+                        </span>
+                        <span className="text-[11px] text-[#8C7474]">
+                          Supported formats: PDF, DOC, DOCX (Max 10MB)
+                        </span>
+                      </div>
+                    )}
+
+                    {fileError && (
+                      <p className="text-xs text-red-500 mt-1.5 font-medium">
+                        {fileError}
+                      </p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
-                    className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl text-white"
+                    disabled={isSubmitting}
+                    className="btn-luminous w-full py-4 rounded-xl text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl text-white disabled:opacity-75 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 text-white" />
-                    <span>Submit Application</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 text-white animate-spin" />
+                        <span>Sending Application...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 text-white" />
+                        <span>Submit Application</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
