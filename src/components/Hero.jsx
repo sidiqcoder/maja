@@ -40,13 +40,8 @@ export default function Hero({ onExploreServices }) {
 
         {/* Main Headline - Instrument Serif Font */}
         <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-white leading-[1.08] max-w-4xl drop-shadow-sm">
-          Because Every Woman Deserves Her <span className="italic font-serif text-[#F7CEC2]">Maja Moment.</span>
+          Your Go To Premium Beauty Routine, <span className="italic font-serif text-[#F7CEC2]">All in One Place.</span>
         </h1>
-
-        {/* Subtitle Headline */}
-        <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl lg:text-2xl font-light text-[#F3E4DB] tracking-wide max-w-3xl">
-          Your Go-To Premium Beauty Routine, All in One Place.
-        </p>
 
         {/* Supporting Copy */}
         <p className="mt-3 text-xs sm:text-sm md:text-base text-white/85 max-w-2xl leading-relaxed font-light">

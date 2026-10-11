@@ -69,24 +69,41 @@ export const teamMembers = [
 
 export const openPositions = [
   {
-    title: 'Senior Hair Stylist & Balayage Expert',
-    type: 'Full-time · Dubai Meydan',
-    experience: '3+ Years in Luxury Salons',
+    id: 'hair-assistant',
+    title: 'Hair Assistant',
+    type: 'Full-time · Dubai',
+    description: 'We are looking for a reliable Hair Assistant to support our Senior Hairdresser and help deliver excellent client care.',
+    responsibilities: [
+      'Assist with hair washing, treatments, colour application and hair drying.',
+      'Prepare and organise workstations, tools and products.',
+      'Keep the hair area clean and tidy at all times.',
+      'Support the Senior Hairdresser with daily duties and ensure client comfort.',
+    ],
+    qualifications: [
+      'Minimum 3 years’ experience as a Hair Assistant in Dubai is essential.',
+      'Practical knowledge of hair washing, treatments, colour application and drying.',
+      'Strong organisation, teamwork and communication skills.',
+      'A professional attitude, attention to detail and willingness to learn.',
+    ],
   },
   {
-    title: 'Senior Nail Artist & BIAB Specialist',
-    type: 'Full-time · Dubai Meydan',
-    experience: '2+ Years Salon Experience',
-  },
-  {
-    title: 'Certified Lymphatic Drainage Massage Therapist',
-    type: 'Full-time · Dubai Meydan',
-    experience: 'Licensed Therapist / DHA Preferred',
-  },
-  {
-    title: 'Lash & Brow Lamination Artist',
-    type: 'Full-time · Dubai Meydan',
-    experience: 'Experience with YUMI / Russian Volume',
+    id: 'massage-therapist',
+    title: 'Massage Therapist',
+    type: 'Full-time · Dubai',
+    description: 'We are looking for a skilled Massage Therapist who is passionate about personalised treatments and exceptional client care.',
+    responsibilities: [
+      'Perform manual lymphatic drainage, deep tissue, facial, head and foot massages.',
+      'Provide wood therapy, hot stone massage and foot reflexology.',
+      'Assess clients’ needs and tailor treatments to their suitability and comfort.',
+      'Explain treatments and their benefits to clients.',
+      'Maintain a clean, hygienic and organised treatment room.',
+    ],
+    qualifications: [
+      'Strong hands-on experience in manual lymphatic drainage and the massage techniques listed above.',
+      'Thorough knowledge of each treatment’s purpose, benefits and contraindications.',
+      'Excellent client care and communication skills.',
+      'A caring, professional approach and high standards of hygiene.',
+    ],
   },
 ];
 

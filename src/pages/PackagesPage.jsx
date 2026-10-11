@@ -34,11 +34,9 @@ export default function PackagesPage() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#B97A86] font-medium">
-            Curated Bundles & Exclusive Privileges
-          </span>
+
           <h1 className="font-serif italic text-4xl sm:text-6xl text-[#3A1E1E] mt-3 leading-tight font-normal">
-            More of Your Maja Favourites, Beautifully Bundled
+            Curated Bundles & Exclusive Privileges
           </h1>
           <p className="mt-4 text-sm sm:text-base text-[#3A1E1E]/80 max-w-2xl mx-auto leading-relaxed font-light">
             Thoughtfully curated packages designed to keep your hair luminous, your nails pristine, and your body contoured throughout the month.
@@ -58,7 +56,6 @@ export default function PackagesPage() {
                 : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
-            <Scissors className="w-4 h-4 text-[#B97A86]" />
             <span>Hair Packages</span>
           </button>
 
@@ -81,7 +78,6 @@ export default function PackagesPage() {
                 : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
-            <Activity className="w-4 h-4 text-[#B97A86]" />
             <span>Lymphatic Drainage</span>
           </button>
 
@@ -93,7 +89,6 @@ export default function PackagesPage() {
                 : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/25'
             }`}
           >
-            <Sparkles className="w-4 h-4 text-[#B97A86]" />
             <span>Sculpt Your Way</span>
           </button>
         </div>
@@ -117,11 +112,7 @@ export default function PackagesPage() {
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
                     {hairPackages.subtitle}
                   </p>
-                  <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-[#F7CEC2]">
-                    <span>✓ Davines Scalp Rituals</span>
-                    <span>✓ Precision Trims</span>
-                    <span>✓ Gloss &amp; Styling Included</span>
-                  </div>
+                  
                 </div>
 
                 <div className="lg:col-span-5 relative">
@@ -158,9 +149,7 @@ export default function PackagesPage() {
                       {pkg.features.map((feat, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#B97A86] shrink-0 mt-0.5" />
-                          <span className={feat.startsWith('*') ? 'text-xs text-[#8A7769] italic' : ''}>
-                            {feat}
-                          </span>
+                          <span>{feat}</span>
                         </li>
                       ))}
                     </ul>
@@ -189,9 +178,14 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — Hair Packages</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
+              <ul className="space-y-2 text-xs text-[#3A1E1E]/80 font-light">
                 {hairPackages.terms.map((t, idx) => (
-                  <li key={idx}>• {t}</li>
+                  <li 
+                    key={idx} 
+                    className={t.startsWith('*') ? 'text-[#7B2E3A] font-normal italic pl-2 border-l-2 border-[#B97A86]/40' : ''}
+                  >
+                    {t.startsWith('*') ? t : `• ${t}`}
+                  </li>
                 ))}
                 <li>• All prices are inclusive of 5% UAE VAT.</li>
               </ul>
@@ -218,9 +212,6 @@ export default function PackagesPage() {
                   </h2>
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
                     {beautyReset.subtitle}
-                  </p>
-                  <p className="mt-3 text-xs text-[#F7CEC2]">
-                    Special weekly client privileges across massage, waxing, lashes, brows and hair styling every Monday and Tuesday.
                   </p>
                 </div>
 
@@ -284,9 +275,14 @@ export default function PackagesPage() {
                 <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
                 <span>Terms &amp; Conditions — The Beauty Reset</span>
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#3A1E1E]/80 font-light">
+              <ul className="space-y-2 text-xs text-[#3A1E1E]/80 font-light">
                 {beautyReset.terms.map((t, idx) => (
-                  <li key={idx}>• {t}</li>
+                  <li 
+                    key={idx}
+                    className={t.startsWith('*') ? 'text-[#7B2E3A] font-normal italic pl-2 border-l-2 border-[#B97A86]/40' : ''}
+                  >
+                    {t.startsWith('*') ? t : `• ${t}`}
+                  </li>
                 ))}
                 <li>• All prices are inclusive of 5% UAE VAT.</li>
               </ul>
@@ -314,9 +310,7 @@ export default function PackagesPage() {
                   <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
                     {lymphaticDrainage.subtitle}
                   </p>
-                  <p className="mt-3 text-xs text-[#F7CEC2]">
-                    Delivered by our specialist massage therapists using Brazilian manual techniques, wood therapy, and red light contouring.
-                  </p>
+                 
                 </div>
 
                 <div className="lg:col-span-5">
@@ -357,7 +351,7 @@ export default function PackagesPage() {
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#F3E4DB]">
+                <div className="mt-6">
                   <a
                     href={getWaLink('60 Mins Lymphatic Drainage Package', '5 or 10 Sessions')}
                     target="_blank"
@@ -397,7 +391,7 @@ export default function PackagesPage() {
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#F3E4DB]">
+                <div className="mt-6">
                   <a
                     href={getWaLink('90 Mins Lymphatic Drainage Package', '5 or 10 Sessions')}
                     target="_blank"
@@ -449,9 +443,7 @@ export default function PackagesPage() {
                 <p className="text-sm sm:text-base text-[#F3E4DB]/90 max-w-xl leading-relaxed font-light">
                   A personalized mix of full body contouring, red light therapy, ice madero, and targeted facial lymphatic treatments tailored to your body's journey.
                 </p>
-                <div className="mt-4 text-xs text-[#F7CEC2]">
-                  Valid for 3 to 6 months · Complete protocol versatility
-                </div>
+             
               </div>
             </div>
 

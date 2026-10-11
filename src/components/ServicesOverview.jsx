@@ -8,36 +8,26 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
   const serviceCards = [
     {
       id: 'nails',
-      title: 'Nails',
-      tag: 'BIAB & Nail Art',
       image: '/images/services/nails.jpg',
       cta: 'Explore Nails',
     },
     {
       id: 'hair',
-      title: 'Hair',
-      tag: 'Cut, Balayage & Care',
       image: '/images/services/hair.jpg',
       cta: 'Explore Hair',
     },
     {
       id: 'lashes-brows',
-      title: 'Lashes & Brows',
-      tag: 'YUMI Lift & Extensions',
       image: '/images/services/lashes.jpg',
       cta: 'Explore Lashes & Brows',
     },
     {
       id: 'waxing',
-      title: 'Waxing',
-      tag: 'Comfort & Smooth Finish',
       image: '/images/services/waxing.jpg',
       cta: 'Explore Waxing',
     },
     {
       id: 'massages',
-      title: 'Massages',
-      tag: 'Lymphatic & Body Sculpt',
       image: '/images/services/massage.jpg',
       cta: 'Explore Massages',
     },
@@ -84,13 +74,6 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
 
               {/* Gradient Scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E]/90 via-[#3A1E1E]/25 to-transparent transition-opacity duration-300" />
-
-              {/* Top Tag */}
-              <div className="absolute top-3.5 left-3.5">
-                <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-white/20 backdrop-blur-md text-white border border-white/30">
-                  {card.tag}
-                </span>
-              </div>
 
               {/* Bottom Card Title & CTA */}
               <div className="absolute bottom-0 inset-x-0 p-5 flex flex-col justify-end text-white">

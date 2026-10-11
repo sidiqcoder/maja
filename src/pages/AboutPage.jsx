@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { teamMembers, openPositions } from '../data/teamData';
 import { 
-  Users, 
-  Briefcase, 
   CheckCircle2, 
   Send, 
   Mail, 
@@ -19,7 +17,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
     fullName: '',
     email: '',
     phone: '',
-    expertise: 'Hair Stylist',
+    expertise: 'Hair Assistant',
     experience: '',
     about: '',
     portfolio: ''
@@ -38,6 +36,14 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
       onTabChange(tab);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectRole = (roleTitle) => {
+    setFormData(prev => ({ ...prev, expertise: roleTitle }));
+    const formElement = document.getElementById('application-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handleInputChange = (e) => {
@@ -63,25 +69,23 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
         <div className="flex items-center justify-center gap-3 mb-14">
           <button
             onClick={() => handleTabChange('about')}
-            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
+            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all ${
               activeTab === 'about'
                 ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
                 : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/30'
             }`}
           >
-            <Users className="w-4 h-4 text-[#B97A86]" />
             <span>About Us & Meet the Team</span>
           </button>
 
           <button
             onClick={() => handleTabChange('careers')}
-            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all flex items-center gap-2 ${
+            className={`px-7 py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide transition-all ${
               activeTab === 'careers'
                 ? 'bg-[#3A1E1E] text-white shadow-xl scale-105'
                 : 'bg-white/80 text-[#3A1E1E]/80 hover:bg-[#F3E4DB] border border-[#B97A86]/30'
             }`}
           >
-            <Briefcase className="w-4 h-4 text-[#B97A86]" />
             <span>Careers / Join Our Team</span>
           </button>
         </div>
@@ -132,11 +136,6 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                           alt={member.name}
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="absolute top-3 right-3">
-                          <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#F7CEC2] border border-white/20">
-                            {member.tag}
-                          </span>
-                        </div>
                       </div>
 
                       {/* Bio Details */}
@@ -221,36 +220,95 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
 
             {/* Current Open Positions */}
             <div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#3A1E1E] mb-6 text-center">
-                Current Opportunities in Dubai
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {openPositions.map((pos, idx) => (
+              <div className="text-center mb-10 max-w-2xl mx-auto">
+                <span className="text-xs uppercase tracking-widest text-[#7B2E3A] font-medium">
+                  We Are Hiring
+                </span>
+                <h3 className="font-serif text-3xl sm:text-4xl text-[#3A1E1E] mt-1 font-normal">
+                  Current Opportunities Maja
+                </h3>
+                <p className="text-xs sm:text-sm text-[#8C7474] mt-2 font-light">
+                  Explore our open roles and find your place in our warm, passionate beauty team.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {openPositions.map((pos) => (
                   <div
-                    key={idx}
-                    className="bg-luxury-card rounded-2xl p-6 border border-[#D8B1B7]/40 shadow-md flex items-start justify-between gap-4"
+                    key={pos.id || pos.title}
+                    className="bg-white/95 rounded-3xl p-7 sm:p-9 border border-[#D8B1B7]/40 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
-                      <h4 className="font-serif text-xl text-[#3A1E1E] font-medium">
-                        {pos.title}
-                      </h4>
-                      <p className="text-xs text-[#7B2E3A] font-medium mt-1">
-                        {pos.type}
+                      {/* Header */}
+                      <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#F3E4DB] mb-5">
+                        <div>
+                          <h4 className="font-serif italic text-2xl sm:text-3xl text-[#3A1E1E] font-normal">
+                            {pos.title}
+                          </h4>
+                          <span className="text-xs font-medium text-[#7B2E3A] tracking-wide mt-1 block">
+                            {pos.type}
+                          </span>
+                        </div>
+                        <span className="px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#F7CEC2] text-[#3A1E1E] shrink-0 font-medium">
+                          Hiring Now
+                        </span>
+                      </div>
+
+                      {/* Role Summary */}
+                      <p className="text-xs sm:text-sm text-[#3A1E1E]/85 leading-relaxed font-light mb-6">
+                        {pos.description}
                       </p>
-                      <p className="text-xs text-[#8C7474] mt-2 font-normal">
-                        Requirements: {pos.experience}
-                      </p>
+
+                      {/* Responsibilities */}
+                      {pos.responsibilities && (
+                        <div className="mb-6 pt-5 border-t border-[#F3E4DB]/80">
+                          <h5 className="text-xs uppercase tracking-wider text-[#7B2E3A] font-semibold mb-3">
+                            Responsibilities &amp; Duties
+                          </h5>
+                          <ol className="space-y-2 text-xs sm:text-sm text-[#3A1E1E]/80 list-decimal list-inside font-light">
+                            {pos.responsibilities.map((resp, rIdx) => (
+                              <li key={rIdx} className="leading-relaxed">
+                                <span className="ml-1">{resp}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      )}
+
+                      {/* Qualifications */}
+                      {pos.qualifications && (
+                        <div className="pt-5 border-t border-[#F3E4DB]/80 mb-6">
+                          <h5 className="text-xs uppercase tracking-wider text-[#7B2E3A] font-semibold mb-3">
+                            Qualifications &amp; Requirements
+                          </h5>
+                          <ol className="space-y-2 text-xs sm:text-sm text-[#3A1E1E]/80 list-decimal list-inside font-light">
+                            {pos.qualifications.map((qual, qIdx) => (
+                              <li key={qIdx} className="leading-relaxed">
+                                <span className="ml-1">{qual}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      )}
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-[#F3E4DB] text-[#7B2E3A] border border-[#D8B1B7]/40 shrink-0">
-                      Hiring Now
-                    </span>
+
+                    {/* Apply Button */}
+                    <div className="pt-6 border-t border-[#F3E4DB]">
+                      <button
+                        onClick={() => handleSelectRole(pos.title)}
+                        className="btn-maja-wine w-full py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all"
+                      >
+                        <span>Apply for {pos.title}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Application Form (Modeled after Blush N Curls & The Hideaway) */}
-            <div className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#D8B1B7]/40 shadow-xl">
+            <div id="application-form" className="max-w-3xl mx-auto bg-warm-canvas rounded-3xl p-8 sm:p-12 border border-[#D8B1B7]/40 shadow-xl scroll-mt-28">
               <div className="text-center mb-8">
                 <span className="text-xs uppercase tracking-widest text-[#7B2E3A] font-medium">
                   Application Form
@@ -339,12 +397,14 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-[#B97A86]/40 focus:border-[#7B2E3A] focus:ring-2 focus:ring-[#F7CEC2]/40 text-sm text-[#3A1E1E]"
                       >
+                        <option value="Hair Assistant">Hair Assistant</option>
+                        <option value="Massage Therapist">Massage Therapist</option>
                         <option value="Hair Stylist & Colorist">Hair Stylist & Colorist</option>
                         <option value="Nail Artist & BIAB Specialist">Nail Artist & BIAB Specialist</option>
                         <option value="Lash & Brow Specialist">Lash & Brow Specialist</option>
-                        <option value="Massage Therapist (Lymphatic / DHA)">Massage Therapist (Lymphatic / DHA)</option>
                         <option value="Waxing & Beauty Therapist">Waxing & Beauty Therapist</option>
-                        <option value="Salon Reception & Concierge">Salon Reception & Concierge</option>
+                        <option value="Salon Reception">Salon Reception</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
                   </div>

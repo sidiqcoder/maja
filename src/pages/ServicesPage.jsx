@@ -106,9 +106,6 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             </div>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-[#D8B1B7]/20 text-[#F7CEC2] border border-[#D8B1B7]/35 mb-5">
-                Our Services · More Than Beauty
-              </span>
 
               <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.12]">
                 Beauty, <span className="italic text-[#F7CEC2]">Your Way</span>
@@ -116,10 +113,6 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
 
               <p className="mt-5 text-base sm:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
                 From nails to hair, lashes, brows and body treatments, discover everything you need for your beauty routine under one roof in Dubai.
-              </p>
-
-              <p className="mt-3 text-xs sm:text-sm text-white/70 max-w-xl mx-auto">
-                Our services are designed to help you look polished, feel confident and enjoy a little time for yourself.
               </p>
 
               {/* Quick Navigation Category Pills */}
@@ -166,38 +159,16 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                           alt={`Maja Beauty Bar ${cat.name}`}
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.95]"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                        <div className="absolute top-4 left-4">
-                          <span className="px-3.5 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wider bg-[#3A1E1E]/85 text-[#F7CEC2] backdrop-blur-md border border-white/20">
-                            Category 0{idx + 1}
-                          </span>
-                        </div>
+                        
                       </div>
                     </div>
 
                     {/* Content Column */}
                     <div className={`lg:col-span-6 ${isEven ? '' : 'lg:col-start-1'}`}>
                       <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                          {getCategoryIcon(cat.id)}
-                          <span className="text-xs uppercase tracking-[0.25em] text-[#7B2E3A] font-medium">
-                            Suite 0{idx + 1} · {cat.name}
-                          </span>
-                        </div>
-
                         <h2 className="font-serif text-3xl sm:text-5xl text-[#3A1E1E] tracking-tight leading-tight">
                           {cat.name}
                         </h2>
-
-                        {cat.deckHeadline && (
-                          <p className="font-serif italic text-lg sm:text-xl text-[#7B2E3A] leading-snug">
-                            "{cat.deckHeadline}"
-                          </p>
-                        )}
-
-                        <p className="text-sm sm:text-base text-[#3A1E1E]/80 leading-relaxed font-normal">
-                          {cat.description}
-                        </p>
 
                         {/* Highlight Pills */}
                         {cat.highlights && (
@@ -256,10 +227,10 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                   Appointments & Inquiries
                 </span>
                 <h3 className="font-serif italic text-3xl sm:text-5xl text-white font-normal leading-tight">
-                  Ready for Your Maja Moment?
+                  Ready for your next appointment ?
                 </h3>
-                <p className="text-xs sm:text-base text-white/80 max-w-lg mx-auto font-light leading-relaxed">
-                  Discover the treatment that feels right for you and book your next visit with the Maja team.
+                <p className="text-base sm:text-lg text-[#F3E4DB]/90 font-light">
+                  Book on Fresha or message us on whatsapp
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
@@ -471,7 +442,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                       </a>
 
                       <div className="mt-2.5 text-center text-[10px] text-[#8C7474]">
-                        Instant WhatsApp Booking · Inclusive of 5% UAE VAT
+                        Inclusive of 5% UAE VAT
                       </div>
                     </div>
                   </div>
@@ -497,37 +468,35 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
             )}
 
             {/* Bottom Banner */}
-            <div className="mt-16 sm:mt-24 rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
+            <div className="mt-16 sm:mt-24 rounded-3xl bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl border border-[#D8B1B7]/30">
               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-                <span className="inline-block px-3.5 py-1 rounded-full text-[11px] uppercase tracking-[0.2em] bg-[#D8B1B7]/15 text-[#F7CEC2] border border-[#D8B1B7]/30 font-medium">
+                <span className="text-xs uppercase tracking-widest text-[#F7CEC2] font-medium">
                   Appointments & Inquiries
                 </span>
-                <h2 className="font-serif italic text-3xl sm:text-5xl text-white font-normal leading-tight">
-                  Treat yourself to something beautiful.
-                </h2>
-                <p className="text-xs sm:text-sm text-[#F3E4DB]/90 max-w-lg mx-auto font-light leading-relaxed">
-                  Ready for your Maja moment? Book your appointment online via Fresha or directly on WhatsApp with our concierge team.
+                <h3 className="font-serif italic text-3xl sm:text-5xl text-white font-normal leading-tight">
+                  Ready for your next appointment ?
+                </h3>
+                <p className="text-base sm:text-lg text-[#F3E4DB]/90 font-light">
+                  Book on Fresha or message us on whatsapp
                 </p>
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href={freshaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#FAF5F2] hover:bg-white text-[#3A1E1E] font-medium text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105"
+                    className="btn-luminous w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg text-white"
                   >
-                    <Calendar className="w-4 h-4 text-[#7B2E3A]" />
+                    <Calendar className="w-4 h-4 text-white" />
                     <span>Book on Fresha</span>
                   </a>
                   <a
-                    href="https://wa.me/971509964626?text=Hi%20Maja%20Beauty%20Bar%2C%20I'd%20like%20to%20book%20an%20appointment."
+                    href="https://wa.me/971509964626"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-maja-wine w-full sm:w-auto px-7 py-3.5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all text-white"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/30 flex items-center justify-center gap-2 transition-all"
                   >
-                    <div className="w-4 h-4 rounded-full bg-[#25D366]/20 flex items-center justify-center">
-                      <MessageCircle className="w-3.5 h-3.5 fill-[#25D366]" />
-                    </div>
-                    <span>Chat on WhatsApp</span>
+                    <MessageCircle className="w-4 h-4 fill-white/20" />
+                    <span>Message on WhatsApp</span>
                   </a>
                 </div>
 

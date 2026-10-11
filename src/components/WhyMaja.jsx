@@ -7,25 +7,22 @@ export default function WhyMaja() {
       image: '/images/why-maja/experience.jpg',
       badge: 'Client Satisfaction & Trust',
       title: '4.8 ★ & 5 Years Experience',
-      description: 'Bringing 5 years of salon expertise in Dubai. Our passionate team of certified artisans ensures every visit is memorable, relaxed, and finished to perfection.',
-      footerTag: 'Top Rated in Meydan Dubai',
+      description: '5 years of salon excellence in Dubai. Our certified team ensures every visit is relaxed and finished to perfection.',
     },
     {
       id: 'products',
       image: '/images/why-maja/products.jpg',
       badge: 'Trusted Quality',
       title: 'Premium Products',
-      description: 'We choose premium products from trusted beauty brands to give every treatment the quality and results it deserves.',
-      brandsList: 'Schwarzkopf · Davines · Keune · The GelBottle · Luxio · Essie',
-      footerTag: '100% Authentic Formulations',
+      description: 'We choose trusted global brands for exceptional, long-lasting beauty results.',
+      brandsList: 'Schwarzkopf · Davines · Keune · The Gel Bottle · Essie',
     },
     {
       id: 'destination',
       image: '/images/why-maja/destination.jpg',
       badge: 'Complete Luxury Space',
       title: 'One Beauty Destination',
-      description: 'Nails • Hair • Lashes • Brows • Wellness. Everything your beauty routine needs brought together under one chic, welcoming roof in Dubai.',
-      footerTag: 'M1M Building, Al Meydan Road',
+      description: 'Nails, hair, lashes, brows, and spa — all under one chic roof in Nad Al Sheba.',
     },
   ];
 
@@ -77,29 +74,23 @@ export default function WhyMaja() {
               </div>
 
               {/* Card Content */}
-              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-[#3A1E1E] mb-1.5 leading-snug font-normal">
+                  <h3 className="font-serif text-xl sm:text-2xl text-[#3A1E1E] mb-2 leading-snug font-normal">
                     {card.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-[13px] text-[#3A1E1E]/80 leading-relaxed line-clamp-3 font-normal">
+                  <p className="text-xs sm:text-[13px] text-[#3A1E1E]/80 leading-relaxed font-normal">
                     {card.description}
                   </p>
 
                   {card.brandsList && (
-                    <div className="mt-2.5 p-2 rounded-xl bg-[#F3E4DB]/60 border border-[#D8B1B7]/40">
-                      <span className="text-[10.5px] font-medium tracking-wide text-[#7B2E3A] block truncate">
+                    <div className="mt-3 p-2.5 rounded-xl bg-[#F3E4DB]/60 border border-[#D8B1B7]/40">
+                      <span className="text-[11px] font-medium tracking-wide text-[#7B2E3A] block">
                         {card.brandsList}
                       </span>
                     </div>
                   )}
-                </div>
-
-                {/* Card Bottom Tag */}
-                <div className="mt-3 pt-2.5 border-t border-[#D8B1B7]/30 flex items-center justify-between text-[10.5px] text-[#8C7474]">
-                  <span>{card.footerTag}</span>
-                  <span className="font-medium text-[#B97A86]">Maja Standard</span>
                 </div>
               </div>
             </div>

@@ -1,16 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { 
   Heart, 
-  Gift, 
   Copy, 
   Check, 
   Sparkles, 
   ArrowRight, 
   MessageCircle,
-  Cake,
-  Crown,
   ShieldCheck,
-  Calendar,
   Share2
 } from 'lucide-react';
 
@@ -25,17 +21,17 @@ export default function ReferPage() {
   const inputRef = useRef(null);
   const linkInputRef = useRef(null);
 
-  // Official Maja Beauty Bar Concierge WhatsApp
+  // Official Maja Beauty Bar WhatsApp
   const WA_NUMBER = '971509964626';
 
   const currentName = generatedName || referrerName.trim() || 'My Bestie';
 
-  // Direct WhatsApp booking message to Maja Concierge (Direct 1-on-1 Chat)
-  const directBookingMsg = `Hi Maja Beauty Bar, I'm booking an appointment through the Maja Girls Club referral circle (referred by ${currentName}). I'd love to claim the AED 50 first visit welcome gift. Could you please share available appointments?`;
+  // Direct WhatsApp booking message to Maja (Direct 1-on-1 Chat)
+  const directBookingMsg = `Hi Maja Beauty Bar, I'm booking an appointment through the Maja Girls Club referral circle (referred by ${currentName}). I'd love to claim the AED 50 first visit welcome gift (minimum spend AED 200). Could you please share available appointments?`;
   const directWhatsAppChatUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(directBookingMsg)}`;
 
   // Share text that referrer sends to friends
-  const shareText = `Hey darling! I wanted to share my go-to luxury beauty spot in Dubai — Maja Beauty Bar (Meydan). Here's an exclusive invitation for AED 50 OFF your first visit:\n\nBook directly on WhatsApp with Maja: ${directWhatsAppChatUrl}`;
+  const shareText = `Hey darling! I wanted to share my go-to luxury beauty spot in Dubai — Maja Beauty Bar (Meydan). Here's an exclusive invitation for AED 50 OFF your first visit (minimum spend AED 200):\n\nBook directly on WhatsApp with Maja: ${directWhatsAppChatUrl}`;
   const shareWhatsAppUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
 
   const handleGenerate = (e) => {
@@ -116,7 +112,7 @@ export default function ReferPage() {
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-[#3A1E1E]/80 max-w-2xl mx-auto font-light leading-relaxed">
-            Because beauty rituals are always sweeter shared. Introduce your friends to the sanctuary of Maja Beauty Bar and celebrate together with exclusive club benefits.
+            Because beauty rituals are always sweeter shared. Introduce your friends to Maja Beauty Bar and celebrate together with exclusive club benefits.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -127,93 +123,79 @@ export default function ReferPage() {
               <span>Create Your Invitation Pass</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
-            <a
-              href="https://wa.me/971509964626?text=Hi%20Maja%20Beauty%20Bar%2C%20I'd%20like%20to%20know%20more%20about%20the%20Maja%20Girls%20Club%20benefits."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full text-xs font-medium uppercase tracking-wider bg-white/80 hover:bg-white text-[#3A1E1E] border border-[#B97A86]/30 shadow-sm transition-all"
-            >
-              Ask Concierge
-            </a>
           </div>
         </div>
 
-        {/* 2. Maja Girls Club Pillars (Birthday, Referral & Loyalty Privileges) */}
+        {/* 2. Maja Girls Club Privileges: 3 Cards matching Drive without icons */}
         <div className="mb-20 max-w-6xl mx-auto">
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-[11px] uppercase tracking-[0.25em] text-[#B97A86] font-medium">
               Curated Privileges
             </span>
             <h2 className="font-serif italic text-3xl sm:text-4xl text-[#3A1E1E] font-normal mt-1">
-              Maja Girls Club Privileges
+              Maja Girls Club
             </h2>
+            <p className="font-serif italic text-lg sm:text-xl text-[#7B2E3A] mt-1">
+              Beauty that gives back.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             
-            {/* Card 1: Referral Gift */}
+            {/* Card 1: Better Together (Referral) */}
             <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#B97A86]/25 shadow-[0_10px_35px_rgba(58,30,30,0.04)] hover:shadow-[0_15px_40px_rgba(185,122,134,0.15)] transition-all flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] mb-5 group-hover:scale-105 transition-transform">
-                  <Gift className="w-6 h-6" />
-                </div>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-[#B97A86]">
-                  Dual Rewards
+                  Referral Rewards
                 </span>
-                <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
-                  AED 50 & AED 50
+                <h3 className="font-serif uppercase tracking-wider text-2xl text-[#3A1E1E] font-medium mt-2 mb-3">
+                  BETTER TOGETHER
                 </h3>
                 <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
-                  Your referred bestie enjoys <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> her first visit. Once completed, <strong className="text-[#3A1E1E] font-medium">AED 50 credit</strong> is credited to your salon account.
+                  Refer a friend and she receives <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> her first visit with a minimum spend of AED 200. Once completed, you receive <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> on your next visit.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-[#F3E4DB] flex items-center justify-between text-[11px] text-[#7B2E3A] font-medium">
-                <span>Referral Circle</span>
-                <span>Unlimited Invites</span>
+                <span>Min. Spend AED 200</span>
+                <span>Both Receive AED 50</span>
               </div>
             </div>
 
-            {/* Card 2: Birthday Celebration Privilege */}
+            {/* Card 2: It's Your Week (Birthday) */}
             <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#B97A86]/25 shadow-[0_10px_35px_rgba(58,30,30,0.04)] hover:shadow-[0_15px_40px_rgba(185,122,134,0.15)] transition-all flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#F7CEC2]/40 flex items-center justify-center text-[#7B2E3A] mb-5 group-hover:scale-105 transition-transform">
-                  <Cake className="w-6 h-6" />
-                </div>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-[#B97A86]">
-                  Annual Celebration
+                  Birthday Treat
                 </span>
-                <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
-                  Birthday Privilege
+                <h3 className="font-serif uppercase tracking-wider text-2xl text-[#3A1E1E] font-medium mt-2 mb-3">
+                  IT’S YOUR WEEK
                 </h3>
                 <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
-                  Celebrate your special day at Maja with a complimentary Davines hair care upgrade or signature nail art accent during your birthday month.
+                  Enjoy <strong className="text-[#3A1E1E] font-medium">20% OFF</strong> one visit during your birthday week. A valid Emirates ID must be presented to redeem the offer.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-[#F3E4DB] flex items-center justify-between text-[11px] text-[#7B2E3A] font-medium">
-                <span>Birthday Treat</span>
-                <span>Birthday Month</span>
+                <span>20% OFF</span>
+                <span>Birthday Week</span>
               </div>
             </div>
 
-            {/* Card 3: Loyalty Rewards */}
+            {/* Card 3: Every Visit Counts (Points & Loyalty) */}
             <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#B97A86]/25 shadow-[0_10px_35px_rgba(58,30,30,0.04)] hover:shadow-[0_15px_40px_rgba(185,122,134,0.15)] transition-all flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#F3E4DB] flex items-center justify-center text-[#7B2E3A] mb-5 group-hover:scale-105 transition-transform">
-                  <Crown className="w-6 h-6" />
-                </div>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-[#B97A86]">
-                  VIP Membership
+                  Loyalty Points
                 </span>
-                <h3 className="font-serif italic text-2xl text-[#3A1E1E] font-normal mt-1 mb-2">
-                  Loyalty Rituals
+                <h3 className="font-serif uppercase tracking-wider text-2xl text-[#3A1E1E] font-medium mt-2 mb-3">
+                  EVERY VISIT COUNTS
                 </h3>
                 <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
-                  Enjoy priority booking access for Eid & holiday seasons, curated complimentary herbal refreshments, and invitations to private Maja beauty masterclasses.
+                  Earn 1 point for every AED 1 spent, 10 points when you book online and 25 points when you leave a review. Complete 10 appointments and receive 1,000 bonus points. Every 100 points gives you AED 1 towards your next visit.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-[#F3E4DB] flex items-center justify-between text-[11px] text-[#7B2E3A] font-medium">
-                <span>VIP Priority</span>
-                <span>Always Looked After</span>
+                <span>100 Points = AED 1</span>
+                <span>Bonus Milestones</span>
               </div>
             </div>
 
@@ -233,7 +215,7 @@ export default function ReferPage() {
                 Generate Your Maja Pass
               </h2>
               <p className="text-xs sm:text-sm text-[#8C7474] mt-2 font-light">
-                Enter your name to personalise your WhatsApp booking invitation for your friends.
+                Enter your full name to personalise your WhatsApp booking invitation for your friends.
               </p>
             </div>
 
@@ -243,14 +225,14 @@ export default function ReferPage() {
                   htmlFor="referrerName"
                   className="block text-xs font-medium uppercase tracking-wider text-[#3A1E1E] mb-2"
                 >
-                  Your Name *
+                  Your Full Name *
                 </label>
                 <div className="relative">
                   <input
                     ref={inputRef}
                     id="referrerName"
                     type="text"
-                    placeholder="e.g. Maya or Elena"
+                    placeholder="Enter your full name"
                     value={referrerName}
                     onChange={(e) => {
                       setReferrerName(e.target.value);
@@ -265,7 +247,7 @@ export default function ReferPage() {
                 </div>
                 {inputError && (
                   <p className="text-xs text-red-500 mt-1.5 font-medium">
-                    Please enter your name to create your pass.
+                    Please enter your full name to create your pass.
                   </p>
                 )}
               </div>
@@ -285,7 +267,7 @@ export default function ReferPage() {
                 ref={resultRef}
                 className="mt-8 pt-8 border-t border-[#B97A86]/25 space-y-6 transition-all duration-300"
               >
-                {/* Visual VIP Pass Card */}
+                {/* Visual Pass Card */}
                 <div className="bg-gradient-to-br from-[#3A1E1E] via-[#2A1414] to-[#231012] rounded-2xl p-6 text-white border border-[#D8B1B7]/40 shadow-xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-[#D8B1B7]/15 rounded-full blur-2xl pointer-events-none" />
                   
@@ -302,19 +284,19 @@ export default function ReferPage() {
                     Special Invitation from {currentName}
                   </h3>
                   <p className="text-xs text-[#F3E4DB]/80 font-light leading-relaxed mb-4">
-                    Valid for AED 50 off your first appointment at Maja Beauty Bar Dubai across hair, nails, lash, wax, or massage rituals.
+                    Valid for AED 50 off your first appointment at Maja Beauty Bar Dubai across hair, nails, lash, wax, or massage rituals with a minimum spend of AED 200.
                   </p>
 
                   <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-[#F3E4DB]/60">
                     <span>M1M Building, Al Meydan Road</span>
-                    <span>Inclusive of 5% VAT</span>
+                    <span>Minimum spend AED 200</span>
                   </div>
                 </div>
 
                 {/* Direct Action 1: Direct 1-on-1 WhatsApp Chat with Maja */}
                 <div>
                   <label className="block text-[11px] font-medium uppercase tracking-wider text-[#3A1E1E] mb-2">
-                    Action 1: Chat Directly with Maja Concierge
+                    Action 1: Chat Directly with Maja on WhatsApp
                   </label>
                   <a
                     href={directWhatsAppChatUrl}
@@ -328,7 +310,7 @@ export default function ReferPage() {
                     <span>Open Direct WhatsApp Chat with Maja</span>
                   </a>
                   <p className="text-[11px] text-[#8C7474] mt-2 text-center">
-                    This connects straight to Maja Concierge (+971 50 996 4626) with your referral note pre-filled.
+                    This connects straight to Maja (+971 50 996 4626) with your referral note pre-filled.
                   </p>
                 </div>
 
@@ -390,18 +372,19 @@ export default function ReferPage() {
           </div>
         </section>
 
-        {/* 4. Terms and Conditions (Inclusive of 5% UAE VAT) */}
+        {/* 4. Terms and Conditions */}
         <div className="max-w-3xl mx-auto p-6 sm:p-8 rounded-3xl bg-white/70 backdrop-blur-sm border border-[#B97A86]/25 shadow-sm mb-16">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#7B2E3A] font-medium mb-3">
             <ShieldCheck className="w-4 h-4 text-[#B97A86]" />
-            <span>Maja Girls Club · Terms &amp; Policies</span>
+            <span>Maja Girls Club · Terms &amp; Conditions</span>
           </div>
-          <ul className="space-y-2 text-xs text-[#3A1E1E]/80 leading-relaxed font-light">
-            <li>• Referral gift of AED 50 is applicable for first-time guests with a minimum treatment spend of AED 200.</li>
-            <li>• Earned AED 50 credits are added to the referrer’s account once the friend completes her visit, valid for 6 months.</li>
-            <li>• All service prices and reward credits are inclusive of 5% UAE VAT.</li>
-            <li>• Rewards cannot be combined with seasonal promotional packages, nor redeemed during Eid or UAE Public Holidays.</li>
-            <li>• Appointments must be booked in advance via WhatsApp or online.</li>
+          <ul className="space-y-2.5 text-xs text-[#3A1E1E]/80 leading-relaxed font-light">
+            <li>• Only one loyalty reward or discount may be used per visit. Benefits cannot be combined with other offers, promotions or discount cards.</li>
+            <li>• Loyalty rewards and discounts cannot be redeemed during Eid, UAE public holidays, New Year’s Eve or New Year’s Day.</li>
+            <li>• Referral rewards are issued after the new client completes her first appointment. The referred guest receives AED 50 OFF her first visit (minimum spend of AED 200), and the referrer receives AED 50 OFF on her next visit. Referral credits do not expire and remain valid permanently.</li>
+            <li>• Rewards cannot be combined with seasonal promotional packages, discount cards like Fazaa or Essad cards nor redeemed during Eid or UAE Public Holidays.</li>
+            <li>• The birthday offer provides 20% OFF one visit during the client’s birthday week. A valid Emirates ID must be presented to redeem the offer.</li>
+            <li>• Advance booking is required via WhatsApp or online. All service prices are inclusive of 5% UAE VAT.</li>
           </ul>
         </div>
 

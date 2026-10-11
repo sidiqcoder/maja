@@ -65,7 +65,6 @@ export default function FirstVisitModal() {
           
           {/* Top Badge */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#B97A86]/15 border border-[#B97A86]/30 text-[11px] font-medium uppercase tracking-[0.2em] text-[#7B2E3A] mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#B97A86]" />
             <span>First Visit Privilege</span>
           </div>
 
@@ -74,11 +73,7 @@ export default function FirstVisitModal() {
             Enjoy 20% OFF
           </h2>
           <p className="font-serif italic text-xl sm:text-2xl text-[#7B2E3A] mt-1 mb-3 font-normal">
-            Your First Maja Sanctuary Visit
-          </p>
-
-          <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed max-w-sm mx-auto font-light">
-            Welcome to Maja Beauty Bar Dubai. Indulge in our bespoke hair styling, BIAB nail artistry, lash treatments, or lymphatic massage with an exclusive welcome gift.
+            Your First Visit
           </p>
 
           {/* Promo Code Box */}

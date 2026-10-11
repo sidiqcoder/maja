@@ -104,9 +104,6 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     onClick={() => handleNavClick('services', 'nails')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Sparkles className="w-4 h-4" />
-                    </div>
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">NAILS</div>
                       <div className="text-[11px] text-[#8C7474]">BIAB, Manicure, Pedicure & Art</div>
@@ -117,9 +114,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     onClick={() => handleNavClick('services', 'hair')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Scissors className="w-4 h-4" />
-                    </div>
+                   
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">HAIR</div>
                       <div className="text-[11px] text-[#8C7474]">Cut, Blow-dry, Balayage & Care</div>
@@ -130,9 +125,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     onClick={() => handleNavClick('services', 'lashes-brows')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Eye className="w-4 h-4" />
-                    </div>
+                    
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">LASHES & BROWS</div>
                       <div className="text-[11px] text-[#8C7474]">Extensions, YUMI Lift & Tint</div>
@@ -143,9 +136,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     onClick={() => handleNavClick('services', 'waxing')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Feather className="w-4 h-4" />
-                    </div>
+                   
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">WAXING</div>
                       <div className="text-[11px] text-[#8C7474]">Gentle Full Body & Brazilian</div>
@@ -156,9 +147,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     onClick={() => handleNavClick('services', 'massages')}
                     className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Activity className="w-4 h-4" />
-                    </div>
+                   
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">MASSAGES</div>
                       <div className="text-[11px] text-[#8C7474]">Lymphatic Drainage & Sculpt</div>
@@ -210,11 +199,8 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                 >
                   <button
                     onClick={() => handleNavClick('about', 'about')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
+                    className="w-full px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Users className="w-4 h-4" />
-                    </div>
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">ABOUT & TEAM</div>
                       <div className="text-[11px] text-[#8C7474]">Meet Our Beauty Experts</div>
@@ -222,11 +208,8 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                   </button>
                   <button
                     onClick={() => handleNavClick('about', 'careers')}
-                    className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
+                    className="w-full px-3.5 py-2.5 rounded-xl text-left text-sm hover:bg-[#F3E4DB]/60 transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#D8B1B7]/25 flex items-center justify-center text-[#7B2E3A] group-hover/item:bg-[#7B2E3A] group-hover/item:text-white transition-colors shrink-0">
-                      <Briefcase className="w-4 h-4" />
-                    </div>
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">CAREERS</div>
                       <div className="text-[11px] text-[#8C7474]">Join the Maja Team</div>
