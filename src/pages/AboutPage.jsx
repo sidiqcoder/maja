@@ -46,6 +46,11 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const createMailtoLink = (data) => {
     const subject = encodeURIComponent(`Career Application: ${data.expertise || 'Specialist'} - ${data.fullName}`);
     const body = encodeURIComponent(
