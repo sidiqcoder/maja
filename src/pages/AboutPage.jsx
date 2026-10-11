@@ -46,14 +46,34 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const createMailtoLink = (data) => {
+    const subject = encodeURIComponent(`Career Application: ${data.expertise || 'Specialist'} - ${data.fullName}`);
+    const body = encodeURIComponent(
+`Dear Maja Beauty Bar Team,
+
+I would like to apply for the ${data.expertise || 'Open Position'} role at Maja Beauty Bar.
+
+Applicant Details:
+• Full Name: ${data.fullName}
+• Email Address: ${data.email}
+• Phone / WhatsApp: ${data.phone}
+• Area of Expertise: ${data.expertise}
+• Years of Experience: ${data.experience || 'Not specified'}
+• Instagram / Portfolio: ${data.portfolio || 'Not specified'}
+
+About Me & Background:
+${data.about}
+
+Thank you,
+${data.fullName}`
+    );
+    return `mailto:careers@majabeautybar.com?subject=${subject}&body=${body}`;
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
+    window.location.href = createMailtoLink(formData);
   };
 
   return (
@@ -326,16 +346,25 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
                   <div className="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="font-serif text-2xl text-[#3A1E1E]">Application Received!</h4>
+                  <h4 className="font-serif text-2xl text-[#3A1E1E]">Application Prepared!</h4>
                   <p className="text-sm text-[#3A1E1E]/80 mt-2 max-w-md mx-auto font-light">
-                    Thank you, {formData.fullName}. We have received your application. Our salon director will review your portfolio and get in touch if an opportunity arises.
+                    Thank you, {formData.fullName}. Your application details have been prepared for <strong className="text-[#7B2E3A] font-medium">careers@majabeautybar.com</strong>.
                   </p>
-                  <button
-                    onClick={() => setFormSubmitted(false)}
-                    className="mt-6 px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#3A1E1E] text-white"
-                  >
-                    Submit Another Application
-                  </button>
+                  <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <a
+                      href={createMailtoLink(formData)}
+                      className="px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-[#7B2E3A] hover:bg-[#8C3745] text-white shadow-md inline-flex items-center gap-2 transition-all"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Open in Email App</span>
+                    </a>
+                    <button
+                      onClick={() => setFormSubmitted(false)}
+                      className="px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider bg-white border border-[#B97A86]/40 text-[#3A1E1E] hover:bg-[#F3E4DB] transition-all"
+                    >
+                      Submit Another Application
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-5">
@@ -460,7 +489,7 @@ export default function AboutPage({ initialTab = 'about', onTabChange }) {
               )}
 
               <div className="mt-8 pt-6 border-t border-[#D8B1B7]/30 text-center text-xs text-[#8C7474]">
-                For direct career inquiries, email us at <span className="font-medium text-[#3A1E1E]">careers@majabeautybar.ae</span> or message via WhatsApp.
+                For direct career inquiries, email us at <a href="mailto:careers@majabeautybar.com" className="font-medium text-[#7B2E3A] hover:underline">careers@majabeautybar.com</a> or message via WhatsApp.
               </div>
             </div>
 
