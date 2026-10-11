@@ -1,0 +1,6 @@
+# Robots.txt for Maja Beauty Bar Dubai
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://majabeautybar.com/sitemap.xml
