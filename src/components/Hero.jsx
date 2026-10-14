@@ -18,6 +18,7 @@ export default function Hero({ onExploreServices }) {
           poster="/images/why-maja/hero-fallback.jpg"
           className="w-full h-full object-cover scale-105 filter brightness-[0.76] contrast-[1.05]"
         >
+          <source src="/videos/hero-new.mp4" type="video/mp4" />
           <source src="/videos/hero.mp4" type="video/mp4" />
           <source src="/videos/hero-salon.mp4" type="video/mp4" />
         </video>

@@ -6,13 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "video:preview": "remotion preview src/video/index.ts",
+    "video:render": "remotion render src/video/index.ts MajaPromo public/maja_promo_video.mp4",
+    "video:still": "remotion still src/video/index.ts MajaPromo public/maja_promo_still.jpeg"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.535",
+    "@remotion/media-utils": "^4.0.535",
+    "@remotion/player": "^4.0.535",
+    "@remotion/tailwind": "^4.0.535",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "remotion": "^4.0.535",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
@@ -25,4 +33,3 @@
     "vite": "^6.1.0"
   }
 }
-
