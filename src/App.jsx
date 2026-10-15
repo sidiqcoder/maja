@@ -8,6 +8,7 @@ import PackagesPage from './pages/PackagesPage';
 import AboutPage from './pages/AboutPage';
 import ReferPage from './pages/ReferPage';
 import FirstVisitModal from './components/FirstVisitModal';
+import { initGA, trackPageView } from './utils/analytics';
 
 // SEO Metadata mapping for SPA client-side routing
 const SEO_CONFIG = {
@@ -77,7 +78,12 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [aboutTab, setAboutTab] = useState('about');
 
-  // Dynamically update document title, description, OG tags, and canonical link
+  // Initialize Google Analytics 4
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  // Dynamically update document title, description, OG tags, canonical link, and GA4 pageview
   useEffect(() => {
     let config = SEO_CONFIG.home;
     if (activePage === 'services') {
@@ -105,6 +111,9 @@ export default function App() {
 
       const canonicalLink = document.querySelector('link[rel="canonical"]');
       if (canonicalLink) canonicalLink.setAttribute('href', config.canonical);
+
+      // Track SPA Page View in GA4 with dynamic title and path
+      trackPageView(window.location.pathname, config.title);
     }
   }, [activePage, selectedCategory, aboutTab]);
 

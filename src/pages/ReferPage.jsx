@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Share2
 } from 'lucide-react';
+import { AnalyticsEvents } from '../utils/analytics';
 
 export default function ReferPage() {
   const [referrerName, setReferrerName] = useState('');
@@ -48,6 +49,9 @@ export default function ReferPage() {
     setHasGenerated(true);
     setInputError(false);
 
+    // Track Referral Code Generation event in GA4
+    AnalyticsEvents.trackReferralAction('code_generated', { referrer_name: clean });
+
     setTimeout(() => {
       if (resultRef.current) {
         resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -79,6 +83,8 @@ export default function ReferPage() {
 
   const triggerCopied = () => {
     setCopied(true);
+    // Track Referral Link Copy event in GA4
+    AnalyticsEvents.trackReferralAction('copied_link');
     setTimeout(() => setCopied(false), 2000);
   };
 

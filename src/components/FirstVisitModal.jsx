@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Sparkles, Calendar, MessageCircle, Copy, Check, Gift } from 'lucide-react';
+import { AnalyticsEvents } from '../utils/analytics';
 
 export default function FirstVisitModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function FirstVisitModal() {
     if (!hasSeen) {
       const timer = setTimeout(() => {
         setIsOpen(true);
+        AnalyticsEvents.trackFirstVisitOffer('view_modal');
       }, 2500); // Gentle 2.5s delay after page load
 
       return () => clearTimeout(timer);
@@ -20,6 +22,7 @@ export default function FirstVisitModal() {
   const handleClose = () => {
     setIsOpen(false);
     sessionStorage.setItem('maja_first_visit_seen', 'true');
+    AnalyticsEvents.trackFirstVisitOffer('dismiss_modal');
   };
 
   const handleCopyCode = () => {
@@ -27,6 +30,7 @@ export default function FirstVisitModal() {
       navigator.clipboard.writeText('FIRST20')
         .then(() => {
           setCopied(true);
+          AnalyticsEvents.trackFirstVisitOffer('copy_promo_code');
           setTimeout(() => setCopied(false), 2000);
         })
         .catch(() => {});

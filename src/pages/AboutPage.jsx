@@ -259,7 +259,8 @@ ${data.fullName}`
                           <img
                             src={member.image || member.mockupImage}
                             alt={member.name}
-                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                            style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                            className={`w-full h-full object-cover ${member.imagePosition ? '' : 'object-top'} transition-transform duration-700 ease-out group-hover:scale-105`}
                           />
                         ) : (
                           <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#F3E4DB]/90 to-[#EAD4CB]/70">

@@ -40,6 +40,7 @@ export const teamMembers = [
     bio: 'Rose does a little bit of everything, from nails and lashes to brow lamination, waxing, threading, hair treatments and blowdries. She’s especially known for her eyebrow threading, pedicures and waxing, and has earned her reputation as the queen of brows.',
     image: '/images/team/Rose.jpeg',
     mockupImage: '/images/team/Rose.jpeg',
+    imagePosition: 'center 35%',
     specialties: ['Eyebrow Threading & Tint', 'Brow Lamination', 'Luxury Pedicures', 'Hair Care']
   },
   {
@@ -58,8 +59,9 @@ export const teamMembers = [
     role: 'Massage Therapist',
     tag: 'Queen of Lymphatic Drainage',
     bio: 'Known as the queen of lymphatic drainage, Cecilia has a natural talent for helping you feel lighter, relaxed and restored. Her massage is all about expert technique and that unmistakable feeling of being completely reset.',
-    image: null,
-    mockupImage: null,
+    image: '/images/team/Cecillia.PNG',
+    mockupImage: '/images/team/Cecillia.PNG',
+    imagePosition: 'center 25%',
     specialties: ['Manual Lymphatic Drainage', 'Full Body Sculpt', 'Red Light Therapy', 'Ice Madero']
   },
 ];
