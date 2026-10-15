@@ -8,7 +8,6 @@ export const serviceCategories = [
     heroTitle: 'Beauty, Your Way',
     heroSubtitle: 'From nails to hair, lashes, brows and body treatments, discover everything you need for your beauty routine at Maja Beauty Bar.',
     description: 'Our services are designed to help you look polished, feel confident and enjoy a little time for yourself in our serene Dubai sanctuary.',
-    brands: 'Schwarzkopf · Davines · Keune · Luxio · The Gel Bottle · Essie',
     image: '/images/services/services-hero-beauty-your-way.jpg',
     deckHeadline: 'Beauty, Your Way',
     ctaLabel: 'Explore All Services',
@@ -21,8 +20,8 @@ export const serviceCategories = [
     heroSubtitle: 'Nails, Made to Be Noticed',
     deckHeadline: 'Beautifully finished nails for every mood, occasion and personal style.',
     description: 'Manicures, pedicures, BIAB and nail art, finished with premium professional brands including Luxio, Nano, Erra Gel, Essie, Orly, Brunson, Mal Beauty and The Gel Bottle for a polished, long lasting finish.',
-    brands: 'Luxio · The Gel Bottle · Essie · Orly · Erra Gel · Brunson · Nano · Mal Beauty',
     image: '/images/services/service-nails-fresh.jpg',
+    imagePosition: 'center 38%',
     ctaLabel: 'See Nail Pricing',
     highlights: ['Biab Nails', 'Gelish Manicure', 'Nail Extension', 'Custom nail Art', 'Nail Treatment']
   },
@@ -33,8 +32,8 @@ export const serviceCategories = [
     heroSubtitle: 'Your Hair, Your Way',
     deckHeadline: 'From fresh cuts and beautiful colour to nourishing treatments, our hair services bring together expert care and effortless results.',
     description: 'Cuts, blow dries, colour, highlights and nourishing treatments using trusted professional brands like Schwarzkopf, Keune and Davines, selected to keep your hair looking and feeling its best.',
-    brands: 'Schwarzkopf · Keune · Davines',
     image: '/images/services/service-hair-new.jpeg',
+    imagePosition: 'center center',
     ctaLabel: 'See Hair Pricing',
     highlights: ['Signature Blow Dries', 'Precision Hair Cut', 'Hair Treatments', 'Roots Color', 'Balayage', 'Hair Styles']
   },
@@ -45,7 +44,6 @@ export const serviceCategories = [
     heroSubtitle: 'Small Details Can Make a Big Difference',
     deckHeadline: 'Enhance your natural features with our selection of lash and brow treatments, tailored to create a look that feels effortless and beautifully defined.',
     description: 'Lash extensions, tinting, lamination and threading to define and frame your features for a refined, natural looking finish.',
-    brands: 'Lashes & Brows · Professional Tint',
     image: '/images/services/lp-lashes.jpeg',
     ctaLabel: 'See Lashes & Brows Pricing',
     highlights: ['Lashes extension', 'Eyelash & Brow lamination', 'Threading & Tinting', 'Lashes Refill']
@@ -267,7 +265,7 @@ export const pricelistCards = [
     id: 'card-hair-treatments',
     category: 'hair',
     title: 'Hair Treatments',
-    description: 'Deep restorative moisture therapy, Davines botanicals, and smoothing.',
+    description: 'Deep restorative moisture therapy, and smoothing.',
     items: [
       { name: 'Collagen Hair Treatment (Short)', price: 'AED 250', note: 'Restores hair elasticity, deeply hydrates damaged strands, and eliminates frizz for a smoother, plumper finish.' },
       { name: 'Collagen Hair Treatment (Medium)', price: 'AED 300' },

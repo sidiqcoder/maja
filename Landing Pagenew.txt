@@ -1,0 +1,88 @@
+Landing Page
+di pop up awal hapus saja maja sactuary dan welcome nya dihapus, terus dibawah nya on your first
+
+because every women hapus ganti your togo dibawhnya
+
+our service, tulisan di atas tombol explore dihapus, card diatas kanan nya dihapus juga, foto nya juga diganti
+
+cancelation, tulisan dibawah cancelation & deposit policy diganti dengan tulisan yang dikirim di wa: We understand that plans can change, and we appreciate your understanding that our time matters too. If you need to cancel, please let us know in advance so we can offer your slot to another client. konten di card nya salah ssemua belum sesuai sama deck atua data aslinya, transparency guarantee dihapus saja
+
+dibagian card di why maja, ada .... itu dipersingkat saja kata katanya, teks dibagian bawah line garis bawah itu dihapus saja, dan fotonya diganti
+
+Halaman Service
+our service more than beauty, dan our service are design dihapus, 
+
+foto dibawah diganti, ikon diatas nails besar dihapus, dan tulisan beautifully dibawah nails besar dihapus, begitu juga keterangan nya, category digambar nya juga, lalu tulisan tulisan di card kecil diantara featured brands diganti seperti berikut
+
+Service : 
+
+Nails : (Biab Nails, Gelish Manicure, Nail Extension, Custom nail Art, Nail Treatment)
+Hair : Siganature Blow Dries, Precision Hair Cut, Hair Treatments, Roots Color, Balayage, Hair Styles
+Lashes & Brows : Lashes extension, Eyelash & Brow lamination, Threading & Tinting, Lashes Refill
+Waxing : Full body packages, Brazilian Waxing, Face Waxing
+Massage : Lymphatic Dranage, Madero Therapy, Hot Stone Massage, Relaxation & Deep Tissue, Warm Herbal Massage
+
+yang lain juga begitu, tapi waxing dan massages tidak ada featured brand
+
+Tulisan di card cta nya ganti jadi hanya ada, yang kecil dibawah hapus, yang diatas biarin, lalu disemua jenis service nails dll sama seperti dihalaman service tapi tetap ada all prices dan cncelation policy yang dibawah garis
+
+lalu di menu service itu untuk nails dll itu hapus saja icon nya, jadi tulisan aja
+
+untuk menu belum sesuai dengan menu yang sebenarnya, jadi sesuaikan lagi, misal dibawah nya ada tulisan, di web ada, jika tidak ada, maka tidak usah
+
+di hero tiap service hanya ada judul misal nails, dan allprices dan featured brands, dan juga gelbottle itu pisah jadi gel bottle
+
+dibawah menu ada tulisan kecil itu dihapus saja, dan tulisan instant dibawah cta wa dihapus saja
+
+yang lashes tidak ada YUMI dan ternyata kurang 1
+
+fotonya ntar diganti
+
+Halaman packages
+
+icon dihapus
+
+more of your itu ganti dengan curated di atasnya
+
+card complete color tambahkan car kecil doiatas nya, dan isi menu nya masih belum sama dengan yang sebenarnya 
+
+jadi di card tu ada term and con yang ada *, nah itu pindahkan ke terms and con dibawah
+
+di the beauty reset dihapus saja yang special weekly client, yang v davines dan yang serupa di tab lain dihaous saja
+
+rapikan dua garis dekat cta, satu saja
+tulisan multi session saving dihapus saja yang serupa juga
+
+nanti fotonya diganti semua
+
+Abous us
+
+ikon dihapus
+tag diatas gambar dihapus saja
+
+current opportunities in Dubai ganti jadi in maja
+
+posisi nya nanti diganti disesuaikan dengan yang dikirim di wa (sabtu baru dikirim)
+
+di form area of expertise, tulisan concierge hapus saja, yang dalam kurung di hapus juga
+
+tulisan email dibawah nya ganti dengan email yang akan dibuat nanti
+
+di refer a friend ask concierge dihapus
+
+3 card itu samakan dengan yang ada di drive kata kata dan kontennta
+
+lalu di bagian hero the sanctuary of hapus saja
+
+untuk orang yang di refer dapat 50 dengan minimal penggunaan 200 AED, lalu yag merefer dapat 50 di kunjungan berikutnya
+
+icon hapus saja
+vip membership dihapus saja
+
+placeholder di personal invite nama lengkap
+
+card maja girl pass hapus 5% aed nya dan tulis, minimum 200 AED
+
+di term itu ada valid 6 bulan, hapus saja, karena valid selamanya
+
+reward cannot .... di term ganti dengan Rewards cannot be combined with seasonal promotional packages, discount cards like Fazaa or Essad cards nor redeemed during Eid or UAE Public Holidays.

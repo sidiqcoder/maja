@@ -153,10 +153,11 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                   >
                     {/* Image Column */}
                     <div className={`lg:col-span-6 ${isEven ? '' : 'lg:col-start-7'}`}>
-                      <div className="relative group overflow-hidden rounded-3xl shadow-2xl border border-[#D8B1B7]/40 bg-black aspect-[4/3] sm:aspect-[16/11]">
+                      <div className="relative group overflow-hidden rounded-3xl shadow-2xl border border-[#D8B1B7]/40 bg-black aspect-[4/3.5] sm:aspect-[16/13]">
                         <img
                           src={cat.image}
                           alt={`Maja Beauty Bar ${cat.name}`}
+                          style={cat.imagePosition ? { objectPosition: cat.imagePosition } : undefined}
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.95]"
                         />
                         
@@ -183,12 +184,6 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                               </span>
                             ))}
                           </div>
-                        )}
-
-                        {cat.brands && (
-                          <p className="text-xs text-[#8C7474] font-medium">
-                            <span className="text-[#7B2E3A]">Featured Brands:</span> {cat.brands}
-                          </p>
                         )}
 
                         {/* Action Buttons */}
@@ -268,6 +263,7 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
               <img
                 src={currentCategoryInfo.image}
                 alt={`Maja Beauty Bar ${currentCategoryInfo.name}`}
+                style={currentCategoryInfo.imagePosition ? { objectPosition: currentCategoryInfo.imagePosition } : undefined}
                 className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.08] scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#3A1E1E] via-[#3A1E1E]/80 to-[#3A1E1E]/70" />
@@ -295,12 +291,6 @@ export default function ServicesPage({ initialCategory = 'all', onSelectCategory
                 <Info className="w-3.5 h-3.5 text-[#F7CEC2]" />
                 <span>All prices are inclusive of 5% UAE VAT</span>
               </div>
-
-              {currentCategoryInfo.brands && (
-                <div className="mt-3 text-xs tracking-wider uppercase text-white/70 font-medium">
-                  Featured Brands: {currentCategoryInfo.brands}
-                </div>
-              )}
             </div>
           </section>
 

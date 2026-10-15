@@ -5,7 +5,7 @@ export const packagesData = {
   hairPackages: {
     title: 'Hair Packages',
     subtitle: 'From signature balayage to unlimited blow-dries, enjoy salon perfection on repeat.',
-    image: '/images/packages/hair-package-new.png',
+    image: '/images/packages/hair-package-new.jpeg',
     secondaryImage: '/images/packages/hair-post.jpg',
     items: [
       {
@@ -16,7 +16,7 @@ export const packagesData = {
           'Roots Colour',
           'Davines Hair Treatment',
           'Hair Trim',
-          'Curls & Blow-Dry',
+          
         ],
         badge: 'Popular',
       },
@@ -28,7 +28,7 @@ export const packagesData = {
           'Full Head Colour',
           'Davines Hair Treatment',
           'Hair Trim',
-          'Curls & Blow-Dry',
+          
         ],
         badge: 'Best Value',
       },
@@ -41,7 +41,7 @@ export const packagesData = {
           'Toner',
           'Davines Hair Treatment',
           'Hair Trim',
-          'Curls & Blow-Dry',
+          
         ],
         badge: 'Signature',
       },

@@ -117,7 +117,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                    
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">HAIR</div>
-                      <div className="text-[11px] text-[#8C7474]">Cut, Blow-dry, Balayage & Care</div>
+                      <div className="text-[11px] text-[#8C7474]">Cut, Blow-dry, Balayage</div>
                     </div>
                   </button>
 
@@ -128,7 +128,7 @@ export default function Navbar({ activePage, setActivePage, selectedCategory, se
                     
                     <div>
                       <div className="font-medium text-xs tracking-wider text-[#3A1E1E] group-hover/item:text-[#7B2E3A]">LASHES & BROWS</div>
-                      <div className="text-[11px] text-[#8C7474]">Extensions, YUMI Lift & Tint</div>
+                      <div className="text-[11px] text-[#8C7474]">Extensions, Lamination & Tint</div>
                     </div>
                   </button>
 

@@ -104,24 +104,36 @@ export default function ReferPage() {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#B97A86]/15 border border-[#B97A86]/30 text-xs font-medium uppercase tracking-[0.2em] text-[#7B2E3A] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#B97A86]" />
-            <span>Maja Girls Club · Member Privileges</span>
+            <span>Maja Girls Club · The Referral Circle</span>
           </div>
 
-          <h1 className="font-serif italic text-4xl sm:text-6xl text-[#3A1E1E] leading-tight font-normal">
-            The Referral Circle
+          <h1 className="font-serif text-4xl sm:text-6xl text-[#3A1E1E] leading-tight font-normal">
+            Get <span className="italic font-serif text-[#7B2E3A]">50 AED OFF</span> for Every Friend You Refer to Maja
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-[#3A1E1E]/80 max-w-2xl mx-auto font-light leading-relaxed">
-            Because beauty rituals are always sweeter shared. Introduce your friends to Maja Beauty Bar and celebrate together with exclusive club benefits.
+          <p className="mt-4 text-base sm:text-lg text-[#3A1E1E]/85 max-w-2xl mx-auto font-light leading-relaxed">
+            Because beauty rituals are always sweeter shared. You can refer as many friends as you want — there is no limit! Introduce your friends to Maja Beauty Bar and celebrate together with 50 AED OFF for every friend who visits.
           </p>
 
+          {/* Quick Highlight Feature Pills */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-[#B97A86]/35 shadow-sm text-xs text-[#3A1E1E]">
+              <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+              <span className="font-medium">Unlimited Referrals:</span> Refer as many friends as you want
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-[#B97A86]/35 shadow-sm text-xs text-[#3A1E1E]">
+              <span className="w-2 h-2 rounded-full bg-[#7B2E3A]" />
+              <span className="font-medium">50 AED OFF:</span> For both you and your friend
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={scrollToGenerate}
-              className="btn-maja-wine px-7 py-3 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-lg"
+              className="btn-maja-wine px-8 py-3.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-lg hover:scale-105 transition-all text-white"
             >
               <span>Create Your Invitation Pass</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#F7CEC2]" />
             </button>
           </div>
         </div>
@@ -152,11 +164,11 @@ export default function ReferPage() {
                   BETTER TOGETHER
                 </h3>
                 <p className="text-xs sm:text-sm text-[#3A1E1E]/80 leading-relaxed font-light">
-                  Refer a friend and she receives <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> her first visit with a minimum spend of AED 200. Once completed, you receive <strong className="text-[#3A1E1E] font-medium">AED 50 OFF</strong> on your next visit.
+                  <strong className="text-[#3A1E1E] font-medium">You can refer as many friends as you want — there is no limit!</strong> Each friend receives <strong className="text-[#7B2E3A] font-medium">AED 50 OFF</strong> her first visit with a minimum spend of AED 200. Once completed, you receive <strong className="text-[#7B2E3A] font-medium">AED 50 OFF</strong> on your next visit for each referral.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-[#F3E4DB] flex items-center justify-between text-[11px] text-[#7B2E3A] font-medium">
-                <span>Min. Spend AED 200</span>
+                <span>Unlimited Referrals</span>
                 <span>Both Receive AED 50</span>
               </div>
             </div>
@@ -215,7 +227,7 @@ export default function ReferPage() {
                 Generate Your Maja Pass
               </h2>
               <p className="text-xs sm:text-sm text-[#8C7474] mt-2 font-light">
-                Enter your full name to personalise your WhatsApp booking invitation for your friends.
+                Enter your full name to personalise your WhatsApp booking invitation. You can refer as many friends as you want to earn unlimited 50 AED rewards!
               </p>
             </div>
 
@@ -381,7 +393,7 @@ export default function ReferPage() {
           <ul className="space-y-2.5 text-xs text-[#3A1E1E]/80 leading-relaxed font-light">
             <li>• Only one loyalty reward or discount may be used per visit. Benefits cannot be combined with other offers, promotions or discount cards.</li>
             <li>• Loyalty rewards and discounts cannot be redeemed during Eid, UAE public holidays, New Year’s Eve or New Year’s Day.</li>
-            <li>• Referral rewards are issued after the new client completes her first appointment. The referred guest receives AED 50 OFF her first visit (minimum spend of AED 200), and the referrer receives AED 50 OFF on her next visit. Referral credits do not expire and remain valid permanently.</li>
+            <li>• Referral rewards: You can refer as many friends as you want with no limit. Referral rewards are issued after each new client completes her first appointment. The referred guest receives AED 50 OFF her first visit (minimum spend of AED 200), and the referrer receives AED 50 OFF on her next visit for every friend referred. Referral credits do not expire and remain valid permanently.</li>
             <li>• Rewards cannot be combined with seasonal promotional packages, discount cards like Fazaa or Essad cards nor redeemed during Eid or UAE Public Holidays.</li>
             <li>• The birthday offer provides 20% OFF one visit during the client’s birthday week. A valid Emirates ID must be presented to redeem the offer.</li>
             <li>• Advance booking is required via WhatsApp or online. All service prices are inclusive of 5% UAE VAT.</li>

@@ -8,7 +8,8 @@ export const teamMembers = [
     role: 'Hair Stylist',
     tag: 'Hair Specialist',
     bio: 'From effortless blowdries to colour, cuts, styling and extensions, Khalid takes care of all things hair. His blowdry is one of our most-loved services, known for leaving you with that fresh-from-the-salon feeling.',
-    mockupImage: '/images/team/khalid.jpg',
+    image: '/images/team/Khalid.jpeg',
+    mockupImage: '/images/team/Khalid.jpeg',
     specialties: ['Precision Haircut', 'Signature Blow-Dry', 'Colour & Balayage', 'Hair Extensions']
   },
   {
@@ -17,7 +18,8 @@ export const teamMembers = [
     role: 'Nail Artist',
     tag: 'BIAB & Nail Art',
     bio: 'Have a nail design in mind? Dyna can bring it to life. From detailed nail art to beautifully finished sets, she loves creating nails that feel personal to you. Her BIAB nails are a Maja favourite.',
-    mockupImage: '/images/team/dyna.jpg',
+    image: '/images/team/Dyna.jpeg',
+    mockupImage: '/images/team/Dyna.jpeg',
     specialties: ['BIAB Builder Gel', 'Custom Nail Art', 'Russian Manicure', 'Gel Extensions']
   },
   {
@@ -26,7 +28,8 @@ export const teamMembers = [
     role: 'Lash & Nail Technician',
     tag: 'Lash & Nail Pro',
     bio: 'Norlyn is your go-to for everything from nails and lash extensions to brow lamination, threading and waxing. Her nail extensions are among her most requested services, combining detail with a polished finish.',
-    mockupImage: '/images/team/norlyn.jpg',
+    image: '/images/team/Norely.jpeg',
+    mockupImage: '/images/team/Norely.jpeg',
     specialties: ['Lash Extensions (1D-3D)', 'Nail Extensions', 'Brow Lamination', 'Gentle Waxing']
   },
   {
@@ -35,7 +38,8 @@ export const teamMembers = [
     role: 'Beauty Therapist',
     tag: 'Queen of Brows',
     bio: 'Rose does a little bit of everything, from nails and lashes to brow lamination, waxing, threading, hair treatments and blowdries. She’s especially known for her eyebrow threading, pedicures and waxing, and has earned her reputation as the queen of brows.',
-    mockupImage: '/images/team/rose.jpg',
+    image: '/images/team/Rose.jpeg',
+    mockupImage: '/images/team/Rose.jpeg',
     specialties: ['Eyebrow Threading & Tint', 'Brow Lamination', 'Luxury Pedicures', 'Hair Care']
   },
   {
@@ -44,7 +48,8 @@ export const teamMembers = [
     role: 'Nail Technician',
     tag: 'Nails & Lashes',
     bio: 'Miriam specialises in nails, lash extensions and waxing, with BIAB being one of her signature services. She brings a careful eye for detail to every appointment.',
-    mockupImage: '/images/team/miriam.jpg',
+    image: '/images/team/Miriam.jpeg',
+    mockupImage: '/images/team/Miriam.jpeg',
     specialties: ['BIAB Overlay', 'Natural Lash Extensions', 'Precision Shaping', 'Body Waxing']
   },
   {
@@ -53,17 +58,9 @@ export const teamMembers = [
     role: 'Massage Therapist',
     tag: 'Queen of Lymphatic Drainage',
     bio: 'Known as the queen of lymphatic drainage, Cecilia has a natural talent for helping you feel lighter, relaxed and restored. Her massage is all about expert technique and that unmistakable feeling of being completely reset.',
-    mockupImage: '/images/team/cecilia.jpg',
+    image: null,
+    mockupImage: null,
     specialties: ['Manual Lymphatic Drainage', 'Full Body Sculpt', 'Red Light Therapy', 'Ice Madero']
-  },
-  {
-    id: 'gilda',
-    name: 'Gilda',
-    role: 'Massage Therapist',
-    tag: 'Wellness & Relaxation',
-    bio: 'The newest addition to the Maja team, Gilda brings her own approach to massage and wellness, creating a calm experience designed to help you slow down and switch off.',
-    mockupImage: '/images/team/gilda.jpg',
-    specialties: ['Deep Tissue Massage', 'Relaxation Massage', 'Warm Candle Melt', 'Hot Stone Therapy']
   },
 ];
 

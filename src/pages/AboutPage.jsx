@@ -11,7 +11,8 @@ import {
   FileText,
   X,
   Loader2,
-  MessageCircle
+  MessageCircle,
+  User
 } from 'lucide-react';
 
 export default function AboutPage({ initialTab = 'about', onTabChange }) {
@@ -245,20 +246,34 @@ ${data.fullName}`
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 {teamMembers.map((member) => (
                   <div
                     key={member.id}
                     className="bg-luxury-card rounded-3xl overflow-hidden border border-[#D8B1B7]/40 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group transform hover:-translate-y-2"
                   >
                     <div>
-                      {/* Stylized Mockup Portrait */}
-                      <div className="relative h-72 w-full overflow-hidden">
-                        <img
-                          src={member.mockupImage}
-                          alt={member.name}
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
+                      {/* Staff Portrait or Graceful Placeholder */}
+                      <div className="relative h-80 w-full overflow-hidden bg-gradient-to-br from-[#F7CEC2]/25 via-[#F3E4DB]/50 to-[#D8B1B7]/25 flex items-center justify-center">
+                        {member.image || member.mockupImage ? (
+                          <img
+                            src={member.image || member.mockupImage}
+                            alt={member.name}
+                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#F3E4DB]/90 to-[#EAD4CB]/70">
+                            <div className="w-20 h-20 rounded-full bg-white/80 border border-[#B97A86]/30 flex items-center justify-center mb-3 shadow-sm">
+                              <User className="w-10 h-10 text-[#7B2E3A]/40 stroke-[1.5]" />
+                            </div>
+                            <span className="font-serif text-lg text-[#3A1E1E]/70 font-medium">
+                              {member.name}
+                            </span>
+                            <span className="text-[11px] uppercase tracking-wider text-[#7B2E3A]/60 font-medium mt-1">
+                              Photo coming soon
+                            </span>
+                          </div>
+                        )}
                       </div>
 
                       {/* Bio Details */}

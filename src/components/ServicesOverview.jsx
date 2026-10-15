@@ -9,11 +9,13 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
     {
       id: 'nails',
       image: '/images/services/lp-nails.jpeg',
+      imagePosition: 'center 38%',
       cta: 'Explore Nails',
     },
     {
       id: 'hair',
       image: '/images/services/lp-hair.jpeg',
+      imagePosition: 'center 22%',
       cta: 'Explore Hair',
     },
     {
@@ -68,6 +70,7 @@ export default function ServicesOverview({ onSelectCategory, onNavigateToService
               <img
                 src={card.image}
                 alt={card.title}
+                style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                 loading="lazy"
               />
